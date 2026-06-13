@@ -42,4 +42,19 @@
       <DependentUpon>UrlSigner.cs</DependentUpon>
     </Compile>
   </ItemGroup>
+  <!-- Clast: NuGet metadata stating this is the Clast republish (placed last to override upstream values). -->
+  <PropertyGroup Condition="'$(Clast)' == 'true'">
+    <Title>Clast republish of Google.Cloud.Storage.V1</Title>
+    <Authors>clast-project</Authors>
+    <Company>clast-project</Company>
+    <Copyright>Clast republish. Based on Google.Cloud.Storage.V1 (Apache-2.0, Copyright Google LLC).</Copyright>
+    <PackageProjectUrl>https://github.com/clast-project/google-cloud-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/clast-project/google-cloud-dotnet</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>Clast republish of Google.Cloud.Storage.V1: the internal UrlSigner JSON moves to System.Text.Json (Utf8JsonWriter), Newtonsoft.Json is removed, the library is trimming/AOT-compatible, and a net10.0 target is added. Namespaces and public type names are unchanged. Independent republish from the clast-project fork — not an official Google package.</Description>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Clast)' == 'true'">
+    <None Include="..\..\..\CLAST_NUGET.md" Pack="true" PackagePath="README.md" />
+  </ItemGroup>
+
 </Project>
