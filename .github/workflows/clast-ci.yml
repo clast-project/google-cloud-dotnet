@@ -26,10 +26,18 @@ jobs:
       DOTNET_NOLOGO: true
       DOTNET_CLI_TELEMETRY_OPTOUT: true
     steps:
+      # The google-cloud-dotnet monorepo has paths exceeding Windows' 260-char MAX_PATH (generated snippet files in
+      # unrelated APIs), which breaks checkout on Windows. Harmless on Linux/macOS.
+      - name: Enable git long paths
+        shell: bash
+        run: git config --global core.longpaths true
+
       - name: Checkout google-cloud-dotnet
         uses: actions/checkout@v6
         with:
           path: google-cloud-dotnet
+          # conformance-tests is a git submodule that the UrlSigner V4 conformance/data tests read from.
+          submodules: true
 
       - name: Resolve dependency refs
         id: dep
