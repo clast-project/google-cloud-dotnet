@@ -13,10 +13,10 @@
 // limitations under the License.
 
 using Google.Api.Gax;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Text.Json;
 using System.Linq;
 using System.Net;
 
@@ -312,7 +312,7 @@ namespace Google.Cloud.Storage.V1
                 AddOrReplace(supportsStartsWith, new StartsWith<ISupportsStartsWith>(supportsStartsWith, prefix));
             }
 
-            internal void WriteTo(JsonWriter json)
+            internal void WriteTo(Utf8JsonWriter json)
             {
                 json.WritePropertyName("conditions");
                 json.WriteStartArray();

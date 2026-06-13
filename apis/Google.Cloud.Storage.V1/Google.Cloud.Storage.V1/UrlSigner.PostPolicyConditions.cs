@@ -13,14 +13,31 @@
 // limitations under the License.
 
 using Google.Api.Gax;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
 
 namespace Google.Cloud.Storage.V1
 {
     public sealed partial class UrlSigner
     {
+        /// <summary>
+        /// Writes a post-policy value (string/number) to the writer. Replaces Newtonsoft's
+        /// <c>JsonWriter.WriteValue(object)</c>, which inferred the JSON token type from the runtime value.
+        /// </summary>
+        private static void WritePostPolicyValue(Utf8JsonWriter json, object value)
+        {
+            switch (value)
+            {
+                case null: json.WriteNullValue(); break;
+                case string s: json.WriteStringValue(s); break;
+                case bool b: json.WriteBooleanValue(b); break;
+                case int i: json.WriteNumberValue(i); break;
+                case long l: json.WriteNumberValue(l); break;
+                default: json.WriteStringValue(value.ToString()); break;
+            }
+        }
+
         /// <summary>
         /// Represents a matching condition that is used to include
         /// <see cref="IPostPolicyElement"/> in a <see cref="PostPolicy"/>.
@@ -28,9 +45,9 @@ namespace Google.Cloud.Storage.V1
         internal interface IPostPolicyCondition
         {
             /// <summary>
-            /// Writes this condition to the given <see cref="JsonWriter"/>.
+            /// Writes this condition to the given <see cref="Utf8JsonWriter"/>.
             /// </summary>
-            void WriteTo(JsonWriter json);
+            void WriteTo(Utf8JsonWriter json);
         }
 
         internal interface IExactMatch : IPostPolicyCondition
@@ -71,13 +88,13 @@ namespace Google.Cloud.Storage.V1
             public TValue Value { get; }
 
             /// <inheritdoc/>
-            void IPostPolicyCondition.WriteTo(JsonWriter json)
+            void IPostPolicyCondition.WriteTo(Utf8JsonWriter json)
             {
                 var field = Field;
 
                 json.WriteStartObject();
                 json.WritePropertyName(field.Key);
-                json.WriteValue(field.Value);
+                WritePostPolicyValue(json, field.Value);
                 json.WriteEndObject();
             }
         }
@@ -107,12 +124,12 @@ namespace Google.Cloud.Storage.V1
             public string Prefix { get; }
 
             /// <inheritdoc/>
-            void IPostPolicyCondition.WriteTo(JsonWriter json)
+            void IPostPolicyCondition.WriteTo(Utf8JsonWriter json)
             {
                 json.WriteStartArray();
-                json.WriteValue("starts-with");
-                json.WriteValue("$"+Element.ElementName);
-                json.WriteValue(Prefix);
+                json.WriteStringValue("starts-with");
+                json.WriteStringValue("$"+Element.ElementName);
+                json.WriteStringValue(Prefix);
                 json.WriteEndArray();
             }
         }
@@ -150,13 +167,13 @@ namespace Google.Cloud.Storage.V1
             /// </summary>
             public TValue Max { get; }
 
-            void IPostPolicyCondition.WriteTo(JsonWriter json)
+            void IPostPolicyCondition.WriteTo(Utf8JsonWriter json)
             {
-                json.WriteStartArrayAsync();
-                json.WriteValueAsync($"{Element.ElementName}-range");
-                json.WriteValueAsync(Element.ToPostPolicyValue(Min));
-                json.WriteValueAsync(Element.ToPostPolicyValue(Max));
-                json.WriteEndArrayAsync();
+                json.WriteStartArray();
+                json.WriteStringValue($"{Element.ElementName}-range");
+                WritePostPolicyValue(json, Element.ToPostPolicyValue(Min));
+                WritePostPolicyValue(json, Element.ToPostPolicyValue(Max));
+                json.WriteEndArray();
             }
         }
     }

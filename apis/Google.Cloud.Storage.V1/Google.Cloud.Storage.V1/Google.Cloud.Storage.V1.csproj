@@ -2,15 +2,34 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>4.15.0</Version>
-    <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net8.0;net10.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Recommended Google client library to access the Google Cloud Storage API. It wraps the Google.Apis.Storage.v1 client library, making common operations simpler in client code. Google Cloud Storage stores and retrieves potentially large, immutable data objects.</Description>
     <PackageTags>Storage;Google;Cloud</PackageTags>
+    <!-- Clast: pin to C# 12 (the level this code was written for). SDK 10's default 'latest' (C# 14) makes 'field'
+         a contextual keyword, which collides with existing 'field' identifiers in UrlSigner.SignedPostPolicy.cs. -->
+    <LangVersion>12.0</LangVersion>
+  </PropertyGroup>
+  <!-- Clast: the net10.0 target is validated for trimming/AOT. -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <IsAotCompatible>true</IsAotCompatible>
+  </PropertyGroup>
+  <!-- Clast: republished under a Clast.* identity only when -p:Clast=true (default off keeps the original identity so
+       the in-repo Google.Cloud.Storage.V1.Tests project builds against the published Google.* stack as before). -->
+  <PropertyGroup Condition="'$(Clast)' == 'true'">
+    <PackageId>Clast.Google.Cloud.Storage.V1</PackageId>
+    <AssemblyName>Clast.Google.Cloud.Storage.V1</AssemblyName>
+    <AssemblyOriginatorKeyFile Condition="'$(ClastKeyPath)' != ''">$(ClastKeyPath)</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ConfigureAwaitChecker.Analyzer" PrivateAssets="All" />
-    <PackageReference Include="Google.Api.Gax.Rest" />
-    <PackageReference Include="Google.Apis.Storage.v1" VersionOverride="[1.74.0.4115, 2.0.0.0)" />
+    <!-- Clast: reference the locally-ported (System.Text.Json) libraries instead of the published Newtonsoft-based packages. -->
+    <ProjectReference Include="..\..\..\..\gax-dotnet\Google.Api.Gax.Rest\Google.Api.Gax.Rest.csproj" />
+    <ProjectReference Include="..\..\..\..\google-api-dotnet-client\Src\Generated\Google.Apis.Storage.v1\Google.Apis.Storage.v1.csproj" />
+  </ItemGroup>
+  <!-- Clast: System.Text.Json (replacing Newtonsoft.Json in UrlSigner) is in-box on net8.0/net10.0; supplied by the package on netstandard2.0. -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="StorageClient.*.cs">

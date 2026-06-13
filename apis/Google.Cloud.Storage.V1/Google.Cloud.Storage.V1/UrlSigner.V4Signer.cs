@@ -13,7 +13,6 @@
 // limitations under the License.
 
 using Google.Api.Gax;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -23,6 +22,8 @@ using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -232,26 +233,48 @@ namespace Google.Cloud.Storage.V1
                     _policy = policy;
                     _url = new Uri(uri);
 
-                    StringBuilder sb = new StringBuilder();
-                    StringWriter sw = new StringWriter(sb);
-
-                    using (JsonWriter writer = new JsonTextWriter(sw))
+                    // Relaxed escaping matches the previous Newtonsoft writer's minimal escaping for ASCII policy
+                    // content (it does not over-escape '<', '>', '&', '+', etc.). Newtonsoft additionally used
+                    // StringEscapeHandling.EscapeNonAscii, so we reproduce that with EscapeNonAscii below — Utf8JsonWriter
+                    // cannot (it emits upper-case \uXXXX, whereas the V4 POST-policy contract expects lower-case).
+                    using MemoryStream ms = new MemoryStream();
+                    using (Utf8JsonWriter writer = new Utf8JsonWriter(ms, new JsonWriterOptions { Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping }))
                     {
-                        writer.StringEscapeHandling = StringEscapeHandling.EscapeNonAscii;
                         writer.WriteStartObject();
                         policy.WriteTo(writer);
-                        writer.WritePropertyName("expiration");
-                        writer.WriteValue(_expiration.UtcDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'", CultureInfo.InvariantCulture));
+                        writer.WriteString("expiration", _expiration.UtcDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'", CultureInfo.InvariantCulture));
                         writer.WriteEndObject();
                     }
 
-                    var decodedPolicy = sb.ToString();
+                    var decodedPolicy = EscapeNonAscii(Encoding.UTF8.GetString(ms.ToArray()));
                     _encodedPolicy = Convert.ToBase64String(Encoding.UTF8.GetBytes(decodedPolicy));
                     _blobToSign = Encoding.UTF8.GetBytes(_encodedPolicy);
                 }
 
                 internal SignedPostPolicy GetResult(string signature) =>
                     new SignedPostPolicy(_policy, _encodedPolicy, signature, _expiration, _url);
+            }
+
+            // Escapes non-ASCII characters as lower-case \uXXXX, matching Newtonsoft's
+            // StringEscapeHandling.EscapeNonAscii (and the V4 POST-policy conformance contract). ASCII characters
+            // (including the JSON escapes already produced by Utf8JsonWriter, e.g. \" and \\) are passed through.
+            private static string EscapeNonAscii(string value)
+            {
+                StringBuilder sb = null;
+                for (int i = 0; i < value.Length; i++)
+                {
+                    char c = value[i];
+                    if (c > '\x7f')
+                    {
+                        sb ??= new StringBuilder(value.Length + 16).Append(value, 0, i);
+                        sb.Append("\\u").Append(((int)c).ToString("x4", CultureInfo.InvariantCulture));
+                    }
+                    else
+                    {
+                        sb?.Append(c);
+                    }
+                }
+                return sb?.ToString() ?? value;
             }
 
             private const string HexCharacters = "0123456789abcdef";
