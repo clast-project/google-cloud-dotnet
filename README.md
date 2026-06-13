@@ -1,3 +1,19 @@
+# Clast fork — Newtonsoft-free, AOT-ready republish
+
+> This is the **`clast-project`** fork of [`googleapis/google-cloud-dotnet`](https://github.com/googleapis/google-cloud-dotnet). From this large monorepo it republishes **one** library under a **`Clast.`** package-id prefix, with **`Newtonsoft.Json` replaced by source-generated `System.Text.Json`** (the internal `UrlSigner` V4 signing moved to `Utf8JsonWriter`), made **trimming/AOT-compatible**, and a **`net10.0`** target added. Namespaces and public type names are **unchanged**.
+>
+> **Why:** to provide a Newtonsoft-free, AOT-ready `Google.Cloud.Storage.V1`; it is repointed to the ported `Clast.Google.Api.Gax.Rest` + `Clast.Google.Apis.Storage.v1`.
+>
+> **Package republished from this repository:**
+>
+> | Clast package | Upstream package |
+> |---|---|
+> | `Clast.Google.Cloud.Storage.V1` | `Google.Cloud.Storage.V1` |
+>
+> Every other package in this monorepo is unchanged upstream content and is **not** part of the Clast republish. The renaming/re-signing is gated behind an opt-in `-p:Clast=true` MSBuild flag (default builds keep the original identity, so the in-repo tests run unchanged). The full design notes and behavior-change catalogue live in the [`clast-project/google-api-dotnet-client`](https://github.com/clast-project/google-api-dotnet-client) repo (`PLAN.md`, `BEHAVIORAL-CHANGES.md`).
+
+---
+
 # Google Cloud Libraries for .NET
 .NET idiomatic client libraries for [Google Cloud Platform](https://cloud.google.com/) services.
 
