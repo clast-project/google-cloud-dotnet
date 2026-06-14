@@ -14,10 +14,10 @@
 
 using Google.Api.Gax;
 using Google.Apis.Bigquery.v2.Data;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text.Json;
 
 namespace Google.Cloud.BigQuery.V2
 {
@@ -125,7 +125,7 @@ namespace Google.Cloud.BigQuery.V2
 
         private static object ConvertSingleValue(object rawValue, TableFieldSchema field, bool useInt64Timestamp)
         {
-            if (rawValue == null || (rawValue as JToken)?.Type == JTokenType.Null)
+            if (rawValue == null || (rawValue is JsonElement nullCheck && nullCheck.ValueKind == JsonValueKind.Null))
             {
                 return null;
             }
@@ -133,7 +133,7 @@ namespace Google.Cloud.BigQuery.V2
 
             if (field.GetFieldMode() == BigQueryFieldMode.Repeated)
             {
-                JArray array = (JArray) rawValue;
+                JsonElement array = (JsonElement) rawValue;
                 return type switch
                 {
                     BigQueryDbType.String or BigQueryDbType.Json => ConvertArray(array, StringConverter),
@@ -154,64 +154,74 @@ namespace Google.Cloud.BigQuery.V2
             }
             return type switch
             {
-                BigQueryDbType.String or BigQueryDbType.Json => StringConverter((string) rawValue),
-                BigQueryDbType.Int64 => Int64Converter((string) rawValue),
-                BigQueryDbType.Float64 => DoubleConverter((string) rawValue),
-                BigQueryDbType.Bytes => BytesConverter((string) rawValue),
-                BigQueryDbType.Bool => BooleanConverter((string) rawValue),
-                BigQueryDbType.Timestamp => (useInt64Timestamp ? Int64TimestampConverter : DoubleTimestampConverter)((string) rawValue),
-                BigQueryDbType.Date => DateConverter((string) rawValue),
-                BigQueryDbType.Time => TimeConverter((string) rawValue),
-                BigQueryDbType.DateTime => DateTimeConverter((string) rawValue),
-                BigQueryDbType.Numeric => NumericConverter((string) rawValue),
-                BigQueryDbType.BigNumeric => BigNumericConverter((string) rawValue),
-                BigQueryDbType.Geography => GeographyConverter((string) rawValue),
-                BigQueryDbType.Struct => ConvertRecord((JObject) rawValue, field, useInt64Timestamp),
+                BigQueryDbType.String or BigQueryDbType.Json => StringConverter(GetRawString(rawValue)),
+                BigQueryDbType.Int64 => Int64Converter(GetRawString(rawValue)),
+                BigQueryDbType.Float64 => DoubleConverter(GetRawString(rawValue)),
+                BigQueryDbType.Bytes => BytesConverter(GetRawString(rawValue)),
+                BigQueryDbType.Bool => BooleanConverter(GetRawString(rawValue)),
+                BigQueryDbType.Timestamp => (useInt64Timestamp ? Int64TimestampConverter : DoubleTimestampConverter)(GetRawString(rawValue)),
+                BigQueryDbType.Date => DateConverter(GetRawString(rawValue)),
+                BigQueryDbType.Time => TimeConverter(GetRawString(rawValue)),
+                BigQueryDbType.DateTime => DateTimeConverter(GetRawString(rawValue)),
+                BigQueryDbType.Numeric => NumericConverter(GetRawString(rawValue)),
+                BigQueryDbType.BigNumeric => BigNumericConverter(GetRawString(rawValue)),
+                BigQueryDbType.Geography => GeographyConverter(GetRawString(rawValue)),
+                BigQueryDbType.Struct => ConvertRecord((JsonElement) rawValue, field, useInt64Timestamp),
                 _ => throw new InvalidOperationException($"Unhandled field type {type} (Underlying type: {rawValue.GetType()})"),
             };
         }
 
+        // A scalar cell value arrives either as a CLR string (when extracted from a parent record, see
+        // ConvertRecord) or as a JSON string element (when read directly from a deserialized response, where the
+        // generated TableCell.V is typed `object`). Newtonsoft surfaced both cases as a string; System.Text.Json
+        // represents the deserialized case as a JsonElement. See BEHAVIORAL-CHANGES.md BC-022 (an instance of BC-002).
+        private static string GetRawString(object rawValue) =>
+            rawValue is JsonElement element ? element.GetString() : (string) rawValue;
+
         // TODO: GetString etc, like IDataReader etc. (Should we actually implement IDataReader?)
 
-        private static T[] ConvertArray<T>(JArray array, Func<string, T> converter)
-            => ConvertArray(array, (object obj) => converter((string) obj));
-
-        private static T[] ConvertArray<T>(JArray array, Func<object, T> converter)
+        // Each element of a repeated cell is a JSON object of the form {"v": <scalar string>}. All callers pass a
+        // converter over the string form, matching the original Newtonsoft behavior (which cast the JValue to string).
+        private static T[] ConvertArray<T>(JsonElement array, Func<string, T> converter)
         {
-            T[] ret = new T[array.Count];
-            for (int i = 0; i < ret.Length; i++)
+            T[] ret = new T[array.GetArrayLength()];
+            int i = 0;
+            foreach (var element in array.EnumerateArray())
             {
-                JValue value = (JValue) ((JObject) array[i])["v"];
-                ret[i] = converter(value.Value);
+                ret[i++] = converter(element.GetProperty("v").GetString());
             }
             return ret;
         }
 
-        private static Dictionary<string, object>[] ConvertRecordArray(JArray array, TableFieldSchema fieldSchema, bool useInt64Timestamp)
+        private static Dictionary<string, object>[] ConvertRecordArray(JsonElement array, TableFieldSchema fieldSchema, bool useInt64Timestamp)
         {
-            var ret = new Dictionary<string, object>[array.Count];
-            for (int i = 0; i < ret.Length; i++)
+            var ret = new Dictionary<string, object>[array.GetArrayLength()];
+            int i = 0;
+            foreach (var element in array.EnumerateArray())
             {
-                JObject value = (JObject)array[i];
-                ret[i] = ConvertRecord((JObject)value["v"], fieldSchema, useInt64Timestamp);
+                ret[i++] = ConvertRecord(element.GetProperty("v"), fieldSchema, useInt64Timestamp);
             }
             return ret;
         }
 
-        private static Dictionary<string, object> ConvertRecord(JObject record, TableFieldSchema fieldSchema, bool useInt64Timestamp)
+        private static Dictionary<string, object> ConvertRecord(JsonElement record, TableFieldSchema fieldSchema, bool useInt64Timestamp)
         {
             var fields = fieldSchema.Fields;
-            JArray values = (JArray)record["f"];
-            if (values.Count != fields.Count)
+            JsonElement values = record.GetProperty("f");
+            int valueCount = values.GetArrayLength();
+            if (valueCount != fields.Count)
             {
-                throw new InvalidOperationException($"Record had {values.Count} entries; expected {fields.Count}");
+                throw new InvalidOperationException($"Record had {valueCount} entries; expected {fields.Count}");
             }
             var ret = new Dictionary<string, object>(fields.Count);
             for (int i = 0; i < fields.Count; i++)
             {
                 var field = fields[i];
-                var token = values[i]["v"];
-                ret[field.Name] = ConvertSingleValue(token.Type == JTokenType.String ? (string)token : (object)token, field, useInt64Timestamp);
+                var token = values[i].GetProperty("v");
+                // Surface scalar leaves as a plain string (as Newtonsoft did via the JToken->string cast), and
+                // nested arrays/records as the JsonElement so the recursive call can re-interpret them.
+                object value = token.ValueKind == JsonValueKind.String ? (object) token.GetString() : token;
+                ret[field.Name] = ConvertSingleValue(value, field, useInt64Timestamp);
             }
             return ret;
         }

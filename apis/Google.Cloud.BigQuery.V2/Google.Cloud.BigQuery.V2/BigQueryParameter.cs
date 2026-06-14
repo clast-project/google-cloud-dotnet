@@ -93,9 +93,23 @@ namespace Google.Cloud.BigQuery.V2
             typeof(BigQueryGeography),
         };
 
-        private static readonly List<TypeInfo> s_validRepeatedTypes = s_validSingleTypes
-            .Select(t => typeof(IReadOnlyList<>).MakeGenericType(t).GetTypeInfo())
-            .ToList();
+        // Clast: the closed IReadOnlyList<T> types are listed explicitly rather than built via
+        // typeof(IReadOnlyList<>).MakeGenericType(...) (which is not AOT-compatible: IL3050). This must mirror
+        // s_validSingleTypes above.
+        private static readonly List<TypeInfo> s_validRepeatedTypes = new List<TypeInfo>
+        {
+            typeof(IReadOnlyList<short>).GetTypeInfo(), typeof(IReadOnlyList<ushort>).GetTypeInfo(),
+            typeof(IReadOnlyList<int>).GetTypeInfo(), typeof(IReadOnlyList<uint>).GetTypeInfo(),
+            typeof(IReadOnlyList<long>).GetTypeInfo(), typeof(IReadOnlyList<ulong>).GetTypeInfo(),
+            typeof(IReadOnlyList<float>).GetTypeInfo(), typeof(IReadOnlyList<double>).GetTypeInfo(),
+            typeof(IReadOnlyList<bool>).GetTypeInfo(),
+            typeof(IReadOnlyList<string>).GetTypeInfo(), typeof(IReadOnlyList<byte[]>).GetTypeInfo(),
+            typeof(IReadOnlyList<DateTime>).GetTypeInfo(), typeof(IReadOnlyList<DateTimeOffset>).GetTypeInfo(),
+            typeof(IReadOnlyList<TimeSpan>).GetTypeInfo(),
+            typeof(IReadOnlyList<BigQueryNumeric>).GetTypeInfo(),
+            typeof(IReadOnlyList<BigQueryBigNumeric>).GetTypeInfo(),
+            typeof(IReadOnlyList<BigQueryGeography>).GetTypeInfo(),
+        };
 
         /// <summary>
         /// Mapping of CLR type to BigQuery parameter type for simple cases.

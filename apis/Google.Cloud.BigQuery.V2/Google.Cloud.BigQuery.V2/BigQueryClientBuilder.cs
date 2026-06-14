@@ -15,7 +15,6 @@
 using Google.Api.Gax;
 using Google.Api.Gax.Rest;
 using Google.Apis.Bigquery.v2;
-using Google.Apis.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -46,8 +45,7 @@ namespace Google.Cloud.BigQuery.V2
         /// <summary>
         /// If set, this is used as the underlying service for the client.
         /// Note that this should rarely be used outside testing, unless the service comes from another <see cref="BigQueryClient"/>.
-        /// Usually this library constructs a service using specific settings such as the JSON serializer settings provided by
-        /// <see cref="BigQueryClient.CreateJsonSerializersSettings"/>; if a service is constructed in user code, the client
+        /// Usually this library constructs a service itself; if a service is constructed in user code, the client
         /// may not function as expected.
         /// </summary>
         internal BigqueryService Service { get; set; }
@@ -60,7 +58,6 @@ namespace Google.Cloud.BigQuery.V2
             if (service is null)
             {
                 var initializer = CreateServiceInitializer();
-                initializer.Serializer = new NewtonsoftJsonSerializer(BigQueryClient.CreateJsonSerializersSettings());
                 service = new BigqueryService(initializer);
             }
             return new BigQueryClientImpl(ProjectId, service, DefaultLocation, PrettyPrint ?? false);
@@ -74,7 +71,6 @@ namespace Google.Cloud.BigQuery.V2
             if (service is null)
             {
                 var initializer = await CreateServiceInitializerAsync(cancellationToken).ConfigureAwait(false);
-                initializer.Serializer = new NewtonsoftJsonSerializer(BigQueryClient.CreateJsonSerializersSettings());
                 service = new BigqueryService(initializer);
             }
             return new BigQueryClientImpl(ProjectId, service, DefaultLocation, PrettyPrint ?? false);

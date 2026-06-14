@@ -41,7 +41,6 @@ namespace Google.Cloud.BigQuery.V2.Tests
         public void ExpectRequest<TResponse>(ClientServiceRequest<TResponse> request, TResponse response)
         {
             MaybeDisablePrettyPrint(request);
-            string requestContent = SerializeObject(request);
             var httpRequest = request.CreateRequest();
             string responseContent = SerializeObject(response);
             handler.ExpectRequest(httpRequest.RequestUri, httpRequest.Content?.ReadAsStringAsync()?.Result, responseContent);
@@ -50,7 +49,6 @@ namespace Google.Cloud.BigQuery.V2.Tests
         public void ExpectRequest<TResponse>(ClientServiceRequest<TResponse> request, HttpStatusCode statusCode, RequestError error)
         {
             MaybeDisablePrettyPrint(request);
-            string requestContent = SerializeObject(request);
             var httpRequest = request.CreateRequest();
             string responseContent = SerializeObject(new StandardResponse<object> { Error = error });
             var responseMessage = new HttpResponseMessage(statusCode) { Content = new StringContent(responseContent) };

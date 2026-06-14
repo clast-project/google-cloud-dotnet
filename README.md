@@ -1,14 +1,15 @@
 # Clast fork — Newtonsoft-free, AOT-ready republish
 
-> This is the **`clast-project`** fork of [`googleapis/google-cloud-dotnet`](https://github.com/googleapis/google-cloud-dotnet). From this large monorepo it republishes **one** library under a **`Clast.`** package-id prefix, with **`Newtonsoft.Json` replaced by source-generated `System.Text.Json`** (the internal `UrlSigner` V4 signing moved to `Utf8JsonWriter`), made **trimming/AOT-compatible**, and a **`net10.0`** target added. Namespaces and public type names are **unchanged**.
+> This is the **`clast-project`** fork of [`googleapis/google-cloud-dotnet`](https://github.com/googleapis/google-cloud-dotnet). From this large monorepo it republishes a small set of libraries under a **`Clast.`** package-id prefix, with **`Newtonsoft.Json` replaced by source-generated `System.Text.Json`** (the internal JSON handling — e.g. `UrlSigner` V4 signing via `Utf8JsonWriter`, BigQuery row parsing via `JsonElement`), made **trimming/AOT-compatible**, and a **`net10.0`** target added. Namespaces and public type names are **unchanged**.
 >
-> **Why:** to provide a Newtonsoft-free, AOT-ready `Google.Cloud.Storage.V1`; it is repointed to the ported `Clast.Google.Api.Gax.Rest` + `Clast.Google.Apis.Storage.v1`.
+> **Why:** to provide Newtonsoft-free, AOT-ready `Google.Cloud.Storage.V1` and `Google.Cloud.BigQuery.V2`; they are repointed to the ported `Clast.Google.Api.Gax.Rest` + the ported `Clast.Google.Apis.*` generated clients.
 >
-> **Package republished from this repository:**
+> **Packages republished from this repository:**
 >
 > | Clast package | Upstream package |
 > |---|---|
 > | `Clast.Google.Cloud.Storage.V1` | `Google.Cloud.Storage.V1` |
+> | `Clast.Google.Cloud.BigQuery.V2` | `Google.Cloud.BigQuery.V2` |
 >
 > Every other package in this monorepo is unchanged upstream content and is **not** part of the Clast republish. The renaming/re-signing is gated behind an opt-in `-p:Clast=true` MSBuild flag (default builds keep the original identity, so the in-repo tests run unchanged). The full design notes and behavior-change catalogue live in the [`clast-project/google-api-dotnet-client`](https://github.com/clast-project/google-api-dotnet-client) repo (`PLAN.md`, `BEHAVIORAL-CHANGES.md`).
 

@@ -4,10 +4,10 @@ This is a **Clast** package — an independent republish (from the [`clast-proje
 
 **How it differs from the upstream package:**
 
-- `Newtonsoft.Json` is replaced with **source-generated `System.Text.Json`** (the internal `UrlSigner` V4 signing uses `Utf8JsonWriter`).
+- `Newtonsoft.Json` is replaced with **source-generated `System.Text.Json`** (internal JSON handling such as `UrlSigner` V4 signing via `Utf8JsonWriter` and BigQuery row parsing via `JsonElement`).
 - The library is **trimming / Native-AOT compatible**, with a **`net10.0`** target added (alongside `netstandard2.0` and `net8.0`).
 - **Namespaces and public type names are unchanged.** Only the package id, assembly name, and strong-name key differ, so you recompile against the `Clast.*` packages rather than dropping them in as binary replacements.
 
-**Package republished from this repository:** `Clast.Google.Cloud.Storage.V1`.
+**Packages republished from this repository:** `Clast.Google.Cloud.Storage.V1`, `Clast.Google.Cloud.BigQuery.V2`.
 
 Full design notes and the behavior-change catalogue live in the [`clast-project/google-api-dotnet-client`](https://github.com/clast-project/google-api-dotnet-client) repository (`PLAN.md`, `BEHAVIORAL-CHANGES.md`).

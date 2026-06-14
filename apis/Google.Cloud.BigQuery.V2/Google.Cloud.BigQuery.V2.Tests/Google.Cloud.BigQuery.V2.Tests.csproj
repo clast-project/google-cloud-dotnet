@@ -11,6 +11,9 @@
     <ProjectReference Include="..\..\..\tools\Google.Cloud.ClientTesting\Google.Cloud.ClientTesting.csproj" />
     <ProjectReference Include="..\..\Google.Cloud.Storage.V1\Google.Cloud.Storage.V1\Google.Cloud.Storage.V1.csproj" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <!-- Clast: the production library no longer brings Newtonsoft.Json transitively; a couple of tests still use
+         JsonConvert purely as a structural-equality device, so reference it explicitly. -->
+    <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="NSubstitute" />
     <PackageReference Include="System.Linq.AsyncEnumerable" />
     <PackageReference Include="Xunit.Combinatorial" />
