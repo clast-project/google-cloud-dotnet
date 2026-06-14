@@ -13,10 +13,11 @@
 // limitations under the License.
 
 using Google.Apis.Bigquery.v2.Data;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using Xunit;
 
 namespace Google.Cloud.BigQuery.V2.Tests
@@ -60,7 +61,7 @@ namespace Google.Cloud.BigQuery.V2.Tests
                     new TableCell { V = "123456789012345678901234567890123456789.12345678901234567890123456789012345678" },
                     new TableCell { V = "POINT(1 2)" },
                     new TableCell { V = "{\"x\": 10, \"y\": \"text\"}" },
-                    new TableCell { V = new JObject { ["f"] = new JArray {new JObject { ["v"] = "100" }, new JObject { ["v"] = "xyz" } } } }
+                    new TableCell { V = ToElement(new JsonObject { ["f"] = new JsonArray { new JsonObject { ["v"] = "100" }, new JsonObject { ["v"] = "xyz" } } }) }
                 }
             };
             var row = new BigQueryRow(rawRow, schema);
@@ -117,10 +118,10 @@ namespace Google.Cloud.BigQuery.V2.Tests
                     new TableCell { V = CreateArray("123456789012345678901234567890123456789.12345678901234567890123456789012345678", "0.00000000000000000000000000000000000001") },
                     new TableCell { V = CreateArray("POINT(1 3)", "POINT(2 4)") },
                     new TableCell { V = CreateArray("{\"x\": 10, \"y\": \"text1\"}", "{\"x\": 11, \"y\": \"text2\"}") },
-                    new TableCell { V = new JArray {
-                        new JObject { ["v"] = new JObject { ["f"] = new JArray { new JObject { ["v"] = "100" }, new JObject { ["v"] = "xyz" } } } },
-                        new JObject { ["v"] = new JObject { ["f"] = new JArray { new JObject { ["v"] = "200" }, new JObject { ["v"] = "abc" } } } }
-                    } }
+                    new TableCell { V = ToElement(new JsonArray {
+                        new JsonObject { ["v"] = new JsonObject { ["f"] = new JsonArray { new JsonObject { ["v"] = "100" }, new JsonObject { ["v"] = "xyz" } } } },
+                        new JsonObject { ["v"] = new JsonObject { ["f"] = new JsonArray { new JsonObject { ["v"] = "200" }, new JsonObject { ["v"] = "abc" } } } }
+                    }) }
                 }
             };
             var row = new BigQueryRow(rawRow, schema);
@@ -178,7 +179,7 @@ namespace Google.Cloud.BigQuery.V2.Tests
                 F = new[]
                 {
                     // No value for y
-                    new TableCell { V = new JObject { ["f"] = new JArray {new JObject { ["v"] = "100" } } } }
+                    new TableCell { V = ToElement(new JsonObject { ["f"] = new JsonArray { new JsonObject { ["v"] = "100" } } }) }
                 }
             };
             var row = new BigQueryRow(rawRow, schema);
@@ -224,8 +225,14 @@ namespace Google.Cloud.BigQuery.V2.Tests
             Assert.Null(rowWithoutQueryId.QueryId);
         }
 
-        private JArray CreateArray(params string[] values) => new JArray(values.Select(CreateObject));
+        // The generated TableCell.V is typed `object`; values read from a real response surface as JsonElement
+        // under System.Text.Json (they were JArray/JObject/JValue under Newtonsoft). Build the equivalent shapes
+        // here via the mutable JsonNode DOM and materialize them as JsonElement, matching what the wire produces.
+        private static JsonElement CreateArray(params string[] values) =>
+            ToElement(new JsonArray(values.Select(v => (JsonNode) CreateObject(v)).ToArray()));
 
-        private JObject CreateObject(string value) => new JObject { ["v"] = value };
+        private static JsonObject CreateObject(string value) => new JsonObject { ["v"] = value };
+
+        private static JsonElement ToElement(JsonNode node) => JsonSerializer.SerializeToElement(node);
     }
 }

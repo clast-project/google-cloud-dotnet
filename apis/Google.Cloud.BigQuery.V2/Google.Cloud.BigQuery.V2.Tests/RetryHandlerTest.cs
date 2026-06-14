@@ -75,7 +75,7 @@ namespace Google.Cloud.BigQuery.V2.Tests
 
         private async Task AssertRetriable(bool expectedRetriable, StandardResponse<object> standardResponse)
         {
-            string json = NewtonsoftJsonSerializer.Instance.Serialize(standardResponse);
+            string json = SystemTextJsonSerializer.Instance.Serialize(standardResponse);
             var httpResponse = new HttpResponseMessage { Content = new StringContent(json) };
             var actual = await RetryHandler.IsRetriableResponse(httpResponse);
             Assert.Equal(expectedRetriable, actual);

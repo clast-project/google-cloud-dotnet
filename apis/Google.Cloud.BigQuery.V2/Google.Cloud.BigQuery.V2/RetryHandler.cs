@@ -53,7 +53,7 @@ namespace Google.Cloud.BigQuery.V2
 
                 // For other errors, check the response content.
                 var str = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                errorResponse = NewtonsoftJsonSerializer.Instance.Deserialize<StandardResponse<object>>(str);
+                errorResponse = SystemTextJsonSerializer.Instance.Deserialize<StandardResponse<object>>(str);
                 var errors = errorResponse.Error?.Errors;
                 // If we couldn't deserialize properly, or the result doesn't contain any reasons, we won't retry.
                 return errors?.All(singleError => s_retriableErrors.Contains(singleError.Reason)) ?? false;

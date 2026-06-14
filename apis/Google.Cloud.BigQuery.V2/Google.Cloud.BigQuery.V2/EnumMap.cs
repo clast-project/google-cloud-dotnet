@@ -30,6 +30,13 @@ namespace Google.Cloud.BigQuery.V2
             Value = value;
         }
 
+#if NET10_0_OR_GREATER
+        // Clast: T is always an enum here (EnumMap is used exclusively with enums, and the static ctors verify the
+        // Flags attribute). This reflects only over enum fields and their [ApiValue] metadata, which are preserved
+        // by the AOT compiler for any enum that is referenced. See BC-021 for the equivalent pattern in Gax.Grpc.
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("Trimming", "IL2090",
+            Justification = "T is always an enum; enum fields and their [ApiValue] metadata are preserved by the AOT compiler.")]
+#endif
         public static IEnumerable<KeyValuePair<T, string>> GetApiValueNamesIn<T>() where T : struct =>
             from field in typeof(T).GetTypeInfo().DeclaredFields
             where field.IsStatic

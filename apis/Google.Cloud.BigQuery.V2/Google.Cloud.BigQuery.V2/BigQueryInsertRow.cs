@@ -92,9 +92,24 @@ namespace Google.Cloud.BigQuery.V2
             typeof(BigQueryInsertRow)
         };
 
-        private static readonly List<TypeInfo> ValidRepeatedTypes = ValidSingleTypes
-            .Select(t => typeof(IReadOnlyList<>).MakeGenericType(t).GetTypeInfo())
-            .ToList();
+        // Clast: the closed IReadOnlyList<T> types are listed explicitly rather than built via
+        // typeof(IReadOnlyList<>).MakeGenericType(...) (which is not AOT-compatible: IL3050). This must mirror
+        // ValidSingleTypes above.
+        private static readonly List<TypeInfo> ValidRepeatedTypes = new List<TypeInfo>
+        {
+            typeof(IReadOnlyList<int>).GetTypeInfo(), typeof(IReadOnlyList<long>).GetTypeInfo(),
+            typeof(IReadOnlyList<uint>).GetTypeInfo(), typeof(IReadOnlyList<short>).GetTypeInfo(),
+            typeof(IReadOnlyList<ushort>).GetTypeInfo(),
+            typeof(IReadOnlyList<float>).GetTypeInfo(), typeof(IReadOnlyList<double>).GetTypeInfo(),
+            typeof(IReadOnlyList<string>).GetTypeInfo(), typeof(IReadOnlyList<byte[]>).GetTypeInfo(),
+            typeof(IReadOnlyList<bool>).GetTypeInfo(),
+            typeof(IReadOnlyList<DateTime>).GetTypeInfo(), typeof(IReadOnlyList<DateTimeOffset>).GetTypeInfo(),
+            typeof(IReadOnlyList<TimeSpan>).GetTypeInfo(),
+            typeof(IReadOnlyList<BigQueryNumeric>).GetTypeInfo(),
+            typeof(IReadOnlyList<BigQueryBigNumeric>).GetTypeInfo(),
+            typeof(IReadOnlyList<BigQueryGeography>).GetTypeInfo(),
+            typeof(IReadOnlyList<BigQueryInsertRow>).GetTypeInfo(),
+        };
 
         private readonly IDictionary<string, object> _fields = new Dictionary<string, object>();
 

@@ -441,7 +441,7 @@ namespace Google.Cloud.BigQuery.V2.IntegrationTests
             Assert.Equal(ToJson(basicTable.Reference), ToJson(fullTable.Reference));
             Assert.Equal(ToJson(basicTable.Schema), ToJson(fullTable.Schema));
 
-            string ToJson(object obj) => NewtonsoftJsonSerializer.Instance.Serialize(obj);
+            string ToJson(object obj) => SystemTextJsonSerializer.Instance.Serialize(obj);
         }
 
         [Fact]
