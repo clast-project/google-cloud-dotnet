@@ -1,6 +1,8 @@
 name: Clast CI
 
-# Build + test Google.Cloud.Storage.V1 and Google.Cloud.BigQuery.V2. They reference the ported gax-dotnet + google-api-dotnet-client via cross-repo
+# Build + test Google.Cloud.Storage.V1 and Google.Cloud.BigQuery.V2, and build Google.Cloud.BigQuery.Storage.V1 (a
+# pure-gRPC package with no test project). They reference the ported gax-dotnet + google-api-dotnet-client (and, for
+# BigQuery.Storage.V1's gRPC stack, grpc-dotnet) via cross-repo
 # ProjectReferences (checked out as siblings; taken from the PR's same-named branch if present, else main) and, for
 # its test project only, the published Google.* helper stack from NuGet. Tests run with the Clast flag OFF, which
 # keeps the original assembly identity so the test project's published-package dependencies (Iam.v1, Gax.Testing,
@@ -54,9 +56,11 @@ jobs:
           }
           GAX=$(resolve gax-dotnet)
           GAPI=$(resolve google-api-dotnet-client)
+          GRPC=$(resolve grpc-dotnet)
           echo "gax=$GAX" >> "$GITHUB_OUTPUT"
           echo "gapi=$GAPI" >> "$GITHUB_OUTPUT"
-          echo "Using gax-dotnet@$GAX, google-api-dotnet-client@$GAPI"
+          echo "grpc=$GRPC" >> "$GITHUB_OUTPUT"
+          echo "Using gax-dotnet@$GAX, google-api-dotnet-client@$GAPI, grpc-dotnet@$GRPC"
 
       - name: Checkout gax-dotnet (dependency, as sibling)
         uses: actions/checkout@v6
@@ -64,6 +68,14 @@ jobs:
           repository: clast-project/gax-dotnet
           ref: ${{ steps.dep.outputs.gax }}
           path: gax-dotnet
+
+      # grpc-dotnet is needed by Google.Cloud.BigQuery.Storage.V1 -> Gax.Grpc -> Grpc.Auth (cross-repo ProjectReference).
+      - name: Checkout grpc-dotnet (dependency, as sibling)
+        uses: actions/checkout@v6
+        with:
+          repository: clast-project/grpc-dotnet
+          ref: ${{ steps.dep.outputs.grpc }}
+          path: grpc-dotnet
 
       - name: Checkout google-api-dotnet-client (dependency, as sibling)
         uses: actions/checkout@v6
@@ -88,3 +100,10 @@ jobs:
         shell: bash
         working-directory: google-cloud-dotnet
         run: dotnet test apis/Google.Cloud.BigQuery.V2/Google.Cloud.BigQuery.V2.Tests/Google.Cloud.BigQuery.V2.Tests.csproj -c Release
+
+      # BigQuery.Storage.V1 is a pure-gRPC (protobuf) package with no test project; build all TFMs, which also
+      # runs the net10 trimming/AOT analyzer under TreatWarningsAsErrors.
+      - name: Build BigQuery.Storage.V1
+        shell: bash
+        working-directory: google-cloud-dotnet
+        run: dotnet build apis/Google.Cloud.BigQuery.Storage.V1/Google.Cloud.BigQuery.Storage.V1/Google.Cloud.BigQuery.Storage.V1.csproj -c Release
