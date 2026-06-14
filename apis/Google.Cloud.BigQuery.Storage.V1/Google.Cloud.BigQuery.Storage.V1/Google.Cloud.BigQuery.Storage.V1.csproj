@@ -1,15 +1,44 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>3.19.0</Version>
-    <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net8.0;net10.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Recommended Google client library to access the BigQuery Storage API.</Description>
     <PackageTags>BigQuery;Google;Cloud</PackageTags>
+    <!-- Clast: generated protobuf files (*.g.cs) use lower-case using-aliases (gax/proto/...); the newer C# compiler
+         (SDK 10) flags these as CS8981. They are a codegen convention, not a real concern. -->
+    <NoWarn>$(NoWarn);CS8981</NoWarn>
+  </PropertyGroup>
+  <!-- Clast: the net10.0 target is validated for trimming/AOT. -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <IsAotCompatible>true</IsAotCompatible>
+  </PropertyGroup>
+  <!-- Clast: republished under a Clast.* identity only when -p:Clast=true (default off keeps the original identity). -->
+  <PropertyGroup Condition="'$(Clast)' == 'true'">
+    <PackageId>Clast.Google.Cloud.BigQuery.Storage.V1</PackageId>
+    <AssemblyName>Clast.Google.Cloud.BigQuery.Storage.V1</AssemblyName>
+    <AssemblyOriginatorKeyFile Condition="'$(ClastKeyPath)' != ''">$(ClastKeyPath)</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ConfigureAwaitChecker.Analyzer" PrivateAssets="All" />
-    <PackageReference Include="Google.Api.Gax.Grpc" />
-    <PackageReference Include="Grpc.Core" PrivateAssets="None" Condition="'$(TargetFramework)'=='net462'" />
+    <!-- Clast: reference the locally-ported (System.Text.Json, AOT-compatible) Google.Api.Gax.Grpc instead of the
+         published package; it transitively brings the ported Gax/Auth/Grpc.Auth plus the published, AOT-fine
+         protobuf/grpc/logging dependencies this gRPC client needs. -->
+    <ProjectReference Include="..\..\..\..\gax-dotnet\Google.Api.Gax.Grpc\Google.Api.Gax.Grpc.csproj" />
+  </ItemGroup>
+  <!-- Clast: NuGet metadata stating this is the Clast republish (placed last to override upstream values). -->
+  <PropertyGroup Condition="'$(Clast)' == 'true'">
+    <Title>Clast republish of Google.Cloud.BigQuery.Storage.V1</Title>
+    <Authors>clast-project</Authors>
+    <Company>clast-project</Company>
+    <Copyright>Clast republish. Based on Google.Cloud.BigQuery.Storage.V1 (Apache-2.0, Copyright Google LLC).</Copyright>
+    <PackageProjectUrl>https://github.com/clast-project/google-cloud-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/clast-project/google-cloud-dotnet</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>Clast republish of Google.Cloud.BigQuery.Storage.V1 (the gRPC BigQuery Storage Read/Write API): built on the trimming/AOT-compatible Clast gRPC stack (System.Text.Json, no Newtonsoft.Json) and adds a net10.0 target. Namespaces and public type names are unchanged. Independent republish from the clast-project fork — not an official Google package.</Description>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Clast)' == 'true'">
+    <None Include="..\..\..\CLAST_NUGET.md" Pack="true" PackagePath="README.md" />
   </ItemGroup>
 </Project>

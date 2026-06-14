@@ -1,6 +1,7 @@
 name: Clast CI
 
-# Build + test Google.Cloud.Storage.V1 and Google.Cloud.BigQuery.V2. They reference the ported gax-dotnet + google-api-dotnet-client via cross-repo
+# Build + test Google.Cloud.Storage.V1 and Google.Cloud.BigQuery.V2, and build Google.Cloud.BigQuery.Storage.V1 (a
+# pure-gRPC package with no test project). They reference the ported gax-dotnet + google-api-dotnet-client via cross-repo
 # ProjectReferences (checked out as siblings; taken from the PR's same-named branch if present, else main) and, for
 # its test project only, the published Google.* helper stack from NuGet. Tests run with the Clast flag OFF, which
 # keeps the original assembly identity so the test project's published-package dependencies (Iam.v1, Gax.Testing,
@@ -88,3 +89,10 @@ jobs:
         shell: bash
         working-directory: google-cloud-dotnet
         run: dotnet test apis/Google.Cloud.BigQuery.V2/Google.Cloud.BigQuery.V2.Tests/Google.Cloud.BigQuery.V2.Tests.csproj -c Release
+
+      # BigQuery.Storage.V1 is a pure-gRPC (protobuf) package with no test project; build all TFMs, which also
+      # runs the net10 trimming/AOT analyzer under TreatWarningsAsErrors.
+      - name: Build BigQuery.Storage.V1
+        shell: bash
+        working-directory: google-cloud-dotnet
+        run: dotnet build apis/Google.Cloud.BigQuery.Storage.V1/Google.Cloud.BigQuery.Storage.V1/Google.Cloud.BigQuery.Storage.V1.csproj -c Release
