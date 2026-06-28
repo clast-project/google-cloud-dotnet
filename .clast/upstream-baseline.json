@@ -1,0 +1,9 @@
+{
+  "_comment": "Upstream NuGet versions this fork was last synced to. upstream-watch.yml compares nuget.org against these; the Clast sync routine bumps them when it merges upstream. Seeded 2026-06-28 to the then-current upstream stable versions, so the watch fires on the NEXT upstream release.",
+  "upstream": "https://github.com/googleapis/google-cloud-dotnet",
+  "packages": {
+    "Google.Cloud.Storage.V1": "4.15.0",
+    "Google.Cloud.BigQuery.V2": "3.12.0",
+    "Google.Cloud.BigQuery.Storage.V1": "3.19.0"
+  }
+}
