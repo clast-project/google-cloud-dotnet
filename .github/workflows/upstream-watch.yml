@@ -34,7 +34,7 @@ jobs:
             slug=$(echo "$id" | tr 'A-Z' 'a-z')
             latest=$(curl -s "https://api.nuget.org/v3-flatcontainer/$slug/index.json" \
               | jq -r '.versions[]?' \
-              | grep -viE '(-|preview|beta|alpha|rc)$' \
+              | grep -v '[-]' \
               | sort -V | tail -1 || true)
             if [ -z "$latest" ]; then
               echo "::warning::no stable versions found for $id"
