@@ -106,6 +106,12 @@
                 "GetAttachmentAsync"
               ]
             },
+            "GetAvailability": {
+              "methods": [
+                "GetAvailability",
+                "GetAvailabilityAsync"
+              ]
+            },
             "GetCustomEmoji": {
               "methods": [
                 "GetCustomEmoji",
@@ -202,6 +208,24 @@
                 "ListSpacesAsync"
               ]
             },
+            "MarkAsActive": {
+              "methods": [
+                "MarkAsActive",
+                "MarkAsActiveAsync"
+              ]
+            },
+            "MarkAsAway": {
+              "methods": [
+                "MarkAsAway",
+                "MarkAsAwayAsync"
+              ]
+            },
+            "MarkAsDoNotDisturb": {
+              "methods": [
+                "MarkAsDoNotDisturb",
+                "MarkAsDoNotDisturbAsync"
+              ]
+            },
             "MoveSectionItem": {
               "methods": [
                 "MoveSectionItem",
@@ -214,6 +238,12 @@
                 "PositionSectionAsync"
               ]
             },
+            "SearchMessages": {
+              "methods": [
+                "SearchMessages",
+                "SearchMessagesAsync"
+              ]
+            },
             "SearchSpaces": {
               "methods": [
                 "SearchSpaces",
@@ -224,6 +254,12 @@
               "methods": [
                 "SetUpSpace",
                 "SetUpSpaceAsync"
+              ]
+            },
+            "UpdateAvailability": {
+              "methods": [
+                "UpdateAvailability",
+                "UpdateAvailabilityAsync"
               ]
             },
             "UpdateMembership": {

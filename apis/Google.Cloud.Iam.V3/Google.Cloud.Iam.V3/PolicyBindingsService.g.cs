@@ -51,69 +51,70 @@ namespace Google.Cloud.Iam.V3 {
             "b2tlbhgDIAEoCUID4EEBEhMKBmZpbHRlchgEIAEoCUID4EEBInEKGkxpc3RQ",
             "b2xpY3lCaW5kaW5nc1Jlc3BvbnNlEjUKD3BvbGljeV9iaW5kaW5ncxgBIAMo",
             "CzIcLmdvb2dsZS5pYW0udjMuUG9saWN5QmluZGluZxIcCg9uZXh0X3BhZ2Vf",
-            "dG9rZW4YAiABKAlCA+BBASKjAQohU2VhcmNoVGFyZ2V0UG9saWN5QmluZGlu",
+            "dG9rZW4YAiABKAlCA+BBASK4AQohU2VhcmNoVGFyZ2V0UG9saWN5QmluZGlu",
             "Z3NSZXF1ZXN0EhMKBnRhcmdldBgBIAEoCUID4EECEhYKCXBhZ2Vfc2l6ZRgC",
             "IAEoBUID4EEBEhcKCnBhZ2VfdG9rZW4YAyABKAlCA+BBARI4CgZwYXJlbnQY",
             "BSABKAlCKOBBAvpBIhIgaWFtLmdvb2dsZWFwaXMuY29tL1BvbGljeUJpbmRp",
-            "bmcieQoiU2VhcmNoVGFyZ2V0UG9saWN5QmluZGluZ3NSZXNwb25zZRI1Cg9w",
-            "b2xpY3lfYmluZGluZ3MYASADKAsyHC5nb29nbGUuaWFtLnYzLlBvbGljeUJp",
-            "bmRpbmcSHAoPbmV4dF9wYWdlX3Rva2VuGAIgASgJQgPgQQEyoBEKDlBvbGlj",
-            "eUJpbmRpbmdzEowDChNDcmVhdGVQb2xpY3lCaW5kaW5nEikuZ29vZ2xlLmlh",
-            "bS52My5DcmVhdGVQb2xpY3lCaW5kaW5nUmVxdWVzdBodLmdvb2dsZS5sb25n",
-            "cnVubmluZy5PcGVyYXRpb24iqgLKQSIKDVBvbGljeUJpbmRpbmcSEU9wZXJh",
-            "dGlvbk1ldGFkYXRh2kEncGFyZW50LHBvbGljeV9iaW5kaW5nLHBvbGljeV9i",
-            "aW5kaW5nX2lkgtPkkwLUASIyL3YzL3twYXJlbnQ9cHJvamVjdHMvKi9sb2Nh",
-            "dGlvbnMvKn0vcG9saWN5QmluZGluZ3M6DnBvbGljeV9iaW5kaW5nWkMiMS92",
-            "My97cGFyZW50PWZvbGRlcnMvKi9sb2NhdGlvbnMvKn0vcG9saWN5QmluZGlu",
-            "Z3M6DnBvbGljeV9iaW5kaW5nWkkiNy92My97cGFyZW50PW9yZ2FuaXphdGlv",
-            "bnMvKi9sb2NhdGlvbnMvKn0vcG9saWN5QmluZGluZ3M6DnBvbGljeV9iaW5k",
-            "aW5nEo0CChBHZXRQb2xpY3lCaW5kaW5nEiYuZ29vZ2xlLmlhbS52My5HZXRQ",
-            "b2xpY3lCaW5kaW5nUmVxdWVzdBocLmdvb2dsZS5pYW0udjMuUG9saWN5Qmlu",
-            "ZGluZyKyAdpBBG5hbWWC0+STAqQBEjIvdjMve25hbWU9cHJvamVjdHMvKi9s",
-            "b2NhdGlvbnMvKi9wb2xpY3lCaW5kaW5ncy8qfVozEjEvdjMve25hbWU9Zm9s",
-            "ZGVycy8qL2xvY2F0aW9ucy8qL3BvbGljeUJpbmRpbmdzLyp9WjkSNy92My97",
-            "bmFtZT1vcmdhbml6YXRpb25zLyovbG9jYXRpb25zLyovcG9saWN5QmluZGlu",
-            "Z3MvKn0SrAMKE1VwZGF0ZVBvbGljeUJpbmRpbmcSKS5nb29nbGUuaWFtLnYz",
-            "LlVwZGF0ZVBvbGljeUJpbmRpbmdSZXF1ZXN0Gh0uZ29vZ2xlLmxvbmdydW5u",
-            "aW5nLk9wZXJhdGlvbiLKAspBIgoNUG9saWN5QmluZGluZxIRT3BlcmF0aW9u",
-            "TWV0YWRhdGHaQRpwb2xpY3lfYmluZGluZyx1cGRhdGVfbWFza4LT5JMCgQIy",
-            "QS92My97cG9saWN5X2JpbmRpbmcubmFtZT1wcm9qZWN0cy8qL2xvY2F0aW9u",
-            "cy8qL3BvbGljeUJpbmRpbmdzLyp9Og5wb2xpY3lfYmluZGluZ1pSMkAvdjMv",
-            "e3BvbGljeV9iaW5kaW5nLm5hbWU9Zm9sZGVycy8qL2xvY2F0aW9ucy8qL3Bv",
-            "bGljeUJpbmRpbmdzLyp9Og5wb2xpY3lfYmluZGluZ1pYMkYvdjMve3BvbGlj",
-            "eV9iaW5kaW5nLm5hbWU9b3JnYW5pemF0aW9ucy8qL2xvY2F0aW9ucy8qL3Bv",
-            "bGljeUJpbmRpbmdzLyp9Og5wb2xpY3lfYmluZGluZxLBAgoTRGVsZXRlUG9s",
-            "aWN5QmluZGluZxIpLmdvb2dsZS5pYW0udjMuRGVsZXRlUG9saWN5QmluZGlu",
-            "Z1JlcXVlc3QaHS5nb29nbGUubG9uZ3J1bm5pbmcuT3BlcmF0aW9uIt8BykEq",
-            "ChVnb29nbGUucHJvdG9idWYuRW1wdHkSEU9wZXJhdGlvbk1ldGFkYXRh2kEE",
-            "bmFtZYLT5JMCpAEqMi92My97bmFtZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8q",
-            "L3BvbGljeUJpbmRpbmdzLyp9WjMqMS92My97bmFtZT1mb2xkZXJzLyovbG9j",
-            "YXRpb25zLyovcG9saWN5QmluZGluZ3MvKn1aOSo3L3YzL3tuYW1lPW9yZ2Fu",
-            "aXphdGlvbnMvKi9sb2NhdGlvbnMvKi9wb2xpY3lCaW5kaW5ncy8qfRKgAgoS",
-            "TGlzdFBvbGljeUJpbmRpbmdzEiguZ29vZ2xlLmlhbS52My5MaXN0UG9saWN5",
-            "QmluZGluZ3NSZXF1ZXN0GikuZ29vZ2xlLmlhbS52My5MaXN0UG9saWN5Qmlu",
-            "ZGluZ3NSZXNwb25zZSK0AdpBBnBhcmVudILT5JMCpAESMi92My97cGFyZW50",
-            "PXByb2plY3RzLyovbG9jYXRpb25zLyp9L3BvbGljeUJpbmRpbmdzWjMSMS92",
-            "My97cGFyZW50PWZvbGRlcnMvKi9sb2NhdGlvbnMvKn0vcG9saWN5QmluZGlu",
-            "Z3NaORI3L3YzL3twYXJlbnQ9b3JnYW5pemF0aW9ucy8qL2xvY2F0aW9ucy8q",
-            "fS9wb2xpY3lCaW5kaW5ncxKQAwoaU2VhcmNoVGFyZ2V0UG9saWN5QmluZGlu",
-            "Z3MSMC5nb29nbGUuaWFtLnYzLlNlYXJjaFRhcmdldFBvbGljeUJpbmRpbmdz",
-            "UmVxdWVzdBoxLmdvb2dsZS5pYW0udjMuU2VhcmNoVGFyZ2V0UG9saWN5Qmlu",
-            "ZGluZ3NSZXNwb25zZSKMAtpBDXBhcmVudCx0YXJnZXSC0+STAvUBEk0vdjMv",
-            "e3BhcmVudD1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qfS9wb2xpY3lCaW5kaW5n",
-            "czpzZWFyY2hUYXJnZXRQb2xpY3lCaW5kaW5nc1pOEkwvdjMve3BhcmVudD1m",
-            "b2xkZXJzLyovbG9jYXRpb25zLyp9L3BvbGljeUJpbmRpbmdzOnNlYXJjaFRh",
-            "cmdldFBvbGljeUJpbmRpbmdzWlQSUi92My97cGFyZW50PW9yZ2FuaXphdGlv",
-            "bnMvKi9sb2NhdGlvbnMvKn0vcG9saWN5QmluZGluZ3M6c2VhcmNoVGFyZ2V0",
-            "UG9saWN5QmluZGluZ3MaRspBEmlhbS5nb29nbGVhcGlzLmNvbdJBLmh0dHBz",
-            "Oi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xvdWQtcGxhdGZvcm1CtAIK",
-            "EWNvbS5nb29nbGUuaWFtLnYzQhpQb2xpY3lCaW5kaW5nc1NlcnZpY2VQcm90",
-            "b1ABWiljbG91ZC5nb29nbGUuY29tL2dvL2lhbS9hcGl2My9pYW1wYjtpYW1w",
-            "YqoCE0dvb2dsZS5DbG91ZC5JYW0uVjPKAhNHb29nbGVcQ2xvdWRcSWFtXFYz",
-            "6kFcCidpYW0uZ29vZ2xlYXBpcy5jb20vT3JnYW5pemF0aW9uTG9jYXRpb24S",
-            "MW9yZ2FuaXphdGlvbnMve29yZ2FuaXphdGlvbn0vbG9jYXRpb25zL3tsb2Nh",
-            "dGlvbn3qQUoKIWlhbS5nb29nbGVhcGlzLmNvbS9Gb2xkZXJMb2NhdGlvbhIl",
-            "Zm9sZGVycy97Zm9sZGVyfS9sb2NhdGlvbnMve2xvY2F0aW9ufWIGcHJvdG8z"));
+            "bmcSEwoGZmlsdGVyGAYgASgJQgPgQQEieQoiU2VhcmNoVGFyZ2V0UG9saWN5",
+            "QmluZGluZ3NSZXNwb25zZRI1Cg9wb2xpY3lfYmluZGluZ3MYASADKAsyHC5n",
+            "b29nbGUuaWFtLnYzLlBvbGljeUJpbmRpbmcSHAoPbmV4dF9wYWdlX3Rva2Vu",
+            "GAIgASgJQgPgQQEyoBEKDlBvbGljeUJpbmRpbmdzEowDChNDcmVhdGVQb2xp",
+            "Y3lCaW5kaW5nEikuZ29vZ2xlLmlhbS52My5DcmVhdGVQb2xpY3lCaW5kaW5n",
+            "UmVxdWVzdBodLmdvb2dsZS5sb25ncnVubmluZy5PcGVyYXRpb24iqgLKQSIK",
+            "DVBvbGljeUJpbmRpbmcSEU9wZXJhdGlvbk1ldGFkYXRh2kEncGFyZW50LHBv",
+            "bGljeV9iaW5kaW5nLHBvbGljeV9iaW5kaW5nX2lkgtPkkwLUASIyL3YzL3tw",
+            "YXJlbnQ9cHJvamVjdHMvKi9sb2NhdGlvbnMvKn0vcG9saWN5QmluZGluZ3M6",
+            "DnBvbGljeV9iaW5kaW5nWkMiMS92My97cGFyZW50PWZvbGRlcnMvKi9sb2Nh",
+            "dGlvbnMvKn0vcG9saWN5QmluZGluZ3M6DnBvbGljeV9iaW5kaW5nWkkiNy92",
+            "My97cGFyZW50PW9yZ2FuaXphdGlvbnMvKi9sb2NhdGlvbnMvKn0vcG9saWN5",
+            "QmluZGluZ3M6DnBvbGljeV9iaW5kaW5nEo0CChBHZXRQb2xpY3lCaW5kaW5n",
+            "EiYuZ29vZ2xlLmlhbS52My5HZXRQb2xpY3lCaW5kaW5nUmVxdWVzdBocLmdv",
+            "b2dsZS5pYW0udjMuUG9saWN5QmluZGluZyKyAdpBBG5hbWWC0+STAqQBEjIv",
+            "djMve25hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi9wb2xpY3lCaW5kaW5n",
+            "cy8qfVozEjEvdjMve25hbWU9Zm9sZGVycy8qL2xvY2F0aW9ucy8qL3BvbGlj",
+            "eUJpbmRpbmdzLyp9WjkSNy92My97bmFtZT1vcmdhbml6YXRpb25zLyovbG9j",
+            "YXRpb25zLyovcG9saWN5QmluZGluZ3MvKn0SrAMKE1VwZGF0ZVBvbGljeUJp",
+            "bmRpbmcSKS5nb29nbGUuaWFtLnYzLlVwZGF0ZVBvbGljeUJpbmRpbmdSZXF1",
+            "ZXN0Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9wZXJhdGlvbiLKAspBIgoNUG9s",
+            "aWN5QmluZGluZxIRT3BlcmF0aW9uTWV0YWRhdGHaQRpwb2xpY3lfYmluZGlu",
+            "Zyx1cGRhdGVfbWFza4LT5JMCgQIyQS92My97cG9saWN5X2JpbmRpbmcubmFt",
+            "ZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL3BvbGljeUJpbmRpbmdzLyp9Og5w",
+            "b2xpY3lfYmluZGluZ1pSMkAvdjMve3BvbGljeV9iaW5kaW5nLm5hbWU9Zm9s",
+            "ZGVycy8qL2xvY2F0aW9ucy8qL3BvbGljeUJpbmRpbmdzLyp9Og5wb2xpY3lf",
+            "YmluZGluZ1pYMkYvdjMve3BvbGljeV9iaW5kaW5nLm5hbWU9b3JnYW5pemF0",
+            "aW9ucy8qL2xvY2F0aW9ucy8qL3BvbGljeUJpbmRpbmdzLyp9Og5wb2xpY3lf",
+            "YmluZGluZxLBAgoTRGVsZXRlUG9saWN5QmluZGluZxIpLmdvb2dsZS5pYW0u",
+            "djMuRGVsZXRlUG9saWN5QmluZGluZ1JlcXVlc3QaHS5nb29nbGUubG9uZ3J1",
+            "bm5pbmcuT3BlcmF0aW9uIt8BykEqChVnb29nbGUucHJvdG9idWYuRW1wdHkS",
+            "EU9wZXJhdGlvbk1ldGFkYXRh2kEEbmFtZYLT5JMCpAEqMi92My97bmFtZT1w",
+            "cm9qZWN0cy8qL2xvY2F0aW9ucy8qL3BvbGljeUJpbmRpbmdzLyp9WjMqMS92",
+            "My97bmFtZT1mb2xkZXJzLyovbG9jYXRpb25zLyovcG9saWN5QmluZGluZ3Mv",
+            "Kn1aOSo3L3YzL3tuYW1lPW9yZ2FuaXphdGlvbnMvKi9sb2NhdGlvbnMvKi9w",
+            "b2xpY3lCaW5kaW5ncy8qfRKgAgoSTGlzdFBvbGljeUJpbmRpbmdzEiguZ29v",
+            "Z2xlLmlhbS52My5MaXN0UG9saWN5QmluZGluZ3NSZXF1ZXN0GikuZ29vZ2xl",
+            "LmlhbS52My5MaXN0UG9saWN5QmluZGluZ3NSZXNwb25zZSK0AdpBBnBhcmVu",
+            "dILT5JMCpAESMi92My97cGFyZW50PXByb2plY3RzLyovbG9jYXRpb25zLyp9",
+            "L3BvbGljeUJpbmRpbmdzWjMSMS92My97cGFyZW50PWZvbGRlcnMvKi9sb2Nh",
+            "dGlvbnMvKn0vcG9saWN5QmluZGluZ3NaORI3L3YzL3twYXJlbnQ9b3JnYW5p",
+            "emF0aW9ucy8qL2xvY2F0aW9ucy8qfS9wb2xpY3lCaW5kaW5ncxKQAwoaU2Vh",
+            "cmNoVGFyZ2V0UG9saWN5QmluZGluZ3MSMC5nb29nbGUuaWFtLnYzLlNlYXJj",
+            "aFRhcmdldFBvbGljeUJpbmRpbmdzUmVxdWVzdBoxLmdvb2dsZS5pYW0udjMu",
+            "U2VhcmNoVGFyZ2V0UG9saWN5QmluZGluZ3NSZXNwb25zZSKMAtpBDXBhcmVu",
+            "dCx0YXJnZXSC0+STAvUBEk0vdjMve3BhcmVudD1wcm9qZWN0cy8qL2xvY2F0",
+            "aW9ucy8qfS9wb2xpY3lCaW5kaW5nczpzZWFyY2hUYXJnZXRQb2xpY3lCaW5k",
+            "aW5nc1pOEkwvdjMve3BhcmVudD1mb2xkZXJzLyovbG9jYXRpb25zLyp9L3Bv",
+            "bGljeUJpbmRpbmdzOnNlYXJjaFRhcmdldFBvbGljeUJpbmRpbmdzWlQSUi92",
+            "My97cGFyZW50PW9yZ2FuaXphdGlvbnMvKi9sb2NhdGlvbnMvKn0vcG9saWN5",
+            "QmluZGluZ3M6c2VhcmNoVGFyZ2V0UG9saWN5QmluZGluZ3MaRspBEmlhbS5n",
+            "b29nbGVhcGlzLmNvbdJBLmh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1",
+            "dGgvY2xvdWQtcGxhdGZvcm1CtAIKEWNvbS5nb29nbGUuaWFtLnYzQhpQb2xp",
+            "Y3lCaW5kaW5nc1NlcnZpY2VQcm90b1ABWiljbG91ZC5nb29nbGUuY29tL2dv",
+            "L2lhbS9hcGl2My9pYW1wYjtpYW1wYqoCE0dvb2dsZS5DbG91ZC5JYW0uVjPK",
+            "AhNHb29nbGVcQ2xvdWRcSWFtXFYz6kFcCidpYW0uZ29vZ2xlYXBpcy5jb20v",
+            "T3JnYW5pemF0aW9uTG9jYXRpb24SMW9yZ2FuaXphdGlvbnMve29yZ2FuaXph",
+            "dGlvbn0vbG9jYXRpb25zL3tsb2NhdGlvbn3qQUoKIWlhbS5nb29nbGVhcGlz",
+            "LmNvbS9Gb2xkZXJMb2NhdGlvbhIlZm9sZGVycy97Zm9sZGVyfS9sb2NhdGlv",
+            "bnMve2xvY2F0aW9ufWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Iam.V3.OperationMetadataReflection.Descriptor, global::Google.Cloud.Iam.V3.PolicyBindingResourcesReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -123,7 +124,7 @@ namespace Google.Cloud.Iam.V3 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Iam.V3.DeletePolicyBindingRequest), global::Google.Cloud.Iam.V3.DeletePolicyBindingRequest.Parser, new[]{ "Name", "Etag", "ValidateOnly" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Iam.V3.ListPolicyBindingsRequest), global::Google.Cloud.Iam.V3.ListPolicyBindingsRequest.Parser, new[]{ "Parent", "PageSize", "PageToken", "Filter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Iam.V3.ListPolicyBindingsResponse), global::Google.Cloud.Iam.V3.ListPolicyBindingsResponse.Parser, new[]{ "PolicyBindings", "NextPageToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Iam.V3.SearchTargetPolicyBindingsRequest), global::Google.Cloud.Iam.V3.SearchTargetPolicyBindingsRequest.Parser, new[]{ "Target", "PageSize", "PageToken", "Parent" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Iam.V3.SearchTargetPolicyBindingsRequest), global::Google.Cloud.Iam.V3.SearchTargetPolicyBindingsRequest.Parser, new[]{ "Target", "PageSize", "PageToken", "Parent", "Filter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Iam.V3.SearchTargetPolicyBindingsResponse), global::Google.Cloud.Iam.V3.SearchTargetPolicyBindingsResponse.Parser, new[]{ "PolicyBindings", "NextPageToken" }, null, null, null, null)
           }));
     }
@@ -1370,8 +1371,7 @@ namespace Google.Cloud.Iam.V3 {
     /// Optional. The maximum number of policy bindings to return. The service may
     /// return fewer than this value.
     ///
-    /// If unspecified, at most 50 policy bindings will be returned.
-    /// The maximum value is 1000; values above 1000 will be coerced to 1000.
+    /// The default value is 50. The maximum value is 1000.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1406,7 +1406,8 @@ namespace Google.Cloud.Iam.V3 {
     private string filter_ = "";
     /// <summary>
     /// Optional. An expression for filtering the results of the request. Filter
-    /// rules are case insensitive. Some eligible fields for filtering are:
+    /// rules are case insensitive. Some eligible fields for filtering are the
+    /// following:
     ///
     /// + `target`
     /// + `policy`
@@ -1915,6 +1916,7 @@ namespace Google.Cloud.Iam.V3 {
       pageSize_ = other.pageSize_;
       pageToken_ = other.pageToken_;
       parent_ = other.parent_;
+      filter_ = other.filter_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1955,8 +1957,7 @@ namespace Google.Cloud.Iam.V3 {
     /// Optional. The maximum number of policy bindings to return. The service may
     /// return fewer than this value.
     ///
-    /// If unspecified, at most 50 policy bindings will be returned.
-    /// The maximum value is 1000; values above 1000 will be coerced to 1000.
+    /// The default value is 50. The maximum value is 1000.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2012,6 +2013,30 @@ namespace Google.Cloud.Iam.V3 {
       }
     }
 
+    /// <summary>Field number for the "filter" field.</summary>
+    public const int FilterFieldNumber = 6;
+    private string filter_ = "";
+    /// <summary>
+    /// Optional. Filtering currently only supports the kind of policies to return,
+    /// and must be in the format "policy_kind={policy_kind}".
+    ///
+    /// If String is empty, bindings bound to all kinds of policies would be
+    /// returned.
+    ///
+    /// The only supported values are the following:
+    ///
+    /// * "policy_kind=PRINCIPAL_ACCESS_BOUNDARY",
+    /// * "policy_kind=ACCESS"
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Filter {
+      get { return filter_; }
+      set {
+        filter_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -2031,6 +2056,7 @@ namespace Google.Cloud.Iam.V3 {
       if (PageSize != other.PageSize) return false;
       if (PageToken != other.PageToken) return false;
       if (Parent != other.Parent) return false;
+      if (Filter != other.Filter) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2042,6 +2068,7 @@ namespace Google.Cloud.Iam.V3 {
       if (PageSize != 0) hash ^= PageSize.GetHashCode();
       if (PageToken.Length != 0) hash ^= PageToken.GetHashCode();
       if (Parent.Length != 0) hash ^= Parent.GetHashCode();
+      if (Filter.Length != 0) hash ^= Filter.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2076,6 +2103,10 @@ namespace Google.Cloud.Iam.V3 {
         output.WriteRawTag(42);
         output.WriteString(Parent);
       }
+      if (Filter.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Filter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2102,6 +2133,10 @@ namespace Google.Cloud.Iam.V3 {
         output.WriteRawTag(42);
         output.WriteString(Parent);
       }
+      if (Filter.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Filter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2123,6 +2158,9 @@ namespace Google.Cloud.Iam.V3 {
       }
       if (Parent.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Parent);
+      }
+      if (Filter.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Filter);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2147,6 +2185,9 @@ namespace Google.Cloud.Iam.V3 {
       }
       if (other.Parent.Length != 0) {
         Parent = other.Parent;
+      }
+      if (other.Filter.Length != 0) {
+        Filter = other.Filter;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2183,6 +2224,10 @@ namespace Google.Cloud.Iam.V3 {
             Parent = input.ReadString();
             break;
           }
+          case 50: {
+            Filter = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -2216,6 +2261,10 @@ namespace Google.Cloud.Iam.V3 {
           }
           case 42: {
             Parent = input.ReadString();
+            break;
+          }
+          case 50: {
+            Filter = input.ReadString();
             break;
           }
         }

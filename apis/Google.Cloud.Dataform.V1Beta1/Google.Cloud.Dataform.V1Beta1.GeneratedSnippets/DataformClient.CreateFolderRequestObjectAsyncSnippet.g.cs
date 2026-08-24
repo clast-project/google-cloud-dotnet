@@ -40,7 +40,6 @@ namespace GoogleCSharpSnippets
             {
                 ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 Folder = new Folder(),
-                FolderId = "",
             };
             // Make the request
             Folder response = await dataformClient.CreateFolderAsync(request);

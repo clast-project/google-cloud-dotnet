@@ -1,5 +1,24 @@
 # Version history
 
+## Version 1.0.0, released 2026-08-10
+
+### New features
+
+- Release stable versions of lagging releases
+
+## Version 1.0.0-beta07, released 2026-07-06
+
+### New features
+
+- GA FindingsRefinementService Client libraries
+
+## Version 1.0.0-beta06, released 2026-06-22
+
+### New features
+
+- GA updates for new Rule and ReferenceList Service Client libraries
+- GA RuleExecutionErrorService Client libraries
+
 ## Version 1.0.0-beta05, released 2026-05-04
 
 ### New features

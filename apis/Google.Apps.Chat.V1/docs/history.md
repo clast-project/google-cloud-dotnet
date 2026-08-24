@@ -1,5 +1,43 @@
 # Version history
 
+## Version 1.0.0-beta28, released 2026-08-07
+
+### New features
+
+- Addition of the Search Messages API
+
+### Documentation improvements
+
+- Update reference documentation for the Search Messages API, and the message and Space resources
+
+## Version 1.0.0-beta27, released 2026-07-28
+
+### New features
+
+- Addition of Membership Affiliation information
+
+## Version 1.0.0-beta26, released 2026-07-13
+
+### New features
+
+- Add access permission settings to Space resource for configuring space discovery and join permissions
+- Add Availability Api's
+
+### Documentation improvements
+
+- Update Space reference documentation for access permission setting update masks
+
+## Version 1.0.0-beta25, released 2026-06-22
+
+### New features
+
+- Add new FORWARD QuoteType enum in the QuotedMessageMetadata proto
+
+### Documentation improvements
+
+- Update documentation for QuotedMessageMetadata
+- Update documentation for enum value `REPLY` in enum `QuoteType`
+
 ## Version 1.0.0-beta24, released 2026-05-11
 
 ### New features

@@ -2,7 +2,7 @@
   "apis": [
     {
       "id": "Google.Ads.AdManager.V1",
-      "version": "1.0.0-beta06",
+      "version": "1.0.0-beta09",
       "type": "grpc",
       "productName": "Google Ad Manager",
       "productUrl": "https://developers.google.com/ad-manager/api/beta",
@@ -24,7 +24,7 @@
     },
     {
       "id": "Google.Ads.DataManager.V1",
-      "version": "1.0.0-beta07",
+      "version": "1.0.0-beta09",
       "type": "grpc",
       "productName": "Ads Data Manager",
       "productUrl": "https://developers.google.com/data-manager",
@@ -63,7 +63,7 @@
     },
     {
       "id": "Google.Analytics.Admin.V1Alpha",
-      "version": "2.0.0-alpha29",
+      "version": "2.0.0-alpha30",
       "type": "grpc",
       "productName": "Analytics Admin",
       "productUrl": "https://developers.google.com/analytics",
@@ -82,7 +82,7 @@
     },
     {
       "id": "Google.Analytics.Admin.V1Beta",
-      "version": "1.0.0-beta10",
+      "version": "1.0.0-beta11",
       "type": "grpc",
       "productName": "Google Analytics Admin",
       "productUrl": "https://developers.google.com/analytics",
@@ -136,7 +136,7 @@
     },
     {
       "id": "Google.Apps.Chat.V1",
-      "version": "1.0.0-beta24",
+      "version": "1.0.0-beta28",
       "type": "grpc",
       "productName": "Google Chat",
       "productUrl": "https://developers.google.com/chat/concepts",
@@ -273,18 +273,15 @@
     },
     {
       "id": "Google.Backstory",
-      "version": "1.0.0-beta01",
-      "type": "grpc",
-      "productName": "Malachite Common Protos",
-      "productUrl": "https://cloud.google.com/chronicle/docs/secops/secops-overview",
+      "version": "1.0.0-beta02",
+      "type": "other",
       "description": "Common Universal Data Model (UDM) and Entity protos used by Chronicle.",
       "tags": [],
-      "dependencies": {},
-      "generator": "micro",
-      "protoPath": "backstory",
-      "shortName": "backstory",
-      "serviceConfigFile": "backstory.yaml",
-      "restNumericEnums": false
+      "dependencies": {
+        "Google.Api.CommonProtos": "default"
+      },
+      "generator": "proto",
+      "protoPath": "backstory"
     },
     {
       "id": "Google.Cloud.AccessApproval.V1",
@@ -329,8 +326,28 @@
       "includeCommonResourcesProto": false
     },
     {
+      "id": "Google.Cloud.AgentRegistry.V1",
+      "version": "1.0.0",
+      "type": "grpc",
+      "productName": "Agent Registry",
+      "productUrl": "https://docs.cloud.google.com/agent-registry/overview",
+      "description": "Agent Registry is a centralized, unified catalog that lets you store, discover, and govern Model Context Protocol (MCP) servers, tools, and AI agents within Google Cloud.",
+      "tags": [],
+      "dependencies": {
+        "Google.Cloud.Location": "2.4.0",
+        "Google.LongRunning": "3.5.0"
+      },
+      "generator": "micro",
+      "protoPath": "google/cloud/agentregistry/v1",
+      "includeCommonResourcesProto": true,
+      "shortName": "agentregistry",
+      "serviceConfigFile": "agentregistry_v1.yaml",
+      "transport": "grpc+rest",
+      "restNumericEnums": true
+    },
+    {
       "id": "Google.Cloud.AlloyDb.V1",
-      "version": "1.14.0",
+      "version": "1.15.0",
       "type": "grpc",
       "productName": "AlloyDB",
       "productUrl": "https://cloud.google.com/alloydb/docs",
@@ -355,7 +372,7 @@
     },
     {
       "id": "Google.Cloud.AlloyDb.V1Alpha",
-      "version": "1.0.0-alpha16",
+      "version": "1.0.0-alpha17",
       "type": "grpc",
       "productName": "AlloyDB",
       "productUrl": "https://cloud.google.com/alloydb/docs",
@@ -380,7 +397,7 @@
     },
     {
       "id": "Google.Cloud.AlloyDb.V1Beta",
-      "version": "1.0.0-beta16",
+      "version": "1.0.0-beta17",
       "type": "grpc",
       "productName": "AlloyDB",
       "productUrl": "https://cloud.google.com/alloydb/docs",
@@ -427,7 +444,7 @@
     },
     {
       "id": "Google.Cloud.AIPlatform.V1Beta1",
-      "version": "1.0.0-beta78",
+      "version": "1.0.0-beta84",
       "type": "grpc",
       "productName": "Vertex AI",
       "productUrl": "https://cloud.google.com/vertex-ai/docs",
@@ -451,7 +468,7 @@
     },
     {
       "id": "Google.Cloud.AIPlatform.V1",
-      "version": "3.72.0",
+      "version": "3.76.0",
       "type": "grpc",
       "productName": "Vertex AI",
       "productUrl": "https://cloud.google.com/vertex-ai/docs",
@@ -579,30 +596,6 @@
       "protoPath": "google/cloud/apigeeconnect/v1",
       "shortName": "apigeeconnect",
       "serviceConfigFile": "apigeeconnect_v1.yaml",
-      "restNumericEnums": true,
-      "transport": "grpc+rest",
-      "includeCommonResourcesProto": true
-    },
-    {
-      "id": "Google.Cloud.ApigeeRegistry.V1",
-      "version": "1.0.0-beta08",
-      "type": "grpc",
-      "productName": "Apigee Registry",
-      "description": "Recommended Google client library to access the Apigee Registry API which allows teams to upload and share machine-readable descriptions of APIs that are in use and in development.",
-      "tags": [
-        "apigee",
-        "api",
-        "registry"
-      ],
-      "dependencies": {
-        "Google.Cloud.Iam.V1": "3.5.0",
-        "Google.Cloud.Location": "2.4.0",
-        "Google.LongRunning": "3.5.0"
-      },
-      "generator": "micro",
-      "protoPath": "google/cloud/apigeeregistry/v1",
-      "shortName": "apigeeregistry",
-      "serviceConfigFile": "apigeeregistry_v1.yaml",
       "restNumericEnums": true,
       "transport": "grpc+rest",
       "includeCommonResourcesProto": true
@@ -831,7 +824,7 @@
     },
     {
       "id": "Google.Cloud.AuditManager.V1",
-      "version": "1.0.0-beta03",
+      "version": "1.2.0",
       "type": "grpc",
       "productName": "Audit Manager",
       "productUrl": "https://cloud.google.com/audit-manager/docs",
@@ -944,7 +937,7 @@
     },
     {
       "id": "Google.Cloud.Batch.V1Alpha",
-      "version": "1.0.0-alpha33",
+      "version": "1.0.0-alpha35",
       "type": "grpc",
       "productName": "Batch",
       "productUrl": "https://cloud.google.com/batch/docs/",
@@ -1220,7 +1213,7 @@
     },
     {
       "id": "Google.Cloud.BigQuery.Reservation.V1",
-      "version": "2.12.0",
+      "version": "2.13.0",
       "type": "grpc",
       "productName": "BigQuery Reservation",
       "productUrl": "https://cloud.google.com/bigquery/docs/reference/reservations",
@@ -1275,7 +1268,7 @@
       "protoPath": "google/cloud/bigquery/storage/v1",
       "productName": "Google BigQuery Storage",
       "productUrl": "https://cloud.google.com/bigquery/docs/reference/storage/",
-      "version": "3.19.0",
+      "version": "3.20.0",
       "type": "grpc",
       "description": "Recommended Google client library to access the BigQuery Storage API.",
       "dependencies": {},
@@ -1292,7 +1285,7 @@
       "protoPath": "google/bigtable/admin/v2",
       "productName": "Google Cloud Bigtable Administration",
       "productUrl": "https://cloud.google.com/bigtable/",
-      "version": "3.33.0",
+      "version": "3.34.0",
       "commonResourcesConfig": "tweaks/Google.Cloud.Bigtable.Common.V2/CommonResourcesConfig.json",
       "type": "grpc",
       "description": "Recommended Google client library to access the Google Cloud Bigtable Instance and Table Admin APIs.",
@@ -1335,7 +1328,7 @@
       "protoPath": "google/bigtable/v2",
       "productName": "Google Bigtable",
       "productUrl": "https://cloud.google.com/bigtable/",
-      "version": "3.28.0",
+      "version": "3.31.0",
       "commonResourcesConfig": "tweaks/Google.Cloud.Bigtable.Common.V2/CommonResourcesConfig.json",
       "type": "grpc",
       "metadataType": "GAPIC_COMBO",
@@ -1424,7 +1417,7 @@
     },
     {
       "id": "Google.Cloud.BinaryAuthorization.V1",
-      "version": "2.6.0",
+      "version": "2.7.0",
       "type": "grpc",
       "productName": "Binary Authorization",
       "productUrl": "https://cloud.google.com/binary-authorization/docs/reference/rpc",
@@ -1437,6 +1430,7 @@
         "kubernetes"
       ],
       "dependencies": {
+        "Google.Cloud.Iam.V1": "3.5.0",
         "Grafeas.V1": "3.11.0"
       },
       "generator": "micro",
@@ -1449,7 +1443,7 @@
     },
     {
       "id": "Google.Cloud.BinaryAuthorization.V1Beta1",
-      "version": "2.0.0-beta09",
+      "version": "2.0.0-beta10",
       "type": "grpc",
       "productName": "Binary Authorization",
       "productUrl": "https://cloud.google.com/binary-authorization/docs/reference/rpc",
@@ -1461,7 +1455,9 @@
         "control",
         "kubernetes"
       ],
-      "dependencies": {},
+      "dependencies": {
+        "Google.Cloud.Iam.V1": "3.5.0"
+      },
       "generator": "micro",
       "protoPath": "google/cloud/binaryauthorization/v1beta1",
       "shortName": "binaryauthorization",
@@ -1515,7 +1511,7 @@
     },
     {
       "id": "Google.Cloud.Ces.V1",
-      "version": "1.0.0-beta02",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Gemini Enterprise for Customer Experience",
       "productUrl": "https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps",
@@ -1535,7 +1531,7 @@
     },
     {
       "id": "Google.Cloud.Ces.V1Beta",
-      "version": "1.0.0-beta05",
+      "version": "1.0.0-beta09",
       "type": "grpc",
       "productName": "Gemini Enterprise for Customer Experience",
       "productUrl": "https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps",
@@ -1577,7 +1573,7 @@
     },
     {
       "id": "Google.Cloud.Chronicle.V1",
-      "version": "1.0.0-beta05",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Chronicle",
       "productUrl": "https://cloud.google.com/chronicle/docs/secops/secops-overview",
@@ -1599,7 +1595,7 @@
     },
     {
       "id": "Google.Cloud.CloudBuild.V1",
-      "version": "2.18.0",
+      "version": "2.20.0",
       "type": "grpc",
       "productName": "Cloud Build",
       "productUrl": "https://cloud.google.com/cloud-build",
@@ -1708,7 +1704,7 @@
     },
     {
       "id": "Google.Cloud.CloudQuotas.V1",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "type": "grpc",
       "productName": "Cloud Quotas",
       "productUrl": "https://cloud.google.com/docs/quotas/api-overview",
@@ -1789,6 +1785,26 @@
       "transport": "grpc+rest"
     },
     {
+      "id": "Google.Cloud.CommerceProducer.V1Beta",
+      "version": "1.0.0-beta02",
+      "type": "grpc",
+      "productName": "Cloud Commerce Producer",
+      "productUrl": "https://docs.cloud.google.com/marketplace/docs/partners/commerce-producer-api/reference",
+      "description": "Partner API for the Cloud Commerce Producer API Early Access.",
+      "tags": [],
+      "dependencies": {
+        "Google.Cloud.Location": "2.4.0",
+        "Google.LongRunning": "3.5.0"
+      },
+      "generator": "micro",
+      "protoPath": "google/cloud/commerceproducer/v1beta",
+      "includeCommonResourcesProto": true,
+      "shortName": "commerceproducer",
+      "serviceConfigFile": "commerceproducer_v1beta.yaml",
+      "transport": "grpc+rest",
+      "restNumericEnums": true
+    },
+    {
       "id": "Google.Cloud.Common",
       "version": "2.3.0",
       "type": "other",
@@ -1802,7 +1818,7 @@
     },
     {
       "id": "Google.Cloud.Compute.V1",
-      "version": "3.28.0",
+      "version": "3.30.0",
       "type": "regapic",
       "productName": "Compute Engine",
       "productUrl": "https://cloud.google.com/compute",
@@ -1826,7 +1842,7 @@
     },
     {
       "id": "Google.Cloud.ConfidentialComputing.V1",
-      "version": "1.11.0",
+      "version": "1.12.0",
       "type": "grpc",
       "productName": "Confidential Computing",
       "productUrl": "https://cloud.google.com/confidential-computing",
@@ -1898,7 +1914,7 @@
     },
     {
       "id": "Google.Cloud.ConfigDelivery.V1",
-      "version": "1.0.0-beta01",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Config Delivery",
       "productUrl": "https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/concepts/fleet-packages",
@@ -2130,7 +2146,7 @@
     },
     {
       "id": "Google.Cloud.Dataform.V1",
-      "version": "1.0.0-beta03",
+      "version": "1.1.0",
       "type": "grpc",
       "productName": "Dataform",
       "productUrl": "https://cloud.google.com/dataform/docs/overview",
@@ -2158,7 +2174,7 @@
     },
     {
       "id": "Google.Cloud.Dataform.V1Beta1",
-      "version": "1.0.0-beta11",
+      "version": "1.0.0-beta14",
       "type": "grpc",
       "productName": "Dataform",
       "productUrl": "https://cloud.google.com/dataform",
@@ -2212,7 +2228,7 @@
       "protoPath": "google/cloud/dataproc/v1",
       "productName": "Google Cloud Dataproc",
       "productUrl": "https://cloud.google.com/dataproc/docs/concepts/overview",
-      "version": "5.26.0",
+      "version": "5.28.0",
       "type": "grpc",
       "description": "Recommended Google client library to access the Google Cloud Dataproc API, which manages Hadoop-based clusters and jobs on Google Cloud Platform.",
       "tags": [
@@ -2256,7 +2272,7 @@
       "protoPath": "google/datastore/v1",
       "productName": "Google Cloud Datastore",
       "productUrl": "https://cloud.google.com/datastore/docs/concepts/overview",
-      "version": "5.1.0",
+      "version": "5.2.0",
       "type": "grpc",
       "metadataType": "GAPIC_COMBO",
       "description": "Recommended Google client library to access the Google Cloud Datastore API, which accesses the schemaless NoSQL database to provide fully managed, robust, scalable storage for your application.",
@@ -2378,7 +2394,7 @@
       "protoPath": "google/devtools/containeranalysis/v1",
       "productName": "Google Container Analysis",
       "productUrl": "https://cloud.google.com/container-registry/docs/container-analysis/",
-      "version": "3.15.0",
+      "version": "3.16.0",
       "type": "grpc",
       "description": "Recommended Google client library to access the Google Cloud Container Analysis API.",
       "tags": [
@@ -2423,7 +2439,7 @@
     },
     {
       "id": "Google.Cloud.DeviceStreaming.V1",
-      "version": "1.0.0-beta02",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Device Streaming",
       "productUrl": "https://cloud.google.com/device-streaming/docs",
@@ -2534,7 +2550,7 @@
       "protoPath": "google/cloud/dialogflow/v2",
       "productName": "Google Cloud Dialogflow",
       "productUrl": "https://cloud.google.com/dialogflow-enterprise/",
-      "version": "4.29.0",
+      "version": "4.31.0",
       "type": "grpc",
       "description": "Recommended Google client library to access the Google Dialogflow API (v2).",
       "tags": [
@@ -2556,7 +2572,7 @@
     },
     {
       "id": "Google.Cloud.Dialogflow.V2Beta1",
-      "version": "1.0.0-beta29",
+      "version": "1.0.0-beta32",
       "type": "grpc",
       "productName": "Google Cloud Dialogflow",
       "productUrl": "https://cloud.google.com/dialogflow-enterprise/",
@@ -2576,7 +2592,7 @@
     },
     {
       "id": "Google.Cloud.DiscoveryEngine.V1",
-      "version": "1.13.0",
+      "version": "1.14.0",
       "type": "grpc",
       "productName": "Discovery Engine",
       "productUrl": "https://cloud.google.com/discovery-engine/docs",
@@ -2599,7 +2615,7 @@
     },
     {
       "id": "Google.Cloud.DiscoveryEngine.V1Beta",
-      "version": "1.0.0-beta23",
+      "version": "1.0.0-beta24",
       "type": "grpc",
       "productName": "Discovery Engine",
       "productUrl": "https://cloud.google.com/discovery-engine/docs",
@@ -2609,6 +2625,7 @@
         "media"
       ],
       "dependencies": {
+        "Google.Cloud.Iam.V1": "3.5.0",
         "Google.Cloud.Location": "2.4.0",
         "Google.LongRunning": "3.5.0"
       },
@@ -2891,7 +2908,7 @@
     },
     {
       "id": "Google.Cloud.FinancialServices.V1",
-      "version": "1.0.0-beta02",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Financial Services",
       "productUrl": "https://cloud.google.com/financial-services/anti-money-laundering/docs/concepts/overview",
@@ -2945,7 +2962,7 @@
       "productName": "Firestore",
       "productUrl": "https://firebase.google.com/docs/firestore/",
       "listingDescription": "Firestore high-level library",
-      "version": "4.2.0",
+      "version": "4.4.0",
       "type": "other",
       "metadataType": "GAPIC_MANUAL",
       "description": "Recommended Google client library to access the Firestore API.",
@@ -2984,7 +3001,7 @@
       "productName": "Firestore",
       "productUrl": "https://firebase.google.com",
       "listingDescription": "Firestore low-level API access",
-      "version": "4.2.0",
+      "version": "4.4.0",
       "type": "grpc",
       "description": "Low-level Google client library to access the Firestore API. Users are recommended to use the Google.Cloud.Firestore package instead.",
       "tags": [
@@ -3004,6 +3021,26 @@
       "projects": [
         "Tests"
       ]
+    },
+    {
+      "id": "Google.Cloud.Ftp.V1",
+      "version": "1.0.0-beta01",
+      "type": "grpc",
+      "productName": "Cloud FTP",
+      "productUrl": "https://docs.cloud.google.com/cloud-ftp",
+      "description": "A managed, cloud-native solution to move data in and out of Google Cloud by using SSH File Transfer Protocol (SFTP).",
+      "tags": [],
+      "dependencies": {
+        "Google.Cloud.Location": "2.4.0",
+        "Google.LongRunning": "3.5.0"
+      },
+      "generator": "micro",
+      "protoPath": "google/cloud/ftp/v1",
+      "includeCommonResourcesProto": true,
+      "shortName": "ftp",
+      "serviceConfigFile": "ftp_v1.yaml",
+      "transport": "rest",
+      "restNumericEnums": true
     },
     {
       "id": "Google.Cloud.Functions.V1",
@@ -3122,7 +3159,7 @@
     },
     {
       "id": "Google.Cloud.GeminiDataAnalytics.V1",
-      "version": "1.0.0-beta02",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Data Analytics API with Gemini",
       "productUrl": "https://cloud.google.com/gemini/docs/conversational-analytics-api/overview",
@@ -3269,7 +3306,7 @@
     },
     {
       "id": "Google.Cloud.GkeMultiCloud.V1",
-      "version": "2.10.0",
+      "version": "2.11.0",
       "type": "grpc",
       "productName": "Anthos Multi-Cloud",
       "productUrl": "https://cloud.google.com/anthos/clusters/docs/multi-cloud",
@@ -3293,7 +3330,7 @@
     },
     {
       "id": "Google.Cloud.GkeRecommender.V1",
-      "version": "1.0.0-beta01",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "GKE Recommender",
       "productUrl": "https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart",
@@ -3310,7 +3347,7 @@
     },
     {
       "id": "Google.Cloud.HypercomputeCluster.V1",
-      "version": "1.0.0-beta01",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Cluster Director",
       "productUrl": "https://cloud.google.com/cluster-director/docs",
@@ -3443,7 +3480,7 @@
     },
     {
       "id": "Google.Cloud.Iam.V3",
-      "version": "1.0.0-beta02",
+      "version": "1.0.0-beta03",
       "type": "grpc",
       "productName": "Identity and Access Management (IAM)",
       "productUrl": "https://cloud.google.com/iam/docs/overview",
@@ -3565,7 +3602,7 @@
       "protoPath": "google/cloud/kms/v1",
       "productName": "Google Cloud Key Management Service",
       "productUrl": "https://cloud.google.com/kms/",
-      "version": "3.24.0",
+      "version": "3.26.0",
       "type": "grpc",
       "description": "Recommended Google client library to access the Google Key Management Service API, which manages encryption for your cloud services the same way you do on-premises. You can generate, use, rotate, and destroy AES256 encryption keys.",
       "tags": [
@@ -3629,7 +3666,7 @@
     },
     {
       "id": "Google.Cloud.LicenseManager.V1",
-      "version": "1.0.0-beta01",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "License Manager",
       "productUrl": "https://cloud.google.com/compute/docs/instances/windows/ms-licensing",
@@ -3692,7 +3729,7 @@
     },
     {
       "id": "Google.Cloud.LocationFinder.V1",
-      "version": "1.0.0-beta02",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Cloud Location Finder",
       "productUrl": "https://cloud.google.com/location-finder/docs/overview",
@@ -3824,7 +3861,7 @@
     },
     {
       "id": "Google.Cloud.Lustre.V1",
-      "version": "1.0.0-beta04",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Google Cloud Managed Lustre",
       "productUrl": "https://cloud.google.com/managed-lustre/docs",
@@ -3850,7 +3887,7 @@
     },
     {
       "id": "Google.Cloud.Maintenance.Api.V1",
-      "version": "1.0.0-beta01",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Maintenance",
       "productUrl": "https://cloud.google.com/unified-maintenance/docs/overview",
@@ -4000,7 +4037,7 @@
     },
     {
       "id": "Google.Cloud.Memorystore.V1",
-      "version": "1.0.0-beta07",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Memorystore",
       "productUrl": "https://cloud.google.com/memorystore/docs/valkey",
@@ -4024,7 +4061,7 @@
     },
     {
       "id": "Google.Cloud.Memorystore.V1Beta",
-      "version": "1.0.0-beta05",
+      "version": "1.0.0-beta06",
       "type": "grpc",
       "productName": "Memorystore",
       "productUrl": "https://cloud.google.com/memorystore/docs/valkey",
@@ -4137,7 +4174,7 @@
     },
     {
       "id": "Google.Cloud.ModelArmor.V1",
-      "version": "1.0.0-beta05",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Model Armor",
       "productUrl": "https://cloud.google.com/security-command-center/docs/model-armor-overview",
@@ -4275,7 +4312,7 @@
     },
     {
       "id": "Google.Cloud.NetworkConnectivity.V1Beta",
-      "version": "1.0.0-beta01",
+      "version": "1.0.0-beta02",
       "type": "grpc",
       "productName": "Network Connectivity",
       "productUrl": "https://docs.cloud.google.com/network-connectivity/docs/concepts",
@@ -4295,7 +4332,7 @@
     },
     {
       "id": "Google.Cloud.NetworkManagement.V1",
-      "version": "2.19.0",
+      "version": "2.21.0",
       "type": "grpc",
       "productName": "Network Management",
       "productUrl": "https://cloud.google.com/network-intelligence-center/docs/",
@@ -4373,7 +4410,7 @@
     },
     {
       "id": "Google.Cloud.NetworkServices.V1",
-      "version": "1.5.0",
+      "version": "1.7.0",
       "type": "grpc",
       "productName": "Network Services",
       "productUrl": "https://cloud.google.com/products/networking",
@@ -4486,7 +4523,7 @@
     },
     {
       "id": "Google.Cloud.OracleDatabase.V1",
-      "version": "1.5.0",
+      "version": "1.8.0",
       "type": "grpc",
       "productName": "Oracle Database@Google Cloud",
       "productUrl": "https://cloud.google.com/oracle/database/docs",
@@ -4726,7 +4763,7 @@
     },
     {
       "id": "Google.Cloud.ParameterManager.V1",
-      "version": "1.0.0-beta04",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Parameter Manager",
       "productUrl": "https://cloud.google.com/secret-manager/parameter-manager/docs/overview",
@@ -4883,6 +4920,23 @@
       "restNumericEnums": true
     },
     {
+      "id": "Google.Cloud.ProductRegistry.V1",
+      "version": "1.0.0-beta01",
+      "type": "grpc",
+      "productName": "Cloud Product Registry",
+      "productUrl": "https://docs.cloud.google.com/product-registry",
+      "description": "cloudproductregistry.googleapis.com API.",
+      "tags": [],
+      "dependencies": {},
+      "generator": "micro",
+      "protoPath": "google/cloud/productregistry/v1",
+      "includeCommonResourcesProto": true,
+      "shortName": "cloudproductregistry",
+      "serviceConfigFile": "cloudproductregistry_v1.yaml",
+      "transport": "grpc+rest",
+      "restNumericEnums": true
+    },
+    {
       "id": "Google.Cloud.Profiler.V2",
       "version": "2.7.0",
       "type": "grpc",
@@ -4908,7 +4962,7 @@
       "protoPath": "google/pubsub/v1",
       "productName": "Cloud Pub/Sub",
       "productUrl": "https://cloud.google.com/pubsub/",
-      "version": "3.35.0",
+      "version": "3.36.0",
       "type": "grpc",
       "metadataType": "GAPIC_COMBO",
       "description": "Recommended Google client library to access the Google Cloud Pub/Sub API, which provides reliable, many-to-many, asynchronous messaging between applications.",
@@ -4964,7 +5018,7 @@
       "protoPath": "google/cloud/recaptchaenterprise/v1",
       "productName": "Google Cloud reCAPTCHA Enterprise",
       "productUrl": "https://cloud.google.com/recaptcha-enterprise/",
-      "version": "2.20.0",
+      "version": "2.21.0",
       "type": "grpc",
       "description": "Recommended Google client library to access the Google Cloud reCAPTCHA for Enterprise API v1.",
       "tags": [
@@ -5038,7 +5092,7 @@
     },
     {
       "id": "Google.Cloud.Redis.Cluster.V1",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "type": "grpc",
       "productName": "Google Cloud Memorystore for Redis (cluster management)",
       "productUrl": "https://cloud.google.com/memorystore/docs/redis",
@@ -5176,7 +5230,7 @@
     },
     {
       "id": "Google.Cloud.SaasPlatform.SaasServiceMgmt.V1Beta1",
-      "version": "1.0.0-beta05",
+      "version": "1.0.0-beta06",
       "type": "grpc",
       "productName": "SaaS Runtime",
       "productUrl": "https://cloud.google.com/saas-runtime/docs/overview",
@@ -5223,7 +5277,7 @@
       "protoPath": "google/cloud/secretmanager/v1",
       "productName": "Secret Manager",
       "productUrl": "https://cloud.google.com/secret-manager",
-      "version": "2.7.0",
+      "version": "2.8.0",
       "type": "grpc",
       "description": "Recommended Google client library to access the Secret Manager API (v1).",
       "dependencies": {
@@ -5385,7 +5439,7 @@
       "protoPath": "google/cloud/securitycenter/v1",
       "productName": "Google Cloud Security Command Center",
       "productUrl": "https://cloud.google.com/security-command-center/",
-      "version": "3.26.0",
+      "version": "3.27.0",
       "type": "grpc",
       "description": "Recommended Google client library to access the Google Cloud Security Command Center API (v1), which helps security teams gather data, identify threats, and act on them before they result in business damage or loss.",
       "dependencies": {
@@ -5427,7 +5481,7 @@
     },
     {
       "id": "Google.Cloud.SecurityCenter.V2",
-      "version": "1.4.0",
+      "version": "1.5.0",
       "type": "grpc",
       "productName": "Security Command Center",
       "productUrl": "https://cloud.google.com/security-command-center/docs/reference/rest",
@@ -5473,7 +5527,7 @@
     },
     {
       "id": "Google.Cloud.ServiceControl.V1",
-      "version": "2.5.0",
+      "version": "2.6.0",
       "type": "grpc",
       "productName": "Service Control",
       "productUrl": "https://cloud.google.com/service-infrastructure/docs/service-control/reference/rpc",
@@ -5631,7 +5685,7 @@
       "protoPath": "google/spanner/admin/database/v1",
       "productName": "Google Cloud Spanner Database Administration",
       "productUrl": "https://cloud.google.com/spanner/",
-      "version": "5.13.0-beta06",
+      "version": "5.13.0-beta09",
       "commonResourcesConfig": "tweaks/Google.Cloud.Spanner.Common.V1/CommonResourcesConfig.json",
       "type": "grpc",
       "description": "Recommended Google client library to access the Google Cloud Spanner Database Admin API.",
@@ -5639,7 +5693,7 @@
         "Spanner"
       ],
       "dependencies": {
-        "Google.Api.Gax.Grpc": "default",
+        "Google.Api.Gax.Grpc": "4.14.0",
         "Google.Cloud.Iam.V1": "3.5.0",
         "Google.Cloud.Spanner.Common.V1": "project",
         "Google.LongRunning": "3.5.0"
@@ -5660,7 +5714,7 @@
       "protoPath": "google/spanner/admin/instance/v1",
       "productName": "Google Cloud Spanner Instance Administration",
       "productUrl": "https://cloud.google.com/spanner/",
-      "version": "5.13.0-beta06",
+      "version": "5.13.0-beta09",
       "commonResourcesConfig": "tweaks/Google.Cloud.Spanner.Common.V1/CommonResourcesConfig.json",
       "type": "grpc",
       "description": "Recommended Google client library to access the Google Cloud Spanner Instance Admin API.",
@@ -5668,7 +5722,7 @@
         "Spanner"
       ],
       "dependencies": {
-        "Google.Api.Gax.Grpc": "default",
+        "Google.Api.Gax.Grpc": "4.14.0",
         "Google.Cloud.Iam.V1": "3.5.0",
         "Google.Cloud.Spanner.Common.V1": "project",
         "Google.LongRunning": "3.5.0"
@@ -5686,7 +5740,7 @@
     {
       "id": "Google.Cloud.Spanner.Data",
       "targetFrameworks": "netstandard2.1;net462",
-      "version": "5.13.0-beta06",
+      "version": "5.13.0-beta09",
       "type": "other",
       "metadataType": "INTEGRATION",
       "shortName": "spanner",
@@ -5696,7 +5750,7 @@
         "ADO"
       ],
       "dependencies": {
-        "Google.Api.Gax.Grpc": "default",
+        "Google.Api.Gax.Grpc": "4.14.0",
         "Google.Cloud.Spanner.Admin.Database.V1": "project",
         "Google.Cloud.Spanner.Admin.Instance.V1": "project",
         "Google.Cloud.Spanner.V1": "project",
@@ -5704,8 +5758,8 @@
         "Microsoft.Extensions.Configuration.Abstractions": "default"
       },
       "testDependencies": {
-        "Google.Api.Gax.Grpc.Testing": "default",
-        "Google.Api.Gax.Testing": "default",
+        "Google.Api.Gax.Grpc.Testing": "4.14.0",
+        "Google.Api.Gax.Testing": "4.14.0",
         "Microsoft.Extensions.Configuration": "default",
         "Microsoft.Extensions.DependencyInjection": "default",
         "System.ValueTuple": "default",
@@ -5723,14 +5777,14 @@
     {
       "id": "Google.Cloud.Spanner.Common.V1",
       "type": "other",
-      "version": "5.13.0-beta06",
+      "version": "5.13.0-beta09",
       "description": "Common resource names used by all Spanner V1 APIs",
       "shortName": "spanner",
       "tags": [
         "Spanner"
       ],
       "dependencies": {
-        "Google.Api.Gax": "default"
+        "Google.Api.Gax": "4.14.0"
       },
       "noVersionHistory": true
     },
@@ -5740,7 +5794,7 @@
       "protoPath": "google/spanner/v1",
       "productName": "Google Cloud Spanner",
       "productUrl": "https://cloud.google.com/spanner/",
-      "version": "5.13.0-beta06",
+      "version": "5.13.0-beta09",
       "commonResourcesConfig": "tweaks/Google.Cloud.Spanner.Common.V1/CommonResourcesConfig.json",
       "type": "grpc",
       "metadataType": "GAPIC_COMBO",
@@ -5749,6 +5803,7 @@
         "Spanner"
       ],
       "dependencies": {
+        "Google.Api.Gax.Grpc": "4.14.0",
         "Google.Cloud.Spanner.Common.V1": "project"
       },
       "testDependencies": {
@@ -5836,7 +5891,7 @@
     },
     {
       "id": "Google.Cloud.Storage.Control.V2",
-      "version": "1.8.0",
+      "version": "1.10.0",
       "type": "grpc",
       "productName": "Cloud Storage",
       "productUrl": "https://cloud.google.com/storage/docs/overview",
@@ -5892,7 +5947,7 @@
     },
     {
       "id": "Google.Cloud.StorageBatchOperations.V1",
-      "version": "1.0.0-beta06",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Storage Batch Operations",
       "productUrl": "https://cloud.google.com/storage/docs/batch-operations/overview",
@@ -5965,7 +6020,7 @@
     },
     {
       "id": "Google.Cloud.Support.V2",
-      "version": "1.6.0",
+      "version": "1.8.0",
       "type": "grpc",
       "productName": "Google Cloud Support",
       "productUrl": "https://cloud.google.com/support/docs/reference/support-api",
@@ -5983,7 +6038,7 @@
     },
     {
       "id": "Google.Cloud.Support.V2Beta",
-      "version": "1.0.0-beta03",
+      "version": "1.0.0-beta05",
       "type": "grpc",
       "productName": "Google Cloud Support",
       "productUrl": "https://cloud.google.com/support/docs/reference/support-api",
@@ -6073,7 +6128,7 @@
       "protoPath": "google/cloud/tasks/v2beta3",
       "productName": "Google Cloud Tasks",
       "productUrl": "https://cloud.google.com/tasks/",
-      "version": "3.0.0-beta08",
+      "version": "3.0.0-beta09",
       "releaseLevelOverride": "preview",
       "type": "grpc",
       "description": "Recommended Google client library to access the Google Cloud Tasks API (v2beta3), which manages the execution of large numbers of distributed requests.",
@@ -6082,7 +6137,8 @@
       ],
       "dependencies": {
         "Google.Cloud.Iam.V1": "3.5.0",
-        "Google.Cloud.Location": "2.4.0"
+        "Google.Cloud.Location": "2.4.0",
+        "Google.LongRunning": "3.5.0"
       },
       "shortName": "cloudtasks",
       "serviceConfigFile": "cloudtasks_v2beta3.yaml",
@@ -6268,7 +6324,7 @@
     },
     {
       "id": "Google.Cloud.VectorSearch.V1",
-      "version": "1.0.0-beta05",
+      "version": "1.1.0",
       "type": "grpc",
       "productName": "Vector Search",
       "productUrl": "https://docs.cloud.google.com/vertex-ai/docs/vector-search-2/overview",
@@ -6455,7 +6511,7 @@
     },
     {
       "id": "Google.Cloud.VisionAI.V1",
-      "version": "1.0.0-beta01",
+      "version": "1.0.0",
       "type": "grpc",
       "productName": "Vision AI",
       "productUrl": "https://cloud.google.com/vision-ai/docs",
@@ -6711,6 +6767,26 @@
       "includeCommonResourcesProto": true
     },
     {
+      "id": "Google.Cloud.WorkloadIdentity.V1",
+      "version": "1.0.0-beta01",
+      "type": "grpc",
+      "productName": "Workload Identity",
+      "productUrl": "https://cloud.google.com/iam/docs/service-agents",
+      "description": "",
+      "tags": [],
+      "dependencies": {
+        "Google.Cloud.Location": "2.4.0",
+        "Google.LongRunning": "3.5.0"
+      },
+      "generator": "micro",
+      "protoPath": "google/cloud/workloadidentity/v1",
+      "includeCommonResourcesProto": true,
+      "shortName": "workloadidentity",
+      "serviceConfigFile": "workloadidentity_v1.yaml",
+      "transport": "grpc+rest",
+      "restNumericEnums": true
+    },
+    {
       "id": "Google.Cloud.WorkloadManager.V1",
       "version": "1.0.0-beta01",
       "type": "grpc",
@@ -6772,7 +6848,7 @@
     },
     {
       "id": "Google.DevicesAndServices.Health.V4",
-      "version": "1.0.0-beta02",
+      "version": "1.0.0-beta03",
       "type": "grpc",
       "productName": "Google Health",
       "productUrl": "https://developers.google.com/health/api",
@@ -6993,6 +7069,40 @@
       "includeCommonResourcesProto": true,
       "shortName": "geocoding-backend",
       "serviceConfigFile": "geocoding_backend_v4.yaml",
+      "transport": "grpc+rest",
+      "restNumericEnums": true
+    },
+    {
+      "id": "Google.Maps.Isochrones.V1",
+      "version": "1.0.0-beta01",
+      "type": "grpc",
+      "productName": "Isochrones",
+      "productUrl": "https://developers.google.com/maps/documentation/isochrones/overview",
+      "description": "isochrones.googleapis.com API.",
+      "tags": [],
+      "dependencies": {},
+      "generator": "micro",
+      "protoPath": "google/maps/isochrones/v1",
+      "includeCommonResourcesProto": true,
+      "shortName": "isochrones",
+      "serviceConfigFile": "isochrones_v1.yaml",
+      "transport": "grpc+rest",
+      "restNumericEnums": true
+    },
+    {
+      "id": "Google.Maps.MapManagement.V2",
+      "version": "1.0.0-beta01",
+      "type": "grpc",
+      "productName": "Map Management",
+      "productUrl": "https://developers.google.com/maps/documentation/mapmanagement/overview",
+      "description": "The Map Management API is a RESTful service that accepts HTTP requests for map styling data through a variety of methods. It returns formatted configuration data about map styling resources so that you can programmatically manage your Cloud-based map styles.",
+      "tags": [],
+      "dependencies": {},
+      "generator": "micro",
+      "protoPath": "google/maps/mapmanagement/v2",
+      "includeCommonResourcesProto": true,
+      "shortName": "mapmanagement",
+      "serviceConfigFile": "mapmanagement_v2.yaml",
       "transport": "grpc+rest",
       "restNumericEnums": true
     },
@@ -7254,7 +7364,7 @@
     },
     {
       "id": "Google.Shopping.Merchant.Inventories.V1",
-      "version": "1.3.0",
+      "version": "1.4.0",
       "type": "grpc",
       "productName": "Merchant",
       "productUrl": "https://developers.google.com/merchant/api",
@@ -7478,7 +7588,7 @@
     },
     {
       "id": "Google.Shopping.Merchant.Products.V1",
-      "version": "1.6.0",
+      "version": "1.7.0",
       "type": "grpc",
       "productName": "Merchant",
       "productUrl": "https://developers.google.com/merchant/api",
@@ -7688,7 +7798,7 @@
       "protoPath": "grafeas/v1",
       "productName": "Grafeas",
       "productUrl": "https://grafeas.io/",
-      "version": "3.15.0",
+      "version": "3.16.0",
       "type": "grpc",
       "description": "Recommended client library to access Grafeas, an open artifact metadata API to audit and govern your software supply chain.",
       "tags": [

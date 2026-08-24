@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>1.0.0-beta04</Version>
+    <Version>1.0.0</Version>
     <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Recommended Google client library to access the Parameter Manager API, which is a single source of truth to store, access and manage the lifecycle of your workload parameters. Parameter Manager aims to make management of sensitive application parameters effortless for customers without diminishing focus on security.</Description>
@@ -14,4 +14,5 @@
     <PackageReference Include="Google.Cloud.Location" VersionOverride="[2.4.0, 3.0.0)" />
     <PackageReference Include="Grpc.Core" PrivateAssets="None" Condition="'$(TargetFramework)'=='net462'" />
   </ItemGroup>
+  <Import Project="Google.Cloud.ParameterManager.V1.csproj.google" Condition="Exists('Google.Cloud.ParameterManager.V1.csproj.google')" />
 </Project>

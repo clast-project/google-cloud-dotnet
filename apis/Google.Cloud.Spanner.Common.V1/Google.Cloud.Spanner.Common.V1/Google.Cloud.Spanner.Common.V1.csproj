@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>5.13.0-beta06</Version>
+    <Version>5.13.0-beta09</Version>
     <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Common resource names used by all Spanner V1 APIs</Description>
@@ -9,6 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ConfigureAwaitChecker.Analyzer" PrivateAssets="All" />
-    <PackageReference Include="Google.Api.Gax" />
+    <PackageReference Include="Google.Api.Gax" VersionOverride="[4.14.0, 5.0.0)" />
   </ItemGroup>
+  <Import Project="Google.Cloud.Spanner.Common.V1.csproj.google" Condition="Exists('Google.Cloud.Spanner.Common.V1.csproj.google')" />
 </Project>

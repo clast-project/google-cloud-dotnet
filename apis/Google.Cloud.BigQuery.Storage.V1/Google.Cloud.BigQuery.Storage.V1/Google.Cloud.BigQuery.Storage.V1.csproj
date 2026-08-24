@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>3.19.0</Version>
+    <Version>3.20.0</Version>
     <TargetFrameworks>netstandard2.0;net8.0;net10.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Recommended Google client library to access the BigQuery Storage API.</Description>
@@ -41,4 +41,5 @@
   <ItemGroup Condition="'$(Clast)' == 'true'">
     <None Include="..\..\..\CLAST_NUGET.md" Pack="true" PackagePath="README.md" />
   </ItemGroup>
+  <Import Project="Google.Cloud.BigQuery.Storage.V1.csproj.google" Condition="Exists('Google.Cloud.BigQuery.Storage.V1.csproj.google')" />
 </Project>

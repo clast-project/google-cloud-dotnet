@@ -17,6 +17,7 @@
 namespace GoogleCSharpSnippets
 {
     using Google.Ads.DataManager.V1;
+    using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     /// <summary>Generated snippets.</summary>
@@ -120,6 +121,43 @@ namespace GoogleCSharpSnippets
             // End snippet
         }
 
+        /// <summary>Snippet for RemoveAllAudienceMembers</summary>
+        public void RemoveAllAudienceMembersRequestObject()
+        {
+            // Snippet: RemoveAllAudienceMembers(RemoveAllAudienceMembersRequest, CallSettings)
+            // Create client
+            IngestionServiceClient ingestionServiceClient = IngestionServiceClient.Create();
+            // Initialize request argument(s)
+            RemoveAllAudienceMembersRequest request = new RemoveAllAudienceMembersRequest
+            {
+                Destinations = { new Destination(), },
+                RemoveAsOfTime = new Timestamp(),
+                ValidateOnly = false,
+            };
+            // Make the request
+            RemoveAllAudienceMembersResponse response = ingestionServiceClient.RemoveAllAudienceMembers(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for RemoveAllAudienceMembersAsync</summary>
+        public async Task RemoveAllAudienceMembersRequestObjectAsync()
+        {
+            // Snippet: RemoveAllAudienceMembersAsync(RemoveAllAudienceMembersRequest, CallSettings)
+            // Additional: RemoveAllAudienceMembersAsync(RemoveAllAudienceMembersRequest, CancellationToken)
+            // Create client
+            IngestionServiceClient ingestionServiceClient = await IngestionServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            RemoveAllAudienceMembersRequest request = new RemoveAllAudienceMembersRequest
+            {
+                Destinations = { new Destination(), },
+                RemoveAsOfTime = new Timestamp(),
+                ValidateOnly = false,
+            };
+            // Make the request
+            RemoveAllAudienceMembersResponse response = await ingestionServiceClient.RemoveAllAudienceMembersAsync(request);
+            // End snippet
+        }
+
         /// <summary>Snippet for IngestEvents</summary>
         public void IngestEventsRequestObject()
         {
@@ -160,6 +198,41 @@ namespace GoogleCSharpSnippets
             };
             // Make the request
             IngestEventsResponse response = await ingestionServiceClient.IngestEventsAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for IngestAdEvents</summary>
+        public void IngestAdEventsRequestObject()
+        {
+            // Snippet: IngestAdEvents(IngestAdEventsRequest, CallSettings)
+            // Create client
+            IngestionServiceClient ingestionServiceClient = IngestionServiceClient.Create();
+            // Initialize request argument(s)
+            IngestAdEventsRequest request = new IngestAdEventsRequest
+            {
+                AdEvents = { new AdEvent(), },
+                EncryptionInfo = new EncryptionInfo(),
+            };
+            // Make the request
+            IngestAdEventsResponse response = ingestionServiceClient.IngestAdEvents(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for IngestAdEventsAsync</summary>
+        public async Task IngestAdEventsRequestObjectAsync()
+        {
+            // Snippet: IngestAdEventsAsync(IngestAdEventsRequest, CallSettings)
+            // Additional: IngestAdEventsAsync(IngestAdEventsRequest, CancellationToken)
+            // Create client
+            IngestionServiceClient ingestionServiceClient = await IngestionServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            IngestAdEventsRequest request = new IngestAdEventsRequest
+            {
+                AdEvents = { new AdEvent(), },
+                EncryptionInfo = new EncryptionInfo(),
+            };
+            // Make the request
+            IngestAdEventsResponse response = await ingestionServiceClient.IngestAdEventsAsync(request);
             // End snippet
         }
 

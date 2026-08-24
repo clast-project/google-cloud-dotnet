@@ -1,5 +1,26 @@
 # Version history
 
+## Version 4.31.0, released 2026-06-29
+
+### New features
+
+- Speech activity event is configurable through InputAudioConfig.enable_voice_activity_events
+- StreamingRecognitionResult now has new MessageType: DTMF_DIGITS, PARTIAL_DTMF_DIGITS, SPEECH_ACTIVITY_BEGIN, SPEECH_ACTIVITY_END
+- Ces_debug_info is available in SearchKnowledgeDebugInfo
+
+## Version 4.30.0, released 2026-06-22
+
+### New features
+
+- Added support for new AnswerType types
+- Added support for SIP config in conversation profile
+- Added support for proactive and reactive in CES app
+- Added support for new knowledge suggestion
+
+### Documentation improvements
+
+- Clarified OUTPUT_AUDIO_ENCODING_MP3
+
 ## Version 4.29.0, released 2026-03-30
 
 ### New features

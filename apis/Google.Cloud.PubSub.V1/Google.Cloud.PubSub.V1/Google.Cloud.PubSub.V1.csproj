@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>3.35.0</Version>
+    <Version>3.36.0</Version>
     <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Recommended Google client library to access the Google Cloud Pub/Sub API, which provides reliable, many-to-many, asynchronous messaging between applications.</Description>
@@ -13,18 +13,5 @@
     <PackageReference Include="Google.Cloud.Iam.V1" VersionOverride="[3.5.0, 4.0.0)" />
     <PackageReference Include="Grpc.Core" PrivateAssets="None" Condition="'$(TargetFramework)'=='net462'" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Update="PublisherClient.*.cs">
-      <DependentUpon>PublisherClient.cs</DependentUpon>
-    </Compile>
-    <Compile Update="PublisherClientImpl.*.cs">
-      <DependentUpon>PublisherClientImpl.cs</DependentUpon>
-    </Compile>
-    <Compile Update="SubscriberClient.*.cs">
-      <DependentUpon>SubscriberClient.cs</DependentUpon>
-    </Compile>
-    <Compile Update="SubscriberClientImpl.*.cs">
-      <DependentUpon>SubscriberClientImpl.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
+  <Import Project="Google.Cloud.PubSub.V1.csproj.google" Condition="Exists('Google.Cloud.PubSub.V1.csproj.google')" />
 </Project>

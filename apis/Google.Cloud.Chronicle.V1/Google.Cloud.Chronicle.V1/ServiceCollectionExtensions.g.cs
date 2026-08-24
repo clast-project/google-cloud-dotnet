@@ -279,6 +279,42 @@ namespace Microsoft.Extensions.DependencyInjection
             });
 
         /// <summary>
+        /// Adds a singleton <see cref="gccv::FindingsRefinementServiceClient"/> to <paramref name="services"/>.
+        /// </summary>
+        /// <param name="services">
+        /// The service collection to add the client to. The services are used to configure the client when requested.
+        /// </param>
+        /// <param name="action">
+        /// An optional action to invoke on the client builder. This is invoked before services from
+        /// <paramref name="services"/> are used.
+        /// </param>
+        public static IServiceCollection AddFindingsRefinementServiceClient(this IServiceCollection services, sys::Action<gccv::FindingsRefinementServiceClientBuilder> action = null) =>
+            services.AddSingleton(provider =>
+            {
+                gccv::FindingsRefinementServiceClientBuilder builder = new gccv::FindingsRefinementServiceClientBuilder();
+                action?.Invoke(builder);
+                return builder.Build(provider);
+            });
+
+        /// <summary>
+        /// Adds a singleton <see cref="gccv::FindingsRefinementServiceClient"/> to <paramref name="services"/>.
+        /// </summary>
+        /// <param name="services">
+        /// The service collection to add the client to. The services are used to configure the client when requested.
+        /// </param>
+        /// <param name="action">
+        /// An optional action to invoke on the client builder. This is invoked before services from
+        /// <paramref name="services"/> are used.
+        /// </param>
+        public static IServiceCollection AddFindingsRefinementServiceClient(this IServiceCollection services, sys::Action<sys::IServiceProvider, gccv::FindingsRefinementServiceClientBuilder> action) =>
+            services.AddSingleton(provider =>
+            {
+                gccv::FindingsRefinementServiceClientBuilder builder = new gccv::FindingsRefinementServiceClientBuilder();
+                action?.Invoke(provider, builder);
+                return builder.Build(provider);
+            });
+
+        /// <summary>
         /// Adds a singleton <see cref="gccv::InstanceServiceClient"/> to <paramref name="services"/>.
         /// </summary>
         /// <param name="services">
@@ -382,6 +418,42 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton(provider =>
             {
                 gccv::ReferenceListServiceClientBuilder builder = new gccv::ReferenceListServiceClientBuilder();
+                action?.Invoke(provider, builder);
+                return builder.Build(provider);
+            });
+
+        /// <summary>
+        /// Adds a singleton <see cref="gccv::RuleExecutionErrorServiceClient"/> to <paramref name="services"/>.
+        /// </summary>
+        /// <param name="services">
+        /// The service collection to add the client to. The services are used to configure the client when requested.
+        /// </param>
+        /// <param name="action">
+        /// An optional action to invoke on the client builder. This is invoked before services from
+        /// <paramref name="services"/> are used.
+        /// </param>
+        public static IServiceCollection AddRuleExecutionErrorServiceClient(this IServiceCollection services, sys::Action<gccv::RuleExecutionErrorServiceClientBuilder> action = null) =>
+            services.AddSingleton(provider =>
+            {
+                gccv::RuleExecutionErrorServiceClientBuilder builder = new gccv::RuleExecutionErrorServiceClientBuilder();
+                action?.Invoke(builder);
+                return builder.Build(provider);
+            });
+
+        /// <summary>
+        /// Adds a singleton <see cref="gccv::RuleExecutionErrorServiceClient"/> to <paramref name="services"/>.
+        /// </summary>
+        /// <param name="services">
+        /// The service collection to add the client to. The services are used to configure the client when requested.
+        /// </param>
+        /// <param name="action">
+        /// An optional action to invoke on the client builder. This is invoked before services from
+        /// <paramref name="services"/> are used.
+        /// </param>
+        public static IServiceCollection AddRuleExecutionErrorServiceClient(this IServiceCollection services, sys::Action<sys::IServiceProvider, gccv::RuleExecutionErrorServiceClientBuilder> action) =>
+            services.AddSingleton(provider =>
+            {
+                gccv::RuleExecutionErrorServiceClientBuilder builder = new gccv::RuleExecutionErrorServiceClientBuilder();
                 action?.Invoke(provider, builder);
                 return builder.Build(provider);
             });

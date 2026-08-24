@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "OracleDatabaseClient",
           "rpcs": {
+            "ConfigureExascaleCloudExadataInfrastructure": {
+              "methods": [
+                "ConfigureExascaleCloudExadataInfrastructure",
+                "ConfigureExascaleCloudExadataInfrastructureAsync"
+              ]
+            },
             "CreateAutonomousDatabase": {
               "methods": [
                 "CreateAutonomousDatabase",
@@ -160,6 +166,12 @@
                 "GetAutonomousDatabaseAsync"
               ]
             },
+            "GetAutonomousDatabaseRefreshableClones": {
+              "methods": [
+                "GetAutonomousDatabaseRefreshableClones",
+                "GetAutonomousDatabaseRefreshableClonesAsync"
+              ]
+            },
             "GetCloudExadataInfrastructure": {
               "methods": [
                 "GetCloudExadataInfrastructure",
@@ -208,34 +220,10 @@
                 "GetGoldengateConnectionAssignmentAsync"
               ]
             },
-            "GetGoldengateConnectionType": {
-              "methods": [
-                "GetGoldengateConnectionType",
-                "GetGoldengateConnectionTypeAsync"
-              ]
-            },
             "GetGoldengateDeployment": {
               "methods": [
                 "GetGoldengateDeployment",
                 "GetGoldengateDeploymentAsync"
-              ]
-            },
-            "GetGoldengateDeploymentEnvironment": {
-              "methods": [
-                "GetGoldengateDeploymentEnvironment",
-                "GetGoldengateDeploymentEnvironmentAsync"
-              ]
-            },
-            "GetGoldengateDeploymentType": {
-              "methods": [
-                "GetGoldengateDeploymentType",
-                "GetGoldengateDeploymentTypeAsync"
-              ]
-            },
-            "GetGoldengateDeploymentVersion": {
-              "methods": [
-                "GetGoldengateDeploymentVersion",
-                "GetGoldengateDeploymentVersionAsync"
               ]
             },
             "GetOdbNetwork": {
@@ -428,6 +416,12 @@
               "methods": [
                 "ListPluggableDatabases",
                 "ListPluggableDatabasesAsync"
+              ]
+            },
+            "RefreshAutonomousDatabase": {
+              "methods": [
+                "RefreshAutonomousDatabase",
+                "RefreshAutonomousDatabaseAsync"
               ]
             },
             "RemoveVirtualMachineExadbVmCluster": {

@@ -129,7 +129,6 @@ namespace GoogleCSharpSnippets
             {
                 ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 TeamFolder = new gcdv::TeamFolder(),
-                TeamFolderId = "",
             };
             // Make the request
             gcdv::TeamFolder response = dataformClient.CreateTeamFolder(request);
@@ -148,7 +147,6 @@ namespace GoogleCSharpSnippets
             {
                 ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 TeamFolder = new gcdv::TeamFolder(),
-                TeamFolderId = "",
             };
             // Make the request
             gcdv::TeamFolder response = await dataformClient.CreateTeamFolderAsync(request);
@@ -361,6 +359,195 @@ namespace GoogleCSharpSnippets
             gcdv::TeamFolderName name = gcdv::TeamFolderName.FromProjectLocationTeamFolder("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
             // Make the request
             await dataformClient.DeleteTeamFolderAsync(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteTeamFolderTree</summary>
+        public void DeleteTeamFolderTreeRequestObject()
+        {
+            // Snippet: DeleteTeamFolderTree(DeleteTeamFolderTreeRequest, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            gcdv::DeleteTeamFolderTreeRequest request = new gcdv::DeleteTeamFolderTreeRequest
+            {
+                TeamFolderName = gcdv::TeamFolderName.FromProjectLocationTeamFolder("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]"),
+                Force = false,
+            };
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = dataformClient.DeleteTeamFolderTree(request);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = response.PollUntilCompleted();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = dataformClient.PollOnceDeleteTeamFolderTree(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteTeamFolderTreeAsync</summary>
+        public async Task DeleteTeamFolderTreeRequestObjectAsync()
+        {
+            // Snippet: DeleteTeamFolderTreeAsync(DeleteTeamFolderTreeRequest, CallSettings)
+            // Additional: DeleteTeamFolderTreeAsync(DeleteTeamFolderTreeRequest, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            gcdv::DeleteTeamFolderTreeRequest request = new gcdv::DeleteTeamFolderTreeRequest
+            {
+                TeamFolderName = gcdv::TeamFolderName.FromProjectLocationTeamFolder("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]"),
+                Force = false,
+            };
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = await dataformClient.DeleteTeamFolderTreeAsync(request);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = await dataformClient.PollOnceDeleteTeamFolderTreeAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteTeamFolderTree</summary>
+        public void DeleteTeamFolderTree()
+        {
+            // Snippet: DeleteTeamFolderTree(string, bool, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/teamFolders/[TEAM_FOLDER]";
+            bool force = false;
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = dataformClient.DeleteTeamFolderTree(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = response.PollUntilCompleted();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = dataformClient.PollOnceDeleteTeamFolderTree(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteTeamFolderTreeAsync</summary>
+        public async Task DeleteTeamFolderTreeAsync()
+        {
+            // Snippet: DeleteTeamFolderTreeAsync(string, bool, CallSettings)
+            // Additional: DeleteTeamFolderTreeAsync(string, bool, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/teamFolders/[TEAM_FOLDER]";
+            bool force = false;
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = await dataformClient.DeleteTeamFolderTreeAsync(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = await dataformClient.PollOnceDeleteTeamFolderTreeAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteTeamFolderTree</summary>
+        public void DeleteTeamFolderTreeResourceNames()
+        {
+            // Snippet: DeleteTeamFolderTree(TeamFolderName, bool, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            gcdv::TeamFolderName name = gcdv::TeamFolderName.FromProjectLocationTeamFolder("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+            bool force = false;
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = dataformClient.DeleteTeamFolderTree(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = response.PollUntilCompleted();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = dataformClient.PollOnceDeleteTeamFolderTree(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteTeamFolderTreeAsync</summary>
+        public async Task DeleteTeamFolderTreeResourceNamesAsync()
+        {
+            // Snippet: DeleteTeamFolderTreeAsync(TeamFolderName, bool, CallSettings)
+            // Additional: DeleteTeamFolderTreeAsync(TeamFolderName, bool, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            gcdv::TeamFolderName name = gcdv::TeamFolderName.FromProjectLocationTeamFolder("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+            bool force = false;
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = await dataformClient.DeleteTeamFolderTreeAsync(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = await dataformClient.PollOnceDeleteTeamFolderTreeAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
             // End snippet
         }
 
@@ -842,7 +1029,6 @@ namespace GoogleCSharpSnippets
             {
                 ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 Folder = new gcdv::Folder(),
-                FolderId = "",
             };
             // Make the request
             gcdv::Folder response = dataformClient.CreateFolder(request);
@@ -861,7 +1047,6 @@ namespace GoogleCSharpSnippets
             {
                 ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 Folder = new gcdv::Folder(),
-                FolderId = "",
             };
             // Make the request
             gcdv::Folder response = await dataformClient.CreateFolderAsync(request);
@@ -1074,6 +1259,195 @@ namespace GoogleCSharpSnippets
             gcdv::FolderName name = gcdv::FolderName.FromProjectLocationFolder("[PROJECT]", "[LOCATION]", "[FOLDER]");
             // Make the request
             await dataformClient.DeleteFolderAsync(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteFolderTree</summary>
+        public void DeleteFolderTreeRequestObject()
+        {
+            // Snippet: DeleteFolderTree(DeleteFolderTreeRequest, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            gcdv::DeleteFolderTreeRequest request = new gcdv::DeleteFolderTreeRequest
+            {
+                FolderName = gcdv::FolderName.FromProjectLocationFolder("[PROJECT]", "[LOCATION]", "[FOLDER]"),
+                Force = false,
+            };
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = dataformClient.DeleteFolderTree(request);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = response.PollUntilCompleted();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = dataformClient.PollOnceDeleteFolderTree(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteFolderTreeAsync</summary>
+        public async Task DeleteFolderTreeRequestObjectAsync()
+        {
+            // Snippet: DeleteFolderTreeAsync(DeleteFolderTreeRequest, CallSettings)
+            // Additional: DeleteFolderTreeAsync(DeleteFolderTreeRequest, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            gcdv::DeleteFolderTreeRequest request = new gcdv::DeleteFolderTreeRequest
+            {
+                FolderName = gcdv::FolderName.FromProjectLocationFolder("[PROJECT]", "[LOCATION]", "[FOLDER]"),
+                Force = false,
+            };
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = await dataformClient.DeleteFolderTreeAsync(request);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = await dataformClient.PollOnceDeleteFolderTreeAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteFolderTree</summary>
+        public void DeleteFolderTree()
+        {
+            // Snippet: DeleteFolderTree(string, bool, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/folders/[FOLDER]";
+            bool force = false;
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = dataformClient.DeleteFolderTree(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = response.PollUntilCompleted();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = dataformClient.PollOnceDeleteFolderTree(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteFolderTreeAsync</summary>
+        public async Task DeleteFolderTreeAsync()
+        {
+            // Snippet: DeleteFolderTreeAsync(string, bool, CallSettings)
+            // Additional: DeleteFolderTreeAsync(string, bool, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/folders/[FOLDER]";
+            bool force = false;
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = await dataformClient.DeleteFolderTreeAsync(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = await dataformClient.PollOnceDeleteFolderTreeAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteFolderTree</summary>
+        public void DeleteFolderTreeResourceNames()
+        {
+            // Snippet: DeleteFolderTree(FolderName, bool, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            gcdv::FolderName name = gcdv::FolderName.FromProjectLocationFolder("[PROJECT]", "[LOCATION]", "[FOLDER]");
+            bool force = false;
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = dataformClient.DeleteFolderTree(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = response.PollUntilCompleted();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = dataformClient.PollOnceDeleteFolderTree(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteFolderTreeAsync</summary>
+        public async Task DeleteFolderTreeResourceNamesAsync()
+        {
+            // Snippet: DeleteFolderTreeAsync(FolderName, bool, CallSettings)
+            // Additional: DeleteFolderTreeAsync(FolderName, bool, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            gcdv::FolderName name = gcdv::FolderName.FromProjectLocationFolder("[PROJECT]", "[LOCATION]", "[FOLDER]");
+            bool force = false;
+            // Make the request
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> response = await dataformClient.DeleteFolderTreeAsync(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            Empty result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<Empty, gcdv::DeleteFolderTreeMetadata> retrievedResponse = await dataformClient.PollOnceDeleteFolderTreeAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                Empty retrievedResult = retrievedResponse.Result;
+            }
             // End snippet
         }
 
@@ -2445,6 +2819,195 @@ namespace GoogleCSharpSnippets
             // End snippet
         }
 
+        /// <summary>Snippet for DeleteRepositoryLongRunning</summary>
+        public void DeleteRepositoryLongRunningRequestObject()
+        {
+            // Snippet: DeleteRepositoryLongRunning(DeleteRepositoryLongRunningRequest, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            gcdv::DeleteRepositoryLongRunningRequest request = new gcdv::DeleteRepositoryLongRunningRequest
+            {
+                RepositoryName = gcdv::RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]"),
+                Force = false,
+            };
+            // Make the request
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> response = dataformClient.DeleteRepositoryLongRunning(request);
+
+            // Poll until the returned long-running operation is complete
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> completedResponse = response.PollUntilCompleted();
+            // Retrieve the operation result
+            gcdv::DeleteRepositoryLongRunningResponse result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> retrievedResponse = dataformClient.PollOnceDeleteRepositoryLongRunning(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                gcdv::DeleteRepositoryLongRunningResponse retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteRepositoryLongRunningAsync</summary>
+        public async Task DeleteRepositoryLongRunningRequestObjectAsync()
+        {
+            // Snippet: DeleteRepositoryLongRunningAsync(DeleteRepositoryLongRunningRequest, CallSettings)
+            // Additional: DeleteRepositoryLongRunningAsync(DeleteRepositoryLongRunningRequest, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            gcdv::DeleteRepositoryLongRunningRequest request = new gcdv::DeleteRepositoryLongRunningRequest
+            {
+                RepositoryName = gcdv::RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]"),
+                Force = false,
+            };
+            // Make the request
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> response = await dataformClient.DeleteRepositoryLongRunningAsync(request);
+
+            // Poll until the returned long-running operation is complete
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            gcdv::DeleteRepositoryLongRunningResponse result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> retrievedResponse = await dataformClient.PollOnceDeleteRepositoryLongRunningAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                gcdv::DeleteRepositoryLongRunningResponse retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteRepositoryLongRunning</summary>
+        public void DeleteRepositoryLongRunning()
+        {
+            // Snippet: DeleteRepositoryLongRunning(string, bool, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/repositories/[REPOSITORY]";
+            bool force = false;
+            // Make the request
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> response = dataformClient.DeleteRepositoryLongRunning(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> completedResponse = response.PollUntilCompleted();
+            // Retrieve the operation result
+            gcdv::DeleteRepositoryLongRunningResponse result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> retrievedResponse = dataformClient.PollOnceDeleteRepositoryLongRunning(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                gcdv::DeleteRepositoryLongRunningResponse retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteRepositoryLongRunningAsync</summary>
+        public async Task DeleteRepositoryLongRunningAsync()
+        {
+            // Snippet: DeleteRepositoryLongRunningAsync(string, bool, CallSettings)
+            // Additional: DeleteRepositoryLongRunningAsync(string, bool, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/repositories/[REPOSITORY]";
+            bool force = false;
+            // Make the request
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> response = await dataformClient.DeleteRepositoryLongRunningAsync(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            gcdv::DeleteRepositoryLongRunningResponse result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> retrievedResponse = await dataformClient.PollOnceDeleteRepositoryLongRunningAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                gcdv::DeleteRepositoryLongRunningResponse retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteRepositoryLongRunning</summary>
+        public void DeleteRepositoryLongRunningResourceNames()
+        {
+            // Snippet: DeleteRepositoryLongRunning(RepositoryName, bool, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            gcdv::RepositoryName name = gcdv::RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+            bool force = false;
+            // Make the request
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> response = dataformClient.DeleteRepositoryLongRunning(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> completedResponse = response.PollUntilCompleted();
+            // Retrieve the operation result
+            gcdv::DeleteRepositoryLongRunningResponse result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> retrievedResponse = dataformClient.PollOnceDeleteRepositoryLongRunning(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                gcdv::DeleteRepositoryLongRunningResponse retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteRepositoryLongRunningAsync</summary>
+        public async Task DeleteRepositoryLongRunningResourceNamesAsync()
+        {
+            // Snippet: DeleteRepositoryLongRunningAsync(RepositoryName, bool, CallSettings)
+            // Additional: DeleteRepositoryLongRunningAsync(RepositoryName, bool, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            gcdv::RepositoryName name = gcdv::RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+            bool force = false;
+            // Make the request
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> response = await dataformClient.DeleteRepositoryLongRunningAsync(name, force);
+
+            // Poll until the returned long-running operation is complete
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            gcdv::DeleteRepositoryLongRunningResponse result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<gcdv::DeleteRepositoryLongRunningResponse, gcdv::DeleteRepositoryLongRunningMetadata> retrievedResponse = await dataformClient.PollOnceDeleteRepositoryLongRunningAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                gcdv::DeleteRepositoryLongRunningResponse retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
         /// <summary>Snippet for MoveRepository</summary>
         public void MoveRepositoryRequestObject()
         {
@@ -3547,6 +4110,7 @@ namespace GoogleCSharpSnippets
             gcdv::InstallNpmPackagesRequest request = new gcdv::InstallNpmPackagesRequest
             {
                 WorkspaceAsWorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+                PipelineConfig = new gcdv::PipelineConfig(),
             };
             // Make the request
             gcdv::InstallNpmPackagesResponse response = dataformClient.InstallNpmPackages(request);
@@ -3564,6 +4128,7 @@ namespace GoogleCSharpSnippets
             gcdv::InstallNpmPackagesRequest request = new gcdv::InstallNpmPackagesRequest
             {
                 WorkspaceAsWorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+                PipelineConfig = new gcdv::PipelineConfig(),
             };
             // Make the request
             gcdv::InstallNpmPackagesResponse response = await dataformClient.InstallNpmPackagesAsync(request);
@@ -3604,6 +4169,250 @@ namespace GoogleCSharpSnippets
             };
             // Make the request
             gcdv::PullGitCommitsResponse response = await dataformClient.PullGitCommitsAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for SyncWorkspaceRefs</summary>
+        public void SyncWorkspaceRefsRequestObject()
+        {
+            // Snippet: SyncWorkspaceRefs(SyncWorkspaceRefsRequest, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            gcdv::SyncWorkspaceRefsRequest request = new gcdv::SyncWorkspaceRefsRequest
+            {
+                WorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+                RemoteBranchName = "",
+                Deepen = 0,
+            };
+            // Make the request
+            gcdv::SyncWorkspaceRefsResponse response = dataformClient.SyncWorkspaceRefs(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for SyncWorkspaceRefsAsync</summary>
+        public async Task SyncWorkspaceRefsRequestObjectAsync()
+        {
+            // Snippet: SyncWorkspaceRefsAsync(SyncWorkspaceRefsRequest, CallSettings)
+            // Additional: SyncWorkspaceRefsAsync(SyncWorkspaceRefsRequest, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            gcdv::SyncWorkspaceRefsRequest request = new gcdv::SyncWorkspaceRefsRequest
+            {
+                WorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+                RemoteBranchName = "",
+                Deepen = 0,
+            };
+            // Make the request
+            gcdv::SyncWorkspaceRefsResponse response = await dataformClient.SyncWorkspaceRefsAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for FetchWorkspaceBranches</summary>
+        public void FetchWorkspaceBranchesRequestObject()
+        {
+            // Snippet: FetchWorkspaceBranches(FetchWorkspaceBranchesRequest, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            gcdv::FetchWorkspaceBranchesRequest request = new gcdv::FetchWorkspaceBranchesRequest
+            {
+                WorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+                Filter = gcdv::FetchWorkspaceBranchesRequest.Types.BranchFilter.Unspecified,
+            };
+            // Make the request
+            PagedEnumerable<gcdv::FetchWorkspaceBranchesResponse, gcdv::BranchMetadata> response = dataformClient.FetchWorkspaceBranches(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (gcdv::BranchMetadata item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (gcdv::FetchWorkspaceBranchesResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (gcdv::BranchMetadata item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<gcdv::BranchMetadata> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (gcdv::BranchMetadata item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for FetchWorkspaceBranchesAsync</summary>
+        public async Task FetchWorkspaceBranchesRequestObjectAsync()
+        {
+            // Snippet: FetchWorkspaceBranchesAsync(FetchWorkspaceBranchesRequest, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            gcdv::FetchWorkspaceBranchesRequest request = new gcdv::FetchWorkspaceBranchesRequest
+            {
+                WorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+                Filter = gcdv::FetchWorkspaceBranchesRequest.Types.BranchFilter.Unspecified,
+            };
+            // Make the request
+            PagedAsyncEnumerable<gcdv::FetchWorkspaceBranchesResponse, gcdv::BranchMetadata> response = dataformClient.FetchWorkspaceBranchesAsync(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await foreach (gcdv::BranchMetadata item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await foreach (gcdv::FetchWorkspaceBranchesResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (gcdv::BranchMetadata item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<gcdv::BranchMetadata> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (gcdv::BranchMetadata item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteBranch</summary>
+        public void DeleteBranchRequestObject()
+        {
+            // Snippet: DeleteBranch(DeleteBranchRequest, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            gcdv::DeleteBranchRequest request = new gcdv::DeleteBranchRequest
+            {
+                WorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+                Branch = "",
+                Force = false,
+            };
+            // Make the request
+            gcdv::DeleteBranchResponse response = dataformClient.DeleteBranch(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteBranchAsync</summary>
+        public async Task DeleteBranchRequestObjectAsync()
+        {
+            // Snippet: DeleteBranchAsync(DeleteBranchRequest, CallSettings)
+            // Additional: DeleteBranchAsync(DeleteBranchRequest, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            gcdv::DeleteBranchRequest request = new gcdv::DeleteBranchRequest
+            {
+                WorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+                Branch = "",
+                Force = false,
+            };
+            // Make the request
+            gcdv::DeleteBranchResponse response = await dataformClient.DeleteBranchAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for CheckoutWorkspaceBranch</summary>
+        public void CheckoutWorkspaceBranchRequestObject()
+        {
+            // Snippet: CheckoutWorkspaceBranch(CheckoutWorkspaceBranchRequest, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            gcdv::CheckoutWorkspaceBranchRequest request = new gcdv::CheckoutWorkspaceBranchRequest
+            {
+                WorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+                Branch = "",
+                CreateIfNotExists = false,
+                SourceBranch = "",
+            };
+            // Make the request
+            dataformClient.CheckoutWorkspaceBranch(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for CheckoutWorkspaceBranchAsync</summary>
+        public async Task CheckoutWorkspaceBranchRequestObjectAsync()
+        {
+            // Snippet: CheckoutWorkspaceBranchAsync(CheckoutWorkspaceBranchRequest, CallSettings)
+            // Additional: CheckoutWorkspaceBranchAsync(CheckoutWorkspaceBranchRequest, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            gcdv::CheckoutWorkspaceBranchRequest request = new gcdv::CheckoutWorkspaceBranchRequest
+            {
+                WorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+                Branch = "",
+                CreateIfNotExists = false,
+                SourceBranch = "",
+            };
+            // Make the request
+            await dataformClient.CheckoutWorkspaceBranchAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for FetchCurrentWorkspaceBranch</summary>
+        public void FetchCurrentWorkspaceBranchRequestObject()
+        {
+            // Snippet: FetchCurrentWorkspaceBranch(FetchCurrentWorkspaceBranchRequest, CallSettings)
+            // Create client
+            gcdv::DataformClient dataformClient = gcdv::DataformClient.Create();
+            // Initialize request argument(s)
+            gcdv::FetchCurrentWorkspaceBranchRequest request = new gcdv::FetchCurrentWorkspaceBranchRequest
+            {
+                WorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+            };
+            // Make the request
+            gcdv::FetchCurrentWorkspaceBranchResponse response = dataformClient.FetchCurrentWorkspaceBranch(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for FetchCurrentWorkspaceBranchAsync</summary>
+        public async Task FetchCurrentWorkspaceBranchRequestObjectAsync()
+        {
+            // Snippet: FetchCurrentWorkspaceBranchAsync(FetchCurrentWorkspaceBranchRequest, CallSettings)
+            // Additional: FetchCurrentWorkspaceBranchAsync(FetchCurrentWorkspaceBranchRequest, CancellationToken)
+            // Create client
+            gcdv::DataformClient dataformClient = await gcdv::DataformClient.CreateAsync();
+            // Initialize request argument(s)
+            gcdv::FetchCurrentWorkspaceBranchRequest request = new gcdv::FetchCurrentWorkspaceBranchRequest
+            {
+                WorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
+            };
+            // Make the request
+            gcdv::FetchCurrentWorkspaceBranchResponse response = await dataformClient.FetchCurrentWorkspaceBranchAsync(request);
             // End snippet
         }
 
@@ -3832,6 +4641,7 @@ namespace GoogleCSharpSnippets
             {
                 WorkspaceAsWorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
                 Path = "",
+                View = gcdv::DirectoryContentsView.Unspecified,
             };
             // Make the request
             PagedEnumerable<gcdv::QueryDirectoryContentsResponse, gcdv::DirectoryEntry> response = dataformClient.QueryDirectoryContents(request);
@@ -3881,6 +4691,7 @@ namespace GoogleCSharpSnippets
             {
                 WorkspaceAsWorkspaceName = gcdv::WorkspaceName.FromProjectLocationRepositoryWorkspace("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]"),
                 Path = "",
+                View = gcdv::DirectoryContentsView.Unspecified,
             };
             // Make the request
             PagedAsyncEnumerable<gcdv::QueryDirectoryContentsResponse, gcdv::DirectoryEntry> response = dataformClient.QueryDirectoryContentsAsync(request);

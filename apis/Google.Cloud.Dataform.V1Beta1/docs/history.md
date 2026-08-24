@@ -1,5 +1,45 @@
 # Version history
 
+## Version 1.0.0-beta14, released 2026-08-17
+
+### New features
+
+- Add fields `original_branch`, `enable_branch_management`, `depth`, and `shallow` to message `.google.cloud.dataform.v1beta1.Workspace`
+- Add message `CheckoutWorkspaceBranchRequest` for Git branch checkout in Dataform Workspaces
+- Add messages `SyncWorkspaceRefsRequest` and `SyncWorkspaceRefsResponse` for syncing remote branch references
+- Add messages `DeleteBranchRequest` and `DeleteBranchResponse` for workspace branch deletion
+- Add messages `FetchWorkspaceBranchesRequest`, `BranchMetadata`, and `FetchWorkspaceBranchesResponse` for branch discovery and pagination
+- Add messages `FetchCurrentWorkspaceBranchRequest` and `FetchCurrentWorkspaceBranchResponse` for querying active workspace branch
+- Add field `lineage_enabled` to message `.google.cloud.dataform.v1beta1.WorkflowInvocation` for OpenLineage status
+
+## Version 1.0.0-beta13, released 2026-08-07
+
+### New features
+
+- Add workflow trigger configuration support
+- Add PipelineConfig to support different pipeline types and paths
+- Add GCS repository snapshot support for notebook runtimes
+- Add file_path tracking to notebook workflow actions
+
+### Documentation improvements
+
+- A comment for field `time_zone` in message `.google.cloud.dataform.v1beta1.ReleaseConfig` is changed
+- A comment for field `time_zone` in message `.google.cloud.dataform.v1beta1.WorkflowConfig` is changed
+
+## Version 1.0.0-beta12, released 2026-06-22
+
+### New features
+
+- Add support for recursive folder and team folder deletions
+- Add long-running operations for asynchronous repository deletion
+- Add Developer Connect integration for Git repository authentication
+- Add effective default branch field and granular access token error status for repositories
+- Add directory metadata views to retrieve file sizes and modification timestamps
+
+### Documentation improvements
+
+- Clarify field usage guidelines and default values in API reference documentation
+
 ## Version 1.0.0-beta11, released 2026-02-16
 
 ### New features

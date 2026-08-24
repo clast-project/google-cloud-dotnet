@@ -45,7 +45,7 @@ namespace Google.Cloud.OracleDatabase.V1 {
             "amVjdH0vbG9jYXRpb25zL3tsb2NhdGlvbn0vY2xvdWRFeGFkYXRhSW5mcmFz",
             "dHJ1Y3R1cmVzL3tjbG91ZF9leGFkYXRhX2luZnJhc3RydWN0dXJlfSobY2xv",
             "dWRFeGFkYXRhSW5mcmFzdHJ1Y3R1cmVzMhpjbG91ZEV4YWRhdGFJbmZyYXN0",
-            "cnVjdHVyZSK1CwokQ2xvdWRFeGFkYXRhSW5mcmFzdHJ1Y3R1cmVQcm9wZXJ0",
+            "cnVjdHVyZSKDDAokQ2xvdWRFeGFkYXRhSW5mcmFzdHJ1Y3R1cmVQcm9wZXJ0",
             "aWVzEhEKBG9jaWQYASABKAlCA+BBAxIaCg1jb21wdXRlX2NvdW50GAIgASgF",
             "QgPgQQESGgoNc3RvcmFnZV9jb3VudBgDIAEoBUID4EEBEiIKFXRvdGFsX3N0",
             "b3JhZ2Vfc2l6ZV9nYhgEIAEoBUID4EEBEiYKGWF2YWlsYWJsZV9zdG9yYWdl",
@@ -73,38 +73,51 @@ namespace Google.Cloud.OracleDatabase.V1 {
             "IAEoCUID4EEDEiYKGW1vbnRobHlfZGJfc2VydmVyX3ZlcnNpb24YGyABKAlC",
             "A+BBAxJICg1jb21wdXRlX21vZGVsGB8gASgOMiwuZ29vZ2xlLmNsb3VkLm9y",
             "YWNsZWRhdGFiYXNlLnYxLkNvbXB1dGVNb2RlbEID4EEDEiEKFGRhdGFiYXNl",
-            "X3NlcnZlcl90eXBlGB0gASgJQgPgQQMSIAoTc3RvcmFnZV9zZXJ2ZXJfdHlw",
-            "ZRgeIAEoCUID4EEDIpcBCgVTdGF0ZRIVChFTVEFURV9VTlNQRUNJRklFRBAA",
-            "EhAKDFBST1ZJU0lPTklORxABEg0KCUFWQUlMQUJMRRACEgwKCFVQREFUSU5H",
-            "EAMSDwoLVEVSTUlOQVRJTkcQBBIOCgpURVJNSU5BVEVEEAUSCgoGRkFJTEVE",
-            "EAYSGwoXTUFJTlRFTkFOQ0VfSU5fUFJPR1JFU1MQByKlBQoRTWFpbnRlbmFu",
-            "Y2VXaW5kb3cSZgoKcHJlZmVyZW5jZRgBIAEoDjJNLmdvb2dsZS5jbG91ZC5v",
-            "cmFjbGVkYXRhYmFzZS52MS5NYWludGVuYW5jZVdpbmRvdy5NYWludGVuYW5j",
-            "ZVdpbmRvd1ByZWZlcmVuY2VCA+BBARInCgZtb250aHMYAiADKA4yEi5nb29n",
-            "bGUudHlwZS5Nb250aEID4EEBEhsKDndlZWtzX29mX21vbnRoGAMgAygFQgPg",
-            "QQESMQoMZGF5c19vZl93ZWVrGAQgAygOMhYuZ29vZ2xlLnR5cGUuRGF5T2ZX",
-            "ZWVrQgPgQQESGQoMaG91cnNfb2ZfZGF5GAUgAygFQgPgQQESGwoObGVhZF90",
-            "aW1lX3dlZWsYBiABKAVCA+BBARJaCg1wYXRjaGluZ19tb2RlGAcgASgOMj4u",
-            "Z29vZ2xlLmNsb3VkLm9yYWNsZWRhdGFiYXNlLnYxLk1haW50ZW5hbmNlV2lu",
-            "ZG93LlBhdGNoaW5nTW9kZUID4EEBEicKGmN1c3RvbV9hY3Rpb25fdGltZW91",
-            "dF9taW5zGAggASgFQgPgQQESLQogaXNfY3VzdG9tX2FjdGlvbl90aW1lb3V0",
-            "X2VuYWJsZWQYCSABKAhCA+BBASJ2ChtNYWludGVuYW5jZVdpbmRvd1ByZWZl",
-            "cmVuY2USLQopTUFJTlRFTkFOQ0VfV0lORE9XX1BSRUZFUkVOQ0VfVU5TUEVD",
-            "SUZJRUQQABIVChFDVVNUT01fUFJFRkVSRU5DRRABEhEKDU5PX1BSRUZFUkVO",
-            "Q0UQAiJLCgxQYXRjaGluZ01vZGUSHQoZUEFUQ0hJTkdfTU9ERV9VTlNQRUNJ",
-            "RklFRBAAEgsKB1JPTExJTkcQARIPCgtOT05fUk9MTElORxACQvkBCiJjb20u",
-            "Z29vZ2xlLmNsb3VkLm9yYWNsZWRhdGFiYXNlLnYxQh9DbG91ZEV4YWRhdGFJ",
-            "bmZyYXN0cnVjdHVyZVByb3RvUAFaSmNsb3VkLmdvb2dsZS5jb20vZ28vb3Jh",
-            "Y2xlZGF0YWJhc2UvYXBpdjEvb3JhY2xlZGF0YWJhc2VwYjtvcmFjbGVkYXRh",
-            "YmFzZXBiqgIeR29vZ2xlLkNsb3VkLk9yYWNsZURhdGFiYXNlLlYxygIeR29v",
-            "Z2xlXENsb3VkXE9yYWNsZURhdGFiYXNlXFYx6gIhR29vZ2xlOjpDbG91ZDo6",
-            "T3JhY2xlRGF0YWJhc2U6OlYxYgZwcm90bzM="));
+            "X3NlcnZlcl90eXBlGB0gASgJQgPgQQESIAoTc3RvcmFnZV9zZXJ2ZXJfdHlw",
+            "ZRgeIAEoCUID4EEBEkwKD2V4YXNjYWxlX2NvbmZpZxggIAEoCzIuLmdvb2ds",
+            "ZS5jbG91ZC5vcmFjbGVkYXRhYmFzZS52MS5FeGFzY2FsZUNvbmZpZ0ID4EED",
+            "IpcBCgVTdGF0ZRIVChFTVEFURV9VTlNQRUNJRklFRBAAEhAKDFBST1ZJU0lP",
+            "TklORxABEg0KCUFWQUlMQUJMRRACEgwKCFVQREFUSU5HEAMSDwoLVEVSTUlO",
+            "QVRJTkcQBBIOCgpURVJNSU5BVEVEEAUSCgoGRkFJTEVEEAYSGwoXTUFJTlRF",
+            "TkFOQ0VfSU5fUFJPR1JFU1MQByKuAQoORXhhc2NhbGVDb25maWcSIgoVdG90",
+            "YWxfc3RvcmFnZV9zaXplX2diGAEgASgFQgPgQQMSJgoZYXZhaWxhYmxlX3N0",
+            "b3JhZ2Vfc2l6ZV9nYhgCIAEoBUID4EEDEiUKGHRvdGFsX3ZtX3N0b3JhZ2Vf",
+            "c2l6ZV9nYhgDIAEoBUID4EEDEikKHGF2YWlsYWJsZV92bV9zdG9yYWdlX3Np",
+            "emVfZ2IYBCABKAVCA+BBAyKlBQoRTWFpbnRlbmFuY2VXaW5kb3cSZgoKcHJl",
+            "ZmVyZW5jZRgBIAEoDjJNLmdvb2dsZS5jbG91ZC5vcmFjbGVkYXRhYmFzZS52",
+            "MS5NYWludGVuYW5jZVdpbmRvdy5NYWludGVuYW5jZVdpbmRvd1ByZWZlcmVu",
+            "Y2VCA+BBARInCgZtb250aHMYAiADKA4yEi5nb29nbGUudHlwZS5Nb250aEID",
+            "4EEBEhsKDndlZWtzX29mX21vbnRoGAMgAygFQgPgQQESMQoMZGF5c19vZl93",
+            "ZWVrGAQgAygOMhYuZ29vZ2xlLnR5cGUuRGF5T2ZXZWVrQgPgQQESGQoMaG91",
+            "cnNfb2ZfZGF5GAUgAygFQgPgQQESGwoObGVhZF90aW1lX3dlZWsYBiABKAVC",
+            "A+BBARJaCg1wYXRjaGluZ19tb2RlGAcgASgOMj4uZ29vZ2xlLmNsb3VkLm9y",
+            "YWNsZWRhdGFiYXNlLnYxLk1haW50ZW5hbmNlV2luZG93LlBhdGNoaW5nTW9k",
+            "ZUID4EEBEicKGmN1c3RvbV9hY3Rpb25fdGltZW91dF9taW5zGAggASgFQgPg",
+            "QQESLQogaXNfY3VzdG9tX2FjdGlvbl90aW1lb3V0X2VuYWJsZWQYCSABKAhC",
+            "A+BBASJ2ChtNYWludGVuYW5jZVdpbmRvd1ByZWZlcmVuY2USLQopTUFJTlRF",
+            "TkFOQ0VfV0lORE9XX1BSRUZFUkVOQ0VfVU5TUEVDSUZJRUQQABIVChFDVVNU",
+            "T01fUFJFRkVSRU5DRRABEhEKDU5PX1BSRUZFUkVOQ0UQAiJLCgxQYXRjaGlu",
+            "Z01vZGUSHQoZUEFUQ0hJTkdfTU9ERV9VTlNQRUNJRklFRBAAEgsKB1JPTExJ",
+            "TkcQARIPCgtOT05fUk9MTElORxACIvABCjJDb25maWd1cmVFeGFzY2FsZUNs",
+            "b3VkRXhhZGF0YUluZnJhc3RydWN0dXJlUmVxdWVzdBJOCgRuYW1lGAEgASgJ",
+            "QkDgQQL6QToKOG9yYWNsZWRhdGFiYXNlLmdvb2dsZWFwaXMuY29tL0Nsb3Vk",
+            "RXhhZGF0YUluZnJhc3RydWN0dXJlEiIKFXRvdGFsX3N0b3JhZ2Vfc2l6ZV9n",
+            "YhgCIAEoBUID4EECEiUKGHRvdGFsX3ZtX3N0b3JhZ2Vfc2l6ZV9nYhgEIAEo",
+            "BUID4EEBEh8KCnJlcXVlc3RfaWQYAyABKAlCC+BBAeKMz9cIAggBQvkBCiJj",
+            "b20uZ29vZ2xlLmNsb3VkLm9yYWNsZWRhdGFiYXNlLnYxQh9DbG91ZEV4YWRh",
+            "dGFJbmZyYXN0cnVjdHVyZVByb3RvUAFaSmNsb3VkLmdvb2dsZS5jb20vZ28v",
+            "b3JhY2xlZGF0YWJhc2UvYXBpdjEvb3JhY2xlZGF0YWJhc2VwYjtvcmFjbGVk",
+            "YXRhYmFzZXBiqgIeR29vZ2xlLkNsb3VkLk9yYWNsZURhdGFiYXNlLlYxygIe",
+            "R29vZ2xlXENsb3VkXE9yYWNsZURhdGFiYXNlXFYx6gIhR29vZ2xlOjpDbG91",
+            "ZDo6T3JhY2xlRGF0YWJhc2U6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.FieldInfoReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.OracleDatabase.V1.CommonReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Type.DayofweekReflection.Descriptor, global::Google.Type.MonthReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.OracleDatabase.V1.CloudExadataInfrastructure), global::Google.Cloud.OracleDatabase.V1.CloudExadataInfrastructure.Parser, new[]{ "Name", "DisplayName", "GcpOracleZone", "EntitlementId", "Properties", "Labels", "CreateTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.OracleDatabase.V1.CloudExadataInfrastructureProperties), global::Google.Cloud.OracleDatabase.V1.CloudExadataInfrastructureProperties.Parser, new[]{ "Ocid", "ComputeCount", "StorageCount", "TotalStorageSizeGb", "AvailableStorageSizeGb", "MaintenanceWindow", "State", "Shape", "OciUrl", "CpuCount", "MaxCpuCount", "MemorySizeGb", "MaxMemoryGb", "DbNodeStorageSizeGb", "MaxDbNodeStorageSizeGb", "DataStorageSizeTb", "MaxDataStorageTb", "ActivatedStorageCount", "AdditionalStorageCount", "DbServerVersion", "StorageServerVersion", "NextMaintenanceRunId", "NextMaintenanceRunTime", "NextSecurityMaintenanceRunTime", "CustomerContacts", "MonthlyStorageServerVersion", "MonthlyDbServerVersion", "ComputeModel", "DatabaseServerType", "StorageServerType" }, null, new[]{ typeof(global::Google.Cloud.OracleDatabase.V1.CloudExadataInfrastructureProperties.Types.State) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.OracleDatabase.V1.MaintenanceWindow), global::Google.Cloud.OracleDatabase.V1.MaintenanceWindow.Parser, new[]{ "Preference", "Months", "WeeksOfMonth", "DaysOfWeek", "HoursOfDay", "LeadTimeWeek", "PatchingMode", "CustomActionTimeoutMins", "IsCustomActionTimeoutEnabled" }, null, new[]{ typeof(global::Google.Cloud.OracleDatabase.V1.MaintenanceWindow.Types.MaintenanceWindowPreference), typeof(global::Google.Cloud.OracleDatabase.V1.MaintenanceWindow.Types.PatchingMode) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.OracleDatabase.V1.CloudExadataInfrastructureProperties), global::Google.Cloud.OracleDatabase.V1.CloudExadataInfrastructureProperties.Parser, new[]{ "Ocid", "ComputeCount", "StorageCount", "TotalStorageSizeGb", "AvailableStorageSizeGb", "MaintenanceWindow", "State", "Shape", "OciUrl", "CpuCount", "MaxCpuCount", "MemorySizeGb", "MaxMemoryGb", "DbNodeStorageSizeGb", "MaxDbNodeStorageSizeGb", "DataStorageSizeTb", "MaxDataStorageTb", "ActivatedStorageCount", "AdditionalStorageCount", "DbServerVersion", "StorageServerVersion", "NextMaintenanceRunId", "NextMaintenanceRunTime", "NextSecurityMaintenanceRunTime", "CustomerContacts", "MonthlyStorageServerVersion", "MonthlyDbServerVersion", "ComputeModel", "DatabaseServerType", "StorageServerType", "ExascaleConfig" }, null, new[]{ typeof(global::Google.Cloud.OracleDatabase.V1.CloudExadataInfrastructureProperties.Types.State) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.OracleDatabase.V1.ExascaleConfig), global::Google.Cloud.OracleDatabase.V1.ExascaleConfig.Parser, new[]{ "TotalStorageSizeGb", "AvailableStorageSizeGb", "TotalVmStorageSizeGb", "AvailableVmStorageSizeGb" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.OracleDatabase.V1.MaintenanceWindow), global::Google.Cloud.OracleDatabase.V1.MaintenanceWindow.Parser, new[]{ "Preference", "Months", "WeeksOfMonth", "DaysOfWeek", "HoursOfDay", "LeadTimeWeek", "PatchingMode", "CustomActionTimeoutMins", "IsCustomActionTimeoutEnabled" }, null, new[]{ typeof(global::Google.Cloud.OracleDatabase.V1.MaintenanceWindow.Types.MaintenanceWindowPreference), typeof(global::Google.Cloud.OracleDatabase.V1.MaintenanceWindow.Types.PatchingMode) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.OracleDatabase.V1.ConfigureExascaleCloudExadataInfrastructureRequest), global::Google.Cloud.OracleDatabase.V1.ConfigureExascaleCloudExadataInfrastructureRequest.Parser, new[]{ "Name", "TotalStorageSizeGb", "TotalVmStorageSizeGb", "RequestId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -636,6 +649,7 @@ namespace Google.Cloud.OracleDatabase.V1 {
       computeModel_ = other.computeModel_;
       databaseServerType_ = other.databaseServerType_;
       storageServerType_ = other.storageServerType_;
+      exascaleConfig_ = other.exascaleConfig_ != null ? other.exascaleConfig_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1079,7 +1093,7 @@ namespace Google.Cloud.OracleDatabase.V1 {
     public const int DatabaseServerTypeFieldNumber = 29;
     private string databaseServerType_ = "";
     /// <summary>
-    /// Output only. The database server type of the Exadata Infrastructure.
+    /// Optional. The database server type of the Exadata Infrastructure.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1094,7 +1108,7 @@ namespace Google.Cloud.OracleDatabase.V1 {
     public const int StorageServerTypeFieldNumber = 30;
     private string storageServerType_ = "";
     /// <summary>
-    /// Output only. The storage server type of the Exadata Infrastructure.
+    /// Optional. The storage server type of the Exadata Infrastructure.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1102,6 +1116,21 @@ namespace Google.Cloud.OracleDatabase.V1 {
       get { return storageServerType_; }
       set {
         storageServerType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "exascale_config" field.</summary>
+    public const int ExascaleConfigFieldNumber = 32;
+    private global::Google.Cloud.OracleDatabase.V1.ExascaleConfig exascaleConfig_;
+    /// <summary>
+    /// Output only. The Exascale configuration for the Exadata Infrastructure.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Cloud.OracleDatabase.V1.ExascaleConfig ExascaleConfig {
+      get { return exascaleConfig_; }
+      set {
+        exascaleConfig_ = value;
       }
     }
 
@@ -1150,6 +1179,7 @@ namespace Google.Cloud.OracleDatabase.V1 {
       if (ComputeModel != other.ComputeModel) return false;
       if (DatabaseServerType != other.DatabaseServerType) return false;
       if (StorageServerType != other.StorageServerType) return false;
+      if (!object.Equals(ExascaleConfig, other.ExascaleConfig)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1187,6 +1217,7 @@ namespace Google.Cloud.OracleDatabase.V1 {
       if (ComputeModel != global::Google.Cloud.OracleDatabase.V1.ComputeModel.Unspecified) hash ^= ComputeModel.GetHashCode();
       if (DatabaseServerType.Length != 0) hash ^= DatabaseServerType.GetHashCode();
       if (StorageServerType.Length != 0) hash ^= StorageServerType.GetHashCode();
+      if (exascaleConfig_ != null) hash ^= ExascaleConfig.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1322,6 +1353,10 @@ namespace Google.Cloud.OracleDatabase.V1 {
         output.WriteRawTag(248, 1);
         output.WriteEnum((int) ComputeModel);
       }
+      if (exascaleConfig_ != null) {
+        output.WriteRawTag(130, 2);
+        output.WriteMessage(ExascaleConfig);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1449,6 +1484,10 @@ namespace Google.Cloud.OracleDatabase.V1 {
         output.WriteRawTag(248, 1);
         output.WriteEnum((int) ComputeModel);
       }
+      if (exascaleConfig_ != null) {
+        output.WriteRawTag(130, 2);
+        output.WriteMessage(ExascaleConfig);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1546,6 +1585,9 @@ namespace Google.Cloud.OracleDatabase.V1 {
       }
       if (StorageServerType.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(StorageServerType);
+      }
+      if (exascaleConfig_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ExascaleConfig);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1655,6 +1697,12 @@ namespace Google.Cloud.OracleDatabase.V1 {
       }
       if (other.StorageServerType.Length != 0) {
         StorageServerType = other.StorageServerType;
+      }
+      if (other.exascaleConfig_ != null) {
+        if (exascaleConfig_ == null) {
+          ExascaleConfig = new global::Google.Cloud.OracleDatabase.V1.ExascaleConfig();
+        }
+        ExascaleConfig.MergeFrom(other.ExascaleConfig);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1802,6 +1850,13 @@ namespace Google.Cloud.OracleDatabase.V1 {
           }
           case 248: {
             ComputeModel = (global::Google.Cloud.OracleDatabase.V1.ComputeModel) input.ReadEnum();
+            break;
+          }
+          case 258: {
+            if (exascaleConfig_ == null) {
+              ExascaleConfig = new global::Google.Cloud.OracleDatabase.V1.ExascaleConfig();
+            }
+            input.ReadMessage(ExascaleConfig);
             break;
           }
         }
@@ -1952,6 +2007,13 @@ namespace Google.Cloud.OracleDatabase.V1 {
             ComputeModel = (global::Google.Cloud.OracleDatabase.V1.ComputeModel) input.ReadEnum();
             break;
           }
+          case 258: {
+            if (exascaleConfig_ == null) {
+              ExascaleConfig = new global::Google.Cloud.OracleDatabase.V1.ExascaleConfig();
+            }
+            input.ReadMessage(ExascaleConfig);
+            break;
+          }
         }
       }
     }
@@ -2006,6 +2068,330 @@ namespace Google.Cloud.OracleDatabase.V1 {
   }
 
   /// <summary>
+  /// Details of the Exascale configuration for the Exadata Infrastructure.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ExascaleConfig : pb::IMessage<ExascaleConfig>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ExascaleConfig> _parser = new pb::MessageParser<ExascaleConfig>(() => new ExascaleConfig());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ExascaleConfig> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.OracleDatabase.V1.ExadataInfraReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ExascaleConfig() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ExascaleConfig(ExascaleConfig other) : this() {
+      totalStorageSizeGb_ = other.totalStorageSizeGb_;
+      availableStorageSizeGb_ = other.availableStorageSizeGb_;
+      totalVmStorageSizeGb_ = other.totalVmStorageSizeGb_;
+      availableVmStorageSizeGb_ = other.availableVmStorageSizeGb_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ExascaleConfig Clone() {
+      return new ExascaleConfig(this);
+    }
+
+    /// <summary>Field number for the "total_storage_size_gb" field.</summary>
+    public const int TotalStorageSizeGbFieldNumber = 1;
+    private int totalStorageSizeGb_;
+    /// <summary>
+    /// Output only. Total storage size needed for Exascale in GBs.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int TotalStorageSizeGb {
+      get { return totalStorageSizeGb_; }
+      set {
+        totalStorageSizeGb_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "available_storage_size_gb" field.</summary>
+    public const int AvailableStorageSizeGbFieldNumber = 2;
+    private int availableStorageSizeGb_;
+    /// <summary>
+    /// Output only. Available storage size for Exascale in GBs.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int AvailableStorageSizeGb {
+      get { return availableStorageSizeGb_; }
+      set {
+        availableStorageSizeGb_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_vm_storage_size_gb" field.</summary>
+    public const int TotalVmStorageSizeGbFieldNumber = 3;
+    private int totalVmStorageSizeGb_;
+    /// <summary>
+    /// Output only. Storage size needed for VM storage on Exascale in GBs.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int TotalVmStorageSizeGb {
+      get { return totalVmStorageSizeGb_; }
+      set {
+        totalVmStorageSizeGb_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "available_vm_storage_size_gb" field.</summary>
+    public const int AvailableVmStorageSizeGbFieldNumber = 4;
+    private int availableVmStorageSizeGb_;
+    /// <summary>
+    /// Output only. Available storage size for VM storage on Exascale in GBs.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int AvailableVmStorageSizeGb {
+      get { return availableVmStorageSizeGb_; }
+      set {
+        availableVmStorageSizeGb_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ExascaleConfig);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ExascaleConfig other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (TotalStorageSizeGb != other.TotalStorageSizeGb) return false;
+      if (AvailableStorageSizeGb != other.AvailableStorageSizeGb) return false;
+      if (TotalVmStorageSizeGb != other.TotalVmStorageSizeGb) return false;
+      if (AvailableVmStorageSizeGb != other.AvailableVmStorageSizeGb) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (TotalStorageSizeGb != 0) hash ^= TotalStorageSizeGb.GetHashCode();
+      if (AvailableStorageSizeGb != 0) hash ^= AvailableStorageSizeGb.GetHashCode();
+      if (TotalVmStorageSizeGb != 0) hash ^= TotalVmStorageSizeGb.GetHashCode();
+      if (AvailableVmStorageSizeGb != 0) hash ^= AvailableVmStorageSizeGb.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (TotalStorageSizeGb != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(TotalStorageSizeGb);
+      }
+      if (AvailableStorageSizeGb != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(AvailableStorageSizeGb);
+      }
+      if (TotalVmStorageSizeGb != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(TotalVmStorageSizeGb);
+      }
+      if (AvailableVmStorageSizeGb != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(AvailableVmStorageSizeGb);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (TotalStorageSizeGb != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(TotalStorageSizeGb);
+      }
+      if (AvailableStorageSizeGb != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(AvailableStorageSizeGb);
+      }
+      if (TotalVmStorageSizeGb != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(TotalVmStorageSizeGb);
+      }
+      if (AvailableVmStorageSizeGb != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(AvailableVmStorageSizeGb);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (TotalStorageSizeGb != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TotalStorageSizeGb);
+      }
+      if (AvailableStorageSizeGb != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AvailableStorageSizeGb);
+      }
+      if (TotalVmStorageSizeGb != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TotalVmStorageSizeGb);
+      }
+      if (AvailableVmStorageSizeGb != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AvailableVmStorageSizeGb);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ExascaleConfig other) {
+      if (other == null) {
+        return;
+      }
+      if (other.TotalStorageSizeGb != 0) {
+        TotalStorageSizeGb = other.TotalStorageSizeGb;
+      }
+      if (other.AvailableStorageSizeGb != 0) {
+        AvailableStorageSizeGb = other.AvailableStorageSizeGb;
+      }
+      if (other.TotalVmStorageSizeGb != 0) {
+        TotalVmStorageSizeGb = other.TotalVmStorageSizeGb;
+      }
+      if (other.AvailableVmStorageSizeGb != 0) {
+        AvailableVmStorageSizeGb = other.AvailableVmStorageSizeGb;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            TotalStorageSizeGb = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            AvailableStorageSizeGb = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            TotalVmStorageSizeGb = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            AvailableVmStorageSizeGb = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            TotalStorageSizeGb = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            AvailableStorageSizeGb = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            TotalVmStorageSizeGb = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            AvailableVmStorageSizeGb = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
   /// Maintenance window as defined by Oracle.
   /// https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/MaintenanceWindow
   /// </summary>
@@ -2024,7 +2410,7 @@ namespace Google.Cloud.OracleDatabase.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.OracleDatabase.V1.ExadataInfraReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Google.Cloud.OracleDatabase.V1.ExadataInfraReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2551,6 +2937,332 @@ namespace Google.Cloud.OracleDatabase.V1 {
 
     }
     #endregion
+
+  }
+
+  /// <summary>
+  /// The request for `CloudExadataInfrastructure.ConfigureExascale`.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ConfigureExascaleCloudExadataInfrastructureRequest : pb::IMessage<ConfigureExascaleCloudExadataInfrastructureRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ConfigureExascaleCloudExadataInfrastructureRequest> _parser = new pb::MessageParser<ConfigureExascaleCloudExadataInfrastructureRequest>(() => new ConfigureExascaleCloudExadataInfrastructureRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ConfigureExascaleCloudExadataInfrastructureRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.OracleDatabase.V1.ExadataInfraReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ConfigureExascaleCloudExadataInfrastructureRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ConfigureExascaleCloudExadataInfrastructureRequest(ConfigureExascaleCloudExadataInfrastructureRequest other) : this() {
+      name_ = other.name_;
+      totalStorageSizeGb_ = other.totalStorageSizeGb_;
+      totalVmStorageSizeGb_ = other.totalVmStorageSizeGb_;
+      requestId_ = other.requestId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ConfigureExascaleCloudExadataInfrastructureRequest Clone() {
+      return new ConfigureExascaleCloudExadataInfrastructureRequest(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    /// <summary>
+    /// Required. The name of the Cloud Exadata Infrastructure in the following
+    /// format:
+    /// projects/{project}/locations/{location}/cloudExadataInfrastructures/{cloud_exadata_infrastructure}.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "total_storage_size_gb" field.</summary>
+    public const int TotalStorageSizeGbFieldNumber = 2;
+    private int totalStorageSizeGb_;
+    /// <summary>
+    /// Required. The total storage to be allocated to Exascale in GBs.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int TotalStorageSizeGb {
+      get { return totalStorageSizeGb_; }
+      set {
+        totalStorageSizeGb_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_vm_storage_size_gb" field.</summary>
+    public const int TotalVmStorageSizeGbFieldNumber = 4;
+    private int totalVmStorageSizeGb_;
+    /// <summary>
+    /// Optional. Storage size needed for VM storage on Exascale in GBs.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int TotalVmStorageSizeGb {
+      get { return totalVmStorageSizeGb_; }
+      set {
+        totalVmStorageSizeGb_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "request_id" field.</summary>
+    public const int RequestIdFieldNumber = 3;
+    private string requestId_ = "";
+    /// <summary>
+    /// Optional. An optional ID to identify the request.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RequestId {
+      get { return requestId_; }
+      set {
+        requestId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ConfigureExascaleCloudExadataInfrastructureRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ConfigureExascaleCloudExadataInfrastructureRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (TotalStorageSizeGb != other.TotalStorageSizeGb) return false;
+      if (TotalVmStorageSizeGb != other.TotalVmStorageSizeGb) return false;
+      if (RequestId != other.RequestId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (TotalStorageSizeGb != 0) hash ^= TotalStorageSizeGb.GetHashCode();
+      if (TotalVmStorageSizeGb != 0) hash ^= TotalVmStorageSizeGb.GetHashCode();
+      if (RequestId.Length != 0) hash ^= RequestId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (TotalStorageSizeGb != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(TotalStorageSizeGb);
+      }
+      if (RequestId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(RequestId);
+      }
+      if (TotalVmStorageSizeGb != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(TotalVmStorageSizeGb);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (TotalStorageSizeGb != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(TotalStorageSizeGb);
+      }
+      if (RequestId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(RequestId);
+      }
+      if (TotalVmStorageSizeGb != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(TotalVmStorageSizeGb);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (TotalStorageSizeGb != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TotalStorageSizeGb);
+      }
+      if (TotalVmStorageSizeGb != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TotalVmStorageSizeGb);
+      }
+      if (RequestId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RequestId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ConfigureExascaleCloudExadataInfrastructureRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.TotalStorageSizeGb != 0) {
+        TotalStorageSizeGb = other.TotalStorageSizeGb;
+      }
+      if (other.TotalVmStorageSizeGb != 0) {
+        TotalVmStorageSizeGb = other.TotalVmStorageSizeGb;
+      }
+      if (other.RequestId.Length != 0) {
+        RequestId = other.RequestId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            TotalStorageSizeGb = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            RequestId = input.ReadString();
+            break;
+          }
+          case 32: {
+            TotalVmStorageSizeGb = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            TotalStorageSizeGb = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            RequestId = input.ReadString();
+            break;
+          }
+          case 32: {
+            TotalVmStorageSizeGb = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 

@@ -1,5 +1,21 @@
 # Version history
 
+## Version 2.21.0, released 2026-06-29
+
+### New features
+
+- Add DMS Private Connection
+
+## Version 2.20.0, released 2026-06-22
+
+### New features
+
+- Add fields and messages for Cloud Run jobs
+
+### Documentation improvements
+
+- Update comment for the `region` field in `RouteInfo`
+
 ## Version 2.19.0, released 2026-03-02
 
 ### New features

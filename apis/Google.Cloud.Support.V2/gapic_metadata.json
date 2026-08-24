@@ -109,6 +109,57 @@
           }
         }
       }
+    },
+    "SupportEventSubscriptionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SupportEventSubscriptionServiceClient",
+          "rpcs": {
+            "CreateSupportEventSubscription": {
+              "methods": [
+                "CreateSupportEventSubscription",
+                "CreateSupportEventSubscriptionAsync"
+              ]
+            },
+            "DeleteSupportEventSubscription": {
+              "methods": [
+                "DeleteSupportEventSubscription",
+                "DeleteSupportEventSubscriptionAsync"
+              ]
+            },
+            "ExpungeSupportEventSubscription": {
+              "methods": [
+                "ExpungeSupportEventSubscription",
+                "ExpungeSupportEventSubscriptionAsync"
+              ]
+            },
+            "GetSupportEventSubscription": {
+              "methods": [
+                "GetSupportEventSubscription",
+                "GetSupportEventSubscriptionAsync"
+              ]
+            },
+            "ListSupportEventSubscriptions": {
+              "methods": [
+                "ListSupportEventSubscriptions",
+                "ListSupportEventSubscriptionsAsync"
+              ]
+            },
+            "UndeleteSupportEventSubscription": {
+              "methods": [
+                "UndeleteSupportEventSubscription",
+                "UndeleteSupportEventSubscriptionAsync"
+              ]
+            },
+            "UpdateSupportEventSubscription": {
+              "methods": [
+                "UpdateSupportEventSubscription",
+                "UpdateSupportEventSubscriptionAsync"
+              ]
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ItemGroup>
+    <Compile Update="WriteBatchTest.*.cs">
+      <DependentUpon>WriteBatchTest.cs</DependentUpon>
+    </Compile>
+    <Compile Update="FirestoreDbTest.*.cs">
+      <DependentUpon>FirestoreDbTest.cs</DependentUpon>
+    </Compile>
+    <Compile Update="QueryTest.*.cs">
+      <DependentUpon>QueryTest.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>  
+</Project>

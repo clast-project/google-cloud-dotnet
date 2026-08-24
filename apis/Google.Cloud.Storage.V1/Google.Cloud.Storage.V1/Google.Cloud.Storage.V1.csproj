@@ -31,17 +31,6 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="System.Text.Json" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Update="StorageClient.*.cs">
-      <DependentUpon>StorageClient.cs</DependentUpon>
-    </Compile>
-    <Compile Update="StorageClientImpl.*.cs">
-      <DependentUpon>StorageClientImpl.cs</DependentUpon>
-    </Compile>
-    <Compile Update="UrlSigner.*.cs">
-      <DependentUpon>UrlSigner.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
   <!-- Clast: NuGet metadata stating this is the Clast republish (placed last to override upstream values). -->
   <PropertyGroup Condition="'$(Clast)' == 'true'">
     <Title>Clast republish of Google.Cloud.Storage.V1</Title>
@@ -57,4 +46,5 @@
     <None Include="..\..\..\CLAST_NUGET.md" Pack="true" PackagePath="README.md" />
   </ItemGroup>
 
+  <Import Project="Google.Cloud.Storage.V1.csproj.google" Condition="Exists('Google.Cloud.Storage.V1.csproj.google')" />
 </Project>

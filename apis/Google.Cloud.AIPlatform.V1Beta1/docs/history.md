@@ -1,5 +1,45 @@
 # Version history
 
+## Version 1.0.0-beta84, released 2026-08-17
+
+### New features
+
+- Add build configuration support to Vertex AI Reasoning Engine
+
+## Version 1.0.0-beta83, released 2026-08-10
+
+### New features
+
+- Add endpoint field to BatchPredictionJob for bring-your-own-endpoint batch prediction
+
+## Version 1.0.0-beta82, released 2026-08-07
+
+### New features
+
+- Add Tool.ExaAiSearch to Vertex AI v1beta1
+
+## Version 1.0.0-beta81, released 2026-07-28
+
+### New features
+
+- Add Route to GroundingChunk.Maps in Vertex AI v1beta1
+
+### Documentation improvements
+
+- Expand GroundingChunk.Maps documentation to describe route support
+
+## Version 1.0.0-beta80, released 2026-07-13
+
+### New features
+
+- Add identity_type to Reasoning Engine public protos
+
+## Version 1.0.0-beta79, released 2026-06-22
+
+### New features
+
+- Add data_sharing_enabled_provider field (ModelProvider enum) to PublisherModelConfig
+
 ## Version 1.0.0-beta78, released 2026-05-11
 
 ### New features
