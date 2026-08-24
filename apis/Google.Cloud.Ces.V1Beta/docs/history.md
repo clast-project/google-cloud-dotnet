@@ -1,5 +1,47 @@
 # Version history
 
+## Version 1.0.0-beta09, released 2026-07-13
+
+### New features
+
+- Update public libraries for CES v1beta
+- Add WhatsApp, Instagram, and CCaaS Chat deployment channels
+- Add evaluation run caching settings
+- Add evaluation type (GOLDEN, SCENARIO) to evaluation service
+- Add context messages for external supervision guardrails
+- Add timeout configuration for toolsets
+
+### Documentation improvements
+
+- A comment for field `disable_barge_in` in message `.google.cloud.ces.v1beta.BargeInConfig` is changed
+- A comment for enum value `PENDING` in enum `State` is changed
+- A comment for enum value `DONE` in enum `State` is changed
+- A comment for enum value `EXPIRED` in enum `State` is changed
+
+## Version 1.0.0-beta08, released 2026-07-06
+
+### Bug fixes
+
+- Add routing annotations to BidiRunSession in v1 and v1beta
+
+## Version 1.0.0-beta07, released 2026-06-22
+
+### Bug fixes
+
+- An existing field `root_agent` is removed from message `.google.cloud.ces.v1.AgentTool`
+
+## Version 1.0.0-beta06, released 2026-06-15
+
+### New features
+
+- Update cloud ml ces v1beta client libraries
+
+### Documentation improvements
+
+- Update comments for `audio_recording_config` and `bigquery_export_settings` in `LoggingSettings`.
+- Update comments for various `InputType` enum values.
+- Update comments for `root_span`, `turns`, and `max_turns` in `Evaluation`.
+
 ## Version 1.0.0-beta05, released 2026-05-04
 
 ### New features

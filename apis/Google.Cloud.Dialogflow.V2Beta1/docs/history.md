@@ -1,5 +1,38 @@
 # Version history
 
+## Version 1.0.0-beta32, released 2026-07-14
+
+### New features
+
+- Add tool calls and tool responses to AnalyzeContent and BidiStreaming APIs
+- Introduce CompanionSuggestion
+- Add support for external private CAs in the SIP TRUNK UI.
+
+## Version 1.0.0-beta31, released 2026-06-29
+
+### New features
+
+- Speech activity event is configurable through InputAudioConfig.enable_voice_activity_events
+- StreamingRecognitionResult has two new MessageType: SPEECH_ACTIVITY_BEGIN and SPEECH_ACTIVITY_END
+- SearchKnowledgeDebugInfo contains ces_debug_info
+
+## Version 1.0.0-beta30, released 2026-06-22
+
+### New features
+
+- Added support for new AnswerType types
+- Added support for SIP config in conversation profile
+- Added support for proactive and reactive in CES app
+- Added support for new knowledge suggestion
+
+### Bug fixes
+
+- Hide ConversationModelConfig as ConversationModel isn't visible
+
+### Documentation improvements
+
+- Clarified OUTPUT_AUDIO_ENCODING_MP3
+
 ## Version 1.0.0-beta29, released 2026-03-30
 
 ### New features

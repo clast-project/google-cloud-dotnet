@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "IngestionServiceClient",
           "rpcs": {
+            "IngestAdEvents": {
+              "methods": [
+                "IngestAdEvents",
+                "IngestAdEventsAsync"
+              ]
+            },
             "IngestAudienceMembers": {
               "methods": [
                 "IngestAudienceMembers",
@@ -20,6 +26,12 @@
               "methods": [
                 "IngestEvents",
                 "IngestEventsAsync"
+              ]
+            },
+            "RemoveAllAudienceMembers": {
+              "methods": [
+                "RemoveAllAudienceMembers",
+                "RemoveAllAudienceMembersAsync"
               ]
             },
             "RemoveAudienceMembers": {

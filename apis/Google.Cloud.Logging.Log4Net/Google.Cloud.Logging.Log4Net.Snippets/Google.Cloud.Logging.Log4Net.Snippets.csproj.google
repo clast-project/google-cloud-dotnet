@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ItemGroup>
+    <EmbeddedResource Include="log4net-custom-labels-template.xml" />
+    <EmbeddedResource Include="log4net-template.xml" />
+    <EmbeddedResource Include="log4net-aspnet-template.xml" />
+  </ItemGroup>
+</Project>

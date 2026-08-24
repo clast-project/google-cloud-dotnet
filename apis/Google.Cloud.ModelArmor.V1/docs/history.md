@@ -1,5 +1,31 @@
 # Version history
 
+## Version 1.0.0, released 2026-08-10
+
+### New features
+
+- Release stable versions of lagging releases
+
+## Version 1.0.0-beta07, released 2026-07-06
+
+### New features
+
+- Add image sanitization support
+
+### Documentation improvements
+
+- A comment for enum value `DISABLED` in enum `PiAndJailbreakFilterEnforcement` is changed
+- A comment for field `rai_filter_type_results` in message `.google.cloud.modelarmor.v1.RaiFilterResult` is changed
+- A comment for field `byte_range` in message `.google.cloud.modelarmor.v1.SdpFinding` is changed
+- A comment for field `codepoint_range` in message `.google.cloud.modelarmor.v1.SdpFinding` is changed
+
+## Version 1.0.0-beta06, released 2026-06-15
+
+### New features
+
+- Add streaming methods StreamSanitizeUserPrompt and StreamSanitizeModelResponse
+- Add StreamingMode enum and field to sanitize requests
+
 ## Version 1.0.0-beta05, released 2025-11-05
 
 ### New features

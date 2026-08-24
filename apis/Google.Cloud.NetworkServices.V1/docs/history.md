@@ -1,5 +1,35 @@
 # Version history
 
+## Version 1.7.0, released 2026-07-28
+
+### New features
+
+- Deprecate client_tls_policy field from Endpoint Policy proto
+- A new field `resource_uris` is added to message `.google.cloud.networkservices.v1.AgentGateway`
+
+### Documentation improvements
+
+- Fix unclosed backtick in AgentGateway registries comment
+
+## Version 1.6.0, released 2026-06-18
+
+### New features
+
+- Add AgentGateway resource and associated RPCs
+- Support regional EndpointPolicy, GrpcRoute, HttpRoute, Mesh, TcpRoute, and TlsRoute resources
+- Add EXT_AUTHZ_GRPC wire format and BodySendMode enum in dep.proto
+- Add forward_attributes, request_body_send_mode, and response_body_send_mode to Extension
+- Support generic artifacts for Wasm plugin images and configuration
+- Add all_ports and allow_global_access fields to Gateway
+- Add filter to ListHttpRoutesRequest and request_id to CreateHttpRouteRequest
+- Add target_proxies and labels to TlsRoute
+
+### Documentation improvements
+
+- Update Gateway port limits for SECURE_WEB_GATEWAY
+- Update RouteView resource patterns to use project numbers
+- Update TlsRoute sni_host limit documentation
+
 ## Version 1.5.0, released 2025-11-05
 
 ### New features

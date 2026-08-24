@@ -1,5 +1,76 @@
 # Version history
 
+## Version 1.0.0-beta09, released 2026-08-17
+
+### New features
+
+- Added `PartnerService`
+- Added create and update methods for `CompanyService`
+- Added `CreativeWrapperService`
+- Added `ChildPublisherService`
+- Added `dvrWindowDuration` field to `LiveStream` resource
+- Added `refreshRateType` to AdUnit
+- Added ViewabilityProviderService
+- Added REQUESTED_CREATIVE_ORIENTATION dimension to the Report API
+- Added `IMPRESSIONS_WITH_COMPANION` report dimension
+- Added `CTR_WITH_COMPANION` report dimension
+- A new value `LANDING_PAGE_DOMAIN` is added to enum `Dimension`
+- Added `daiAuthenticationKeys`, `segmentUrlAuthenticationKeys`, and `daiEncofingProfiles` fields to `LiveStream`
+- A new message `ReportVisibilityEnum` is added
+- Added pod report dimensions and metrics
+- Added `DaiEncodingProfileService`
+- Added `DaiAuthenticationKeyService`
+- Added `slate` field to `LiveStream`
+
+### Bug fixes
+
+- Fixed batchApproveSuggestedAdUnits HTTP binding
+- The type of an existing field `visibility` is changed from `Report.Visibility` to `ReportVisibilityEnum.ReportVisibility` in message `Report`.
+
+### Documentation improvements
+
+- Updated many method descriptions to use a consistent style
+- A comment for enum value `ADVERTISER_DOMAIN_NAME` in enum `Dimension` is changed to prefer the new `LANDING_PAGE_DOMAIN` name.
+- Minor documentation adjustments
+
+## Version 1.0.0-beta08, released 2026-07-28
+
+### New features
+
+- Added additional LineItem fields
+- Added `BatchActivateContentBundles` and `BatchDeactivateContentBundles` methods to `ContentBundleService`
+- Added CreativeSetService
+- Added `SlateService`
+- Added the Creative entity
+- Added OrderService write methods and additional stats fields.
+- Added TargetingPresetService update methods
+
+### Bug fixes
+
+- Moved Schedule messages from report_messages.proto to report_delivery.proto
+
+### Documentation improvements
+
+- Updated method descriptions to use a consistent style
+
+## Version 1.0.0-beta07, released 2026-07-20
+
+### New features
+
+- Added AdSpotService
+- Added CdnConfigService
+- Added LiveStreamService
+- Added TargetingPresetService
+- Added SuggestedAdUnitService
+- Added ThirdPartyCompanyService
+- Added `status` and `updateTime` fields to ContentBundle
+- Added write methods for CustomTargetingValue
+- Added `DECLARED_ADVERTISER_DOMAIN` report Dimension
+
+### Documentation improvements
+
+- Normalized documentation on standard methods
+
 ## Version 1.0.0-beta06, released 2026-05-11
 
 ### New features

@@ -38,6 +38,7 @@ namespace GoogleCSharpSnippets
             GetStatusRequest request = new GetStatusRequest
             {
                 TransportName = TransportName.FromProjectLocationTransport("[PROJECT]", "[LOCATION]", "[TRANSPORT]"),
+                SkipCache = false,
             };
             // Make the request
             GetStatusResponse response = await transportManagerClient.GetStatusAsync(request);

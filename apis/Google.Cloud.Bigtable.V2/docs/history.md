@@ -1,5 +1,27 @@
 # Version history
 
+## Version 3.31.0, released 2026-08-17
+
+### New features
+
+- Add microsecond_timestamp feature flag
+
+## Version 3.30.0, released 2026-08-10
+
+### New features
+
+- Add microsecond timestamp precision support
+
+## Version 3.29.0, released 2026-06-15
+
+### New features
+
+- Add support for filtering SampleRowKeys to a specific row_range
+
+### Documentation improvements
+
+- Comments in SampleRowKeys updated to reflect the new row_range field
+
 ## Version 3.28.0, released 2026-06-08
 
 ### New features

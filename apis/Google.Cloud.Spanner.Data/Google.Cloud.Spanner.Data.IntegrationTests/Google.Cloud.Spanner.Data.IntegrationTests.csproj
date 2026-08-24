@@ -7,8 +7,8 @@
     <NoWarn>$(NoWarn);1701;1702;1705;xUnit2004;xUnit2013</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Api.Gax.Grpc.Testing" />
-    <PackageReference Include="Google.Api.Gax.Testing" />
+    <PackageReference Include="Google.Api.Gax.Grpc.Testing" VersionOverride="[4.14.0, 5.0.0)" />
+    <PackageReference Include="Google.Api.Gax.Testing" VersionOverride="[4.14.0, 5.0.0)" />
     <ProjectReference Include="..\..\..\tools\Google.Cloud.ClientTesting\Google.Cloud.ClientTesting.csproj" />
     <ProjectReference Include="..\Google.Cloud.Spanner.Data\Google.Cloud.Spanner.Data.csproj" />
     <PackageReference Include="Microsoft.Extensions.Configuration" />
@@ -23,10 +23,5 @@
     <PackageReference Include="xunit.runner.visualstudio" />
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
-    <Reference Include="System.Transactions" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Google.Cloud.Spanner.Data.CommonTesting\Google.Cloud.Spanner.Data.CommonTesting.csproj" />
-  </ItemGroup>
+  <Import Project="Google.Cloud.Spanner.Data.IntegrationTests.csproj.google" Condition="Exists('Google.Cloud.Spanner.Data.IntegrationTests.csproj.google')" />
 </Project>

@@ -1,5 +1,17 @@
 # Version history
 
+## Version 2.20.0, released 2026-08-17
+
+### New features
+
+- Add option to fetch remote change history (tags) for GitSource dependencies
+
+## Version 2.19.0, released 2026-06-29
+
+### New features
+
+- Add E2_STANDARD_2 machine type to Cloud Build API
+
 ## Version 2.18.0, released 2025-12-03
 
 ### New features

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>1.0.0-beta24</Version>
+    <Version>1.0.0-beta28</Version>
     <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Recommended Google client library to access the Google Chat API, which lets you build Chat apps to integrate your services with Google Chat and manage Chat resources such as spaces, members, and messages.</Description>
@@ -13,4 +13,5 @@
     <PackageReference Include="Google.Apps.Card.V1" VersionOverride="[1.0.0-beta02, 2.0.0)" />
     <PackageReference Include="Grpc.Core" PrivateAssets="None" Condition="'$(TargetFramework)'=='net462'" />
   </ItemGroup>
+  <Import Project="Google.Apps.Chat.V1.csproj.google" Condition="Exists('Google.Apps.Chat.V1.csproj.google')" />
 </Project>

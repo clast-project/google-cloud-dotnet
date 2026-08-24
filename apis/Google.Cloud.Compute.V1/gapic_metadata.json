@@ -1241,6 +1241,33 @@
         }
       }
     },
+    "Hosts": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HostsClient",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "Get",
+                "GetAsync"
+              ]
+            },
+            "GetVersion": {
+              "methods": [
+                "GetVersion",
+                "GetVersionAsync"
+              ]
+            },
+            "List": {
+              "methods": [
+                "List",
+                "ListAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
     "ImageFamilyViews": {
       "clients": {
         "grpc": {
@@ -5231,6 +5258,27 @@
         }
       }
     },
+    "ReliabilityRisks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReliabilityRisksClient",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "Get",
+                "GetAsync"
+              ]
+            },
+            "List": {
+              "methods": [
+                "List",
+                "ListAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
     "ReservationBlocks": {
       "clients": {
         "grpc": {
@@ -5542,6 +5590,12 @@
         "grpc": {
           "libraryClient": "RolloutsClient",
           "rpcs": {
+            "Advance": {
+              "methods": [
+                "Advance",
+                "AdvanceAsync"
+              ]
+            },
             "Cancel": {
               "methods": [
                 "Cancel",
@@ -5565,6 +5619,18 @@
                 "List",
                 "ListAsync"
               ]
+            },
+            "Pause": {
+              "methods": [
+                "Pause",
+                "PauseAsync"
+              ]
+            },
+            "Resume": {
+              "methods": [
+                "Resume",
+                "ResumeAsync"
+              ]
             }
           }
         }
@@ -5587,6 +5653,12 @@
                 "DeleteAsync"
               ]
             },
+            "DeleteNamedSet": {
+              "methods": [
+                "DeleteNamedSet",
+                "DeleteNamedSetAsync"
+              ]
+            },
             "DeleteRoutePolicy": {
               "methods": [
                 "DeleteRoutePolicy",
@@ -5597,6 +5669,12 @@
               "methods": [
                 "Get",
                 "GetAsync"
+              ]
+            },
+            "GetNamedSet": {
+              "methods": [
+                "GetNamedSet",
+                "GetNamedSetAsync"
               ]
             },
             "GetNatIpInfo": {
@@ -5641,6 +5719,12 @@
                 "ListBgpRoutesAsync"
               ]
             },
+            "ListNamedSets": {
+              "methods": [
+                "ListNamedSets",
+                "ListNamedSetsAsync"
+              ]
+            },
             "ListRoutePolicies": {
               "methods": [
                 "ListRoutePolicies",
@@ -5651,6 +5735,12 @@
               "methods": [
                 "Patch",
                 "PatchAsync"
+              ]
+            },
+            "PatchNamedSet": {
+              "methods": [
+                "PatchNamedSet",
+                "PatchNamedSetAsync"
               ]
             },
             "PatchRoutePolicy": {
@@ -5669,6 +5759,12 @@
               "methods": [
                 "Update",
                 "UpdateAsync"
+              ]
+            },
+            "UpdateNamedSet": {
+              "methods": [
+                "UpdateNamedSet",
+                "UpdateNamedSetAsync"
               ]
             },
             "UpdateRoutePolicy": {

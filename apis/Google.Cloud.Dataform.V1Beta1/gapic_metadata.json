@@ -16,6 +16,12 @@
                 "CancelWorkflowInvocationAsync"
               ]
             },
+            "CheckoutWorkspaceBranch": {
+              "methods": [
+                "CheckoutWorkspaceBranch",
+                "CheckoutWorkspaceBranchAsync"
+              ]
+            },
             "CommitRepositoryChanges": {
               "methods": [
                 "CommitRepositoryChanges",
@@ -82,10 +88,22 @@
                 "CreateWorkspaceAsync"
               ]
             },
+            "DeleteBranch": {
+              "methods": [
+                "DeleteBranch",
+                "DeleteBranchAsync"
+              ]
+            },
             "DeleteFolder": {
               "methods": [
                 "DeleteFolder",
                 "DeleteFolderAsync"
+              ]
+            },
+            "DeleteFolderTree": {
+              "methods": [
+                "DeleteFolderTree",
+                "DeleteFolderTreeAsync"
               ]
             },
             "DeleteReleaseConfig": {
@@ -100,10 +118,22 @@
                 "DeleteRepositoryAsync"
               ]
             },
+            "DeleteRepositoryLongRunning": {
+              "methods": [
+                "DeleteRepositoryLongRunning",
+                "DeleteRepositoryLongRunningAsync"
+              ]
+            },
             "DeleteTeamFolder": {
               "methods": [
                 "DeleteTeamFolder",
                 "DeleteTeamFolderAsync"
+              ]
+            },
+            "DeleteTeamFolderTree": {
+              "methods": [
+                "DeleteTeamFolderTree",
+                "DeleteTeamFolderTreeAsync"
               ]
             },
             "DeleteWorkflowConfig": {
@@ -122,6 +152,12 @@
               "methods": [
                 "DeleteWorkspace",
                 "DeleteWorkspaceAsync"
+              ]
+            },
+            "FetchCurrentWorkspaceBranch": {
+              "methods": [
+                "FetchCurrentWorkspaceBranch",
+                "FetchCurrentWorkspaceBranchAsync"
               ]
             },
             "FetchFileDiff": {
@@ -152,6 +188,12 @@
               "methods": [
                 "FetchRepositoryHistory",
                 "FetchRepositoryHistoryAsync"
+              ]
+            },
+            "FetchWorkspaceBranches": {
+              "methods": [
+                "FetchWorkspaceBranches",
+                "FetchWorkspaceBranchesAsync"
               ]
             },
             "GetCompilationResult": {
@@ -386,6 +428,12 @@
               "methods": [
                 "SetIamPolicy",
                 "SetIamPolicyAsync"
+              ]
+            },
+            "SyncWorkspaceRefs": {
+              "methods": [
+                "SyncWorkspaceRefs",
+                "SyncWorkspaceRefsAsync"
               ]
             },
             "TestIamPermissions": {

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>4.2.0</Version>
+    <Version>4.4.0</Version>
     <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Low-level Google client library to access the Firestore API. Users are recommended to use the Google.Cloud.Firestore package instead.</Description>
@@ -14,4 +14,5 @@
     <PackageReference Include="Google.LongRunning" VersionOverride="[3.5.0, 4.0.0)" />
     <PackageReference Include="Grpc.Core" PrivateAssets="None" Condition="'$(TargetFramework)'=='net462'" />
   </ItemGroup>
+  <Import Project="Google.Cloud.Firestore.V1.csproj.google" Condition="Exists('Google.Cloud.Firestore.V1.csproj.google')" />
 </Project>

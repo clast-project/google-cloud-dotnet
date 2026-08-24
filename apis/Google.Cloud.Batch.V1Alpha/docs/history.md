@@ -1,5 +1,17 @@
 # Version history
 
+## Version 1.0.0-alpha35, released 2026-07-14
+
+### New features
+
+- Add support for instance flexibility policy in Cloud Batch
+
+## Version 1.0.0-alpha34, released 2026-07-13
+
+### New features
+
+- Added new NicType field to job
+
 ## Version 1.0.0-alpha33, released 2025-11-03
 
 ### New features

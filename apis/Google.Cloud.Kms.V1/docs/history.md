@@ -1,5 +1,25 @@
 # Version history
 
+## Version 3.26.0, released 2026-07-20
+
+### New features
+
+- Add support for trusted key wrapping and HSM key trust upgrades
+
+### Documentation improvements
+
+- A comment for field `key_portability_enabled` in message `.google.cloud.kms.v1.SingleTenantHsmInstance` is changed to indicate key portability is now GA
+
+## Version 3.25.0, released 2026-07-06
+
+### New features
+
+- Add support for post-quantum (PQ) import methods
+
+### Documentation improvements
+
+- Update the comment for duration value `unrefreshed_duration_until_disable` to accurately reflect the system-defined duration
+
 ## Version 3.24.0, released 2026-04-13
 
 ### New features

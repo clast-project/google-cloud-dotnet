@@ -41,6 +41,7 @@ namespace GoogleCSharpSnippets
                 ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 HttpRouteId = "",
                 HttpRoute = new HttpRoute(),
+                RequestId = "",
             };
             // Make the request
             Operation<HttpRoute, OperationMetadata> response = networkServicesClient.CreateHttpRoute(request);

@@ -384,16 +384,42 @@ namespace Google.Ads.AdManager.V1 {
     ///  See syntax details at
     ///  https://developers.google.com/ad-manager/api/beta/filters
     ///
-    /// &lt;b>Filterable fields:&lt;/b>
-    /// &lt;ul style="list-style-type:none">
-    ///   &lt;li>&lt;code>displayName&lt;/code>&lt;/li>
-    ///   &lt;li>&lt;code>endTime&lt;/code>&lt;/li>
-    ///   &lt;li>&lt;code>goal.units&lt;/code>&lt;/li>
-    ///   &lt;li>&lt;code>lineItemType&lt;/code>&lt;/li>
-    ///   &lt;li>&lt;code>name&lt;/code>&lt;/li>
-    ///   &lt;li>&lt;code>order&lt;/code>&lt;/li>
-    ///   &lt;li>&lt;code>startTime&lt;/code>&lt;/li>
-    /// &lt;/ul>
+    /// **Filterable fields:**
+    ///
+    /// * `archived`
+    /// * `contractedUnitsBought`
+    /// * `costType`
+    /// * `createTime`
+    /// * `creativePlaceholders.size.canonicalName`
+    /// * `dealInfo.externalDealId`
+    /// * `deliveryRateType`
+    /// * `displayName`
+    /// * `endTime`
+    /// * `environmentType`
+    /// * `externalLineItemId`
+    /// * `goal.units`
+    /// * `grpSettings.growbirdNielsenEnabled`
+    /// * `grpSettings.inTargetRatioEstimateMilliPercent`
+    /// * `lineItemType`
+    /// * `missingCreatives`
+    /// * `name`
+    /// * `notes`
+    /// * `order`
+    /// * `orderDisplayName`
+    /// * `priority`
+    /// * `roadblockingType`
+    /// * `startTime`
+    /// * `stats.clickThroughRate`
+    /// * `stats.clicksDelivered`
+    /// * `stats.impressionsDelivered`
+    /// * `stats.viewableImpressionsDelivered`
+    /// * `status`
+    /// * `targeting.inventoryTargeting.targetedAdUnits.adUnit`
+    /// * `targeting.inventoryTargeting.targetedPlacements`
+    /// * `targeting.mobileApplicationTargeting.firstPartyTargeting.targetedApplications`
+    /// * `updateSource`
+    /// * `updateTime`
+    /// * `webPropertyCode`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

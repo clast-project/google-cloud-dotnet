@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>2.12.0</Version>
+    <Version>2.13.0</Version>
     <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Recommended Google client library to access the BigQuery Reservation API, which allows you to modify your BigQuery flat-rate reservations.</Description>
@@ -13,4 +13,5 @@
     <PackageReference Include="Google.Cloud.Iam.V1" VersionOverride="[3.5.0, 4.0.0)" />
     <PackageReference Include="Grpc.Core" PrivateAssets="None" Condition="'$(TargetFramework)'=='net462'" />
   </ItemGroup>
+  <Import Project="Google.Cloud.BigQuery.Reservation.V1.csproj.google" Condition="Exists('Google.Cloud.BigQuery.Reservation.V1.csproj.google')" />
 </Project>
